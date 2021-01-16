@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build-web": "tsc -p public/scripts/tsconfig.json"
   },
   "dependencies": {
     "@types/markdown-it": "^12.0.1",
