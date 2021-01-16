@@ -8,7 +8,9 @@ const postsDirectory = path.join(process.cwd(), 'notes_markdown')
 export function getSortedNotesData():Note[] {
   // Get file names under /notes
   const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData:Note[] = fileNames.map(fileName => {
+  const allPostsData:Note[] = [];
+
+  for (let fileName of fileNames){
     // Remove ".md" from file name to get id
     const slug = fileName.replace(/\.md$/, '')
 
@@ -20,12 +22,15 @@ export function getSortedNotesData():Note[] {
     // Use gray-matter to parse the post metadata section
     const matterResult:Partial<Note> = markdownParser.parse(fileContents);
 
+    if (matterResult.hidden) continue;
+
     // Combine the data with the id
-    return <Note>{
+    allPostsData.push(<Note>{
       slug,
       ...matterResult
-    }
-  })
+    });
+  }
+
   // Sort notes by date
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {

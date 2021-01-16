@@ -13,6 +13,7 @@ declare type Note = {
 	content:string
 	renderedContent:string
 	readTime: string
+	hidden?:boolean
 }
 
 declare type Project = {
