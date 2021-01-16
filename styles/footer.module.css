@@ -1,0 +1,32 @@
+
+.footer{
+	margin-top: 6.2rem;
+	padding: 5.6rem 0;
+	background: #faf7ff;
+}
+
+.footerContent{
+	padding-left: 2rem;
+	padding-right: 2rem;
+	max-width: 40rem;
+	margin: 0 auto;
+}
+
+.footerImage{
+	width: 8rem;
+	margin: 0 auto;
+	display: block;
+}
+
+.footerCopy{
+	padding-top: 2.5rem;
+	text-align: center;
+	font-family: 'Open Sans',sans-serif;
+	font-size: 16.5px;
+	letter-spacing: 1px;
+}
+
+.footerCopyText{
+	color: #546e7a;
+	font-weight: 500;
+}

@@ -1,54 +1,37 @@
 import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
+import Layout, { siteTitle } from '../components/Layout'
 import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
-import Link from 'next/link'
-import Date from '../components/date'
+import { getSortedNotesData } from '../lib/notes'
 import { GetStaticProps } from 'next'
+import React from "react";
+import {Note} from "../types";
+import NotePreview from "../components/NotePreview";
 
-export default function Home({
-  allPostsData
-}: {
-  allPostsData: {
-    date: string
-    title: string
-    id: string
-  }[]
-}) {
+export default function HomePage({ allPostsData }: { allPostsData: Note[] }) {
+
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
+
+      <div className="restrict">
+          <h2 className={utilStyles.header}>Notes 🖋</h2>
+          <p className={utilStyles.paragraph}>Here is a few of my latest <a href="/notes" hrefLang="en">mumbles</a> 😅. I'm trying to write at least one piece every two month this year to get back into writing... let's see how that goes 🤣</p>
+          <p className={utilStyles.paragraph}><strong>UPDATE:</strong> I tried to do this last year (2020), but when covid 💩 hit the fan, I stopped posting. This year im trying again. Lets see how it goes 🤞🏽</p>
+          <br/>
+
+          {allPostsData.map( ({slug, date, title, readTime}) => (
+              <NotePreview key={slug} date={date} readTime={readTime} slug={slug} title={title}/>
+          ) )}
+      </div>
+
     </Layout>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getSortedNotesData();
   return {
     props: {
       allPostsData

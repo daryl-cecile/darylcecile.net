@@ -1,0 +1,16 @@
+
+.socialLinks{
+	text-align: center;
+	font-family: 'Open Sans',sans-serif;
+	font-size: 16.5px;
+	letter-spacing: 1px;
+	font-weight: 400;
+}
+
+.socialLinkBtn{
+
+}
+
+.socialLinkBtn:hover{
+	color: #28a7ff;
+}

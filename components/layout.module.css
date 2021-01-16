@@ -1,25 +1,29 @@
-.container {
-  max-width: 36rem;
-  padding: 0 1rem;
-  margin: 3rem auto 6rem;
+.hero {
+  width: 100%;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.heroImage{
+  width: 135px;
+  margin: 0 auto;
+  display: block;
 }
 
-.headerImage {
-  width: 6rem;
-  height: 6rem;
-}
-
-.headerHomeImage {
-  width: 8rem;
-  height: 8rem;
+.heroTitle{
+  color: #546e7a;
+  font-family: 'Noto Sans',sans-serif;
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-top: 2.4rem;
 }
 
 .backToHome {
-  margin: 3rem 0 0;
+  max-width: 720px;
+  margin: 3rem auto 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
