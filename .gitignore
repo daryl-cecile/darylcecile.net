@@ -26,6 +26,3 @@ yarn-error.log*
 
 # ide
 /.idea/
-
-# others
-/public/scripts/
