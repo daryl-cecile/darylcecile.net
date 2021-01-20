@@ -1,0 +1,133 @@
+@import "JetBrainsMono-1.0.2/JetBrainsMono.css";
+
+.pyrogist-container{
+	display: flex;
+	flex-direction: column;
+	border-radius: 3px;
+	border: 0.5px solid gainsboro;
+	font-family: sans-serif;
+	position: relative;
+	height: 100%;
+	transition: all .3s;
+
+	&:not(.theme-dark):not(.theme-ultraDark):not(.theme-match){
+		background: white;
+		color: #3D3D3D;
+	}
+
+	&.theme-dark{
+		background: #282828;
+		color: #CCC;
+	}
+
+	&.theme-ultraDark{
+		background: #111;
+		color: #DDD;
+	}
+
+	&.theme-match{
+		background: transparent;
+		color: inherit;
+		border-color: currentColor;
+	}
+
+	.pyrogist-head{
+		text-align: center;
+		border-bottom: .5px solid gainsboro;
+		height: 32px;
+		font-size: 15px;
+		font-weight: 300;
+		letter-spacing: 1px;
+		line-height: 32px;
+		color: inherit;
+		position: relative;
+
+		button{
+			position: absolute;
+			width: auto;
+			height: 27px;
+			background: transparent;
+			color: orange;
+			border: 0.5px solid whitesmoke;
+			top: 2px;
+			right: 3px;
+			cursor: pointer;
+			border-radius: 2px;
+		}
+	}
+
+	.pyrogist-body{
+		padding: 15px;
+		margin:0;
+		overflow-x: auto;
+		overflow-y: auto;
+		color: inherit;
+		transition: all .3s;
+		background: transparent;
+
+		code{
+			font-size: 13px;
+			line-height: 1.2;
+
+			-webkit-font-feature-settings: "liga" on, "calt" on;
+			-webkit-font-smoothing: antialiased;
+			text-rendering: optimizeLegibility;
+			font-family: 'JetBrains Mono', sans-serif;
+		}
+	}
+
+	.pyrogist-foot{
+		border-top: .5px solid gainsboro;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		color: inherit;
+
+		height: 28px;
+		font-size: 12px;
+		font-weight: 300;
+		letter-spacing: 1px;
+		line-height: 28px;
+
+		div{
+			margin: 10px;
+			font-size: inherit;
+		}
+	}
+
+	.pyrogist-head,
+	.pyrogist-foot{
+		a{
+			text-decoration: none;
+			color: orange;
+			transition: all .4s;
+			font-size: inherit;
+
+			&:hover{
+				filter: saturate(0);
+			}
+		}
+	}
+
+	&:not(.full){
+		.pyrogist-body{
+			position: relative;
+
+			&::after{
+				content:'';
+				height: 50px;
+				position: absolute;
+				width: 100%;
+				bottom:0;
+				left:0;
+			}
+		}
+	}
+
+	*:focus{
+		outline:none;
+		color: deeppink !important;
+	}
+
+}

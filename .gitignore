@@ -26,3 +26,5 @@ yarn-error.log*
 
 # ide
 /.idea/
+public/scripts/PyroGist_v1/PyroGist.js
+public/scripts/PyroGist_v1/PyroGist.css.map

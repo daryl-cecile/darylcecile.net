@@ -19,8 +19,8 @@ As pictured above, the result allows the user to match the style of the embedded
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
 
-<link rel="stylesheet" href="//lib.darylcecile.net/PyroGist_v1/PyroGist.css">
-<script src="//lib.darylcecile.net/PyroGist_v1/PyroGist.js"></script>
+<link rel="stylesheet" href="//darylcecile.net/scripts/PyroGist_v1/PyroGist.css">
+<script src="//darylcecile.net/scripts/PyroGist_v1/PyroGist.js"></script>
 
 <div id="preview">
 PyroGist("#preview",{
