@@ -1,5 +1,5 @@
 import React from "react";
-import css from "./../styles/socials.module.css"
+import css from "../styles/socials.module.scss"
 
 export default function SocialLinks(){
 	return (

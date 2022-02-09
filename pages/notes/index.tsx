@@ -4,7 +4,7 @@ import React from "react";
 import {getSortedNotesData} from "../../lib/notes";
 import Layout, {siteTitle} from "../../components/Layout";
 import {Note} from "../../types";
-import utilStyles from "../../styles/utils.module.css";
+import utilStyles from "../../styles/utils.module.scss";
 import NotePreview from "../../components/NotePreview";
 
 export default function NotesListingPage({ allPostsData }: { allPostsData: Note[] }) {

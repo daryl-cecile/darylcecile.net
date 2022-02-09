@@ -1,6 +1,6 @@
 import React from "react";
-import css from "./../styles/footer.module.css";
-import utilsCss from "./../styles/utils.module.css"
+import css from "../styles/footer.module.scss";
+import utilsCss from "../styles/utils.module.scss"
 import SocialLinks from "./SocialLinks";
 
 export default function Footer() {

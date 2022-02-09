@@ -1,14 +1,20 @@
 import Date from "./Date";
 import React from "react";
+import Link from "next/link";
+import styles from "./../styles/blog.module.scss";
 
 export default function NotePreview({slug, title, date, readTime}){
 	const navigate = (url:string):void => {location.href = url};
 
 	return (
-		<article className="blog-preview" key={slug} onClick={navigate.bind(this,`/notes/${slug}`)}>
-			<h3>{title}</h3>
-			<span><Date dateString={date} /> &middot; {readTime}</span>
-			<a href={`/notes/${slug}`} hrefLang="en">Read it</a>
+		<article className={styles.blogPreview}>
+			<Link href={`/notes/${slug}`} passHref={true}>
+				<a hrefLang="en" className={styles.wrapper}>
+					<h3>{title}</h3>
+					<span><Date dateString={date} /> &middot; {readTime}</span>
+					<span>Read it</span>
+				</a>
+			</Link>
 		</article>
 	)
 }

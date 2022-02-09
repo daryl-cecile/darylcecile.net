@@ -7,6 +7,12 @@
   line-height: 1.6;
 }
 
+.paragraphStruck {
+  @extend .paragraph;
+  text-decoration: line-through;
+  color: rgba(#3c535f, 0.6);
+}
+
 .header{
   color: #546e7a;
 }

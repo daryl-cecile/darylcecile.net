@@ -1,0 +1,39 @@
+
+
+.blogPreview {
+	border-radius: 3px;
+	border: 1px solid transparent;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	margin-bottom: 3rem;
+	
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	h3 {
+		display: block;
+		text-decoration: none;
+		font-weight: 500;
+		margin: 0;
+		font-size: 1.2rem;
+		color: #546e7a;
+	}
+	
+	span {
+		color: #3a3f4a;
+		font-size: .75rem;
+		font-style: italic;
+		margin: .25rem 0 .4rem;
+		
+		&:nth-of-type(2) {
+			color: inherit;
+			font-size: inherit;
+			font-style: inherit;
+			margin: 0;
+			display: block;
+		}
+	}
+}

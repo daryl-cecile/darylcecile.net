@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
+import utilStyles from '../styles/utils.module.scss'
 import Link from 'next/link'
 import {LayoutOptions} from "../types";
 import React from "react";

@@ -1,4 +1,4 @@
-import utilsCss from "./../styles/utils.module.css"
+import utilsCss from "../styles/utils.module.scss"
 import React, { Fragment } from "react";
 
 export default function ProjectPreview({id, name, startYear, summary, logo, link, tokens, endYear}){

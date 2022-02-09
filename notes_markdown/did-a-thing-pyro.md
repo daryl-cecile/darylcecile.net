@@ -12,6 +12,7 @@ As it currently stands, GitHub allows you to embed gists into your webpage using
 My main priority when creating this was simplicity and customizability. I wanted the library to be easy to use, but also provide some customization options. Furthermore, I wanted to keep the element in the light DOM (outside of the shadow DOM) to ensure users could go even further with their customizations by using custom CSS.
 
 Here is what I ended up creating:
+
 ![Screenshot of PyroGist in use](/images/PyroGist_Example_Screenshot.png)
 
 As pictured above, the result allows the user to match the style of the embedded content to fit their page design. In order to use the library, you first have to link the stylesheet and put the script in the `<head>` of the destination document. Once you have this, PyroGist can be initialized.
@@ -58,6 +59,8 @@ PyroGist("#preview2",{
     autoFit: true,
     highlight: true
 });
+
+console.log('Loaded PyroGist instances');
 </script>
 
 Even though this library has a long way to go, I feel fairly comfident that it has met my initial goals and can serve its original purpose. In the near future, I intend to make GitHub gists embeddable via url. Additionally, I may create an adapter or customElement to automatically load the previews directly from markup (something like `<pyro-gist url="/file/example.js"></pyro-gist>`).
