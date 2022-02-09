@@ -1,14 +1,22 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
-import React from "react";
+import React, {useMemo} from "react";
 import {getSortedNotesData} from "../../lib/notes";
 import Layout, {siteTitle} from "../../components/Layout";
 import {Note} from "../../types";
 import utilStyles from "../../styles/utils.module.scss";
 import NotePreview from "../../components/NotePreview";
+import {parseISO} from "date-fns";
 
 export default function NotesListingPage({ allPostsData }: { allPostsData: Note[] }) {
 
+    const now = new Date();
+    const publicNotes = useMemo(()=>{
+        return allPostsData.filter(p => {
+            if (p.hidden) return false;
+            return parseISO(p.date).getTime() <= now.getTime();
+        });
+    }, [now, allPostsData])
 
   return (
     <Layout>
@@ -22,7 +30,7 @@ export default function NotesListingPage({ allPostsData }: { allPostsData: Note[
 
           <hr className={utilStyles.push}/>
 
-          {allPostsData.map( ({slug, date, title, readTime}) => (
+          {publicNotes.map( ({slug, date, title, readTime}) => (
               <NotePreview key={slug} date={date} readTime={readTime} slug={slug} title={title}/>
           ) )}
       </div>

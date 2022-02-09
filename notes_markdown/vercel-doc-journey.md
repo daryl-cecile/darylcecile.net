@@ -1,7 +1,12 @@
 ---
 title: "Documentation Journey: Vercel Edition"
 date: "2022-02-11"
+hidden: true
 ---
+
+**Note:** Ive been pretty ill this week. Lucky it's not the 'rona. So as I'm writing while recovering its likely this post may take a couple of days. Hopefully throughout that time, not much changes with the doc, so I can gather some screenshots and whatnot. For the sake of structure, I wont change the date on this post, so it may appear to be a couple of days older than when it actually goes live.
+
+<hr/>
 
 Last week [Rizwana](https://twitter.com/rizbizkits) discovered a cute little [Co-working space](https://www.cobdenplace.co.uk/) in Nottingham. We had been on the lookout for a place where we could carry out some PF-related work, as well as potentially run some of our upcoming courses. At the time, I was making some upgrades to [PF Campus](https://projectfunction.io/how-we-teach), trying to enable deployments for students to be able to deploy their work to a portfolio as part of their submission process. With previous versions of Campus being on a dedicated server, we offered learners with the option to privately deploy (onto our infrastructure) or publicly via Netlify; however, now that it has moved onto a serverless model, it was time to revisit the options.
 
@@ -19,14 +24,22 @@ Now before anyone jumps onto the "but Daryl, they provide a CLI" - I know! But i
 
 After a nudge to give the APIs a second consideration, I thought '*Well surely the REST APIs would have matured a little by now*', and it did ...kind of. While the APIs looked a lot more stable with [different versions](https://vercel.com/docs/rest-api#introduction/api-basics/versioning) to avoid breaking changes, it still felt a little overwhelming; it felt like a lot of work had to be done on my part to figure out how things work and what the processes were.
 
-I decided to delve into it a bit more, explore the APIs and see if I could fill the gaps using the Vercel docs. I immediately fell in love with the addition of the `interaface` and `type` definitions for responses! It made the guesswork one-step less intense; and seeing as I was already using Typescript, it was mild case of copy-pasta 🍝.
+explore the APIs and see if I could fill the gaps using the Vercel docs
+
+I decided to delve into it a bit more. I set up a [small project](https://github.com/daryl-cecile/next-deploy) locally to use as an attempt to create a wrapper around the REST APIs. Once I had all the dependencies in place to package my Typescript project, the journey through the docs began. Going into it, I only hoped the docs would be enough to fill the gaps; however, after looking through the endpoint documentation, I immediately fell in love with the addition of the `interaface` and `type` definitions for responses! It made the guesswork one-step less intense; and seeing as I was already using Typescript, it was mild case of copy-pasta 🍝.
 
 ![Sample response interface for the Aliases Endpoint](/images/vercel-docs-response-interface.png)
 
 Seeing the interface and type definitions were very much a welcome change, and I was elated by the state of the documentation; however, that feeling was quickly followed by a sense of defeat once I realised the doc itself was very much incomplete and in some case useless. For example, 
 
+### WIP NOTES
+
 - unknown types in endpoint doc
     - didnt know what `File` was meant to be for createDeployment endpoint
     - had to dive into github codesearch (cs.github.com) to find usages of that endpoint
 - incorrect expected types
-- acknowledge some of these might have cropped up in changelogs but as far as the docs went as a go-to for usage-knowledge it was a deadend
+- acknowledge some of these might have cropped up in changelogs but as far as the docs went as a go-to for usage-knowledge it was a dead end
+- why i did all of this -> Campus -> Learners deploy
+  - Details of the journey for this
+  - Outcome so far
+  - Point out repo where this is again
