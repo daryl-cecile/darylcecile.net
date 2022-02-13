@@ -52,7 +52,7 @@ export default function Layout({ children, home, showBackBtn }:LayoutOptions) {
 						/>
 						<h1 className={styles.heroTitle}>{name}</h1>
 						<p className={utilStyles.paragraph}>I'm a Software developer hopping between Nottingham 🎓 and London 🏡. I recently graduated with a BSc in Computer Science at NTU. In between work and travelling (pre-🦠), I spend my time <a href="/projects" hrefLang="en">making things</a> on the tippy tapper. ⌨️</p>
-						<p className={utilStyles.paragraph}>Check out my <a href="/CV/CV-2021.pdf" rel="noopener" target="_blank">CV</a> (<a href="/CV/CV-2021-ATS.pdf" rel="noopener" target="_blank">ATS</a>)</p>
+						<p className={utilStyles.paragraph}>Check out my 2020-2021 <a href="/CV/CV-2021.pdf" rel="noopener" target="_blank">CV</a> (<a href="/CV/CV-2021-ATS.pdf" rel="noopener" target="_blank">ATS</a>)</p>
 					</header>
 					<hr className={utilStyles.push}/>
 				</>
