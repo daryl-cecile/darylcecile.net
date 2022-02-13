@@ -1,0 +1,30 @@
+
+.box {
+	padding: 1rem;
+	border-radius: 4px;
+	border: 1px solid;
+	
+	p {
+		margin:0;
+	}
+	
+	&[data-format=info]{
+		background: rgba(deepskyblue, 0.2);
+		border-color: deepskyblue;
+	}
+	
+	&[data-format=warn]{
+		background: rgba(gold, 0.2);
+		border-color: gold;
+	}
+	
+	&[data-format=error]{
+		background: rgba(hotpink, 0.2);
+		border-color: hotpink;
+	}
+	
+	&[data-format=success]{
+		background: rgba(#6ed718, 0.2);
+		border-color: #6ed718;
+	}
+}

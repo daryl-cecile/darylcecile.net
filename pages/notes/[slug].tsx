@@ -15,6 +15,8 @@ import rehypeHighlight from "rehype-highlight";
 import useMounted from "../../lib/useMounted";
 import EmbeddedScript from "../../components/EmbeddedScript";
 import CodeBlock from "../../components/CodeBlock";
+import InfoBox from "../../components/InfoBox";
+import InlineLinkHeader from "../../components/InlineLinkHeader";
 
 function markdownToHtmlWithoutSanitization(markdown:string){
 	return remark()
@@ -24,69 +26,77 @@ function markdownToHtmlWithoutSanitization(markdown:string){
 }
 
 function markdownToReact(markdown:string){
+	const components = {
+		a: (props: any)=>{
+			const {children, ...otherProps} = props;
+			return <Anchor {...otherProps}>{children}</Anchor>
+		},
+		p: (props: any)=>{
+			if (props.children.length === 1 && props.children[0]?.type?.name === "img"){
+				return props.children[0];
+			}
+			return <p>{props.children}</p>
+		},
+		div: (props: any)=>{
+			return <div {...props}>{props.children}</div>
+		},
+		ul: (props: any)=>{
+			return <ul className={"para"}>{props.children}</ul>
+		},
+		img: (props: any)=>{
+			if (!!props.alt){
+				return (
+					<figure>
+						<img
+							src={props.src}
+							alt={props.alt}
+							decoding={"async"}
+							loading={props.loading ?? "lazy"}
+						/>
+						<figcaption>{props.alt}</figcaption>
+					</figure>
+				)
+			}
+
+			return (
+				<img
+					src={props.src}
+					alt={props.alt ?? ""}
+					decoding={"async"}
+					loading={props.loading ?? "lazy"}
+					width={props.width}
+					height={props.height}
+				/>
+			)
+		},
+		script: (props: any)=>{
+			const {children, ...otherProps} = props;
+
+			if (!!children){
+				return <EmbeddedScript content={props.children} />
+			}
+
+			return (
+				<script {...otherProps} />
+			)
+		},
+		pre: (props: any)=>{
+			return <CodeBlock>{props.children}</CodeBlock>
+		},
+		infobox: (props: any)=>{
+			return <InfoBox {...props}>{props.children}</InfoBox>
+		},
+		h3: (props: any) => {
+			return <InlineLinkHeader>{props.children}</InlineLinkHeader>
+		}
+	};
+
 	const result = unified()
 		.use(rehypeParse, {fragment: true})
 		.use(rehypeReact, {
 			createElement,
 			Fragment,
-			components: {
-				a: (props: any)=>{
-					const {children, ...otherProps} = props;
-					return <Anchor {...otherProps}>{children}</Anchor>
-				},
-				p: (props: any)=>{
-					if (props.children.length === 1 && props.children[0]?.type?.name === "img"){
-						return props.children[0];
-					}
-					return <p>{props.children}</p>
-				},
-				div: (props: any)=>{
-					return <div {...props}>{props.children}</div>
-				},
-				ul: (props: any)=>{
-					return <ul className={"para"}>{props.children}</ul>
-				},
-				img: (props: any)=>{
-					if (!!props.alt){
-						return (
-							<figure>
-								<img
-									src={props.src}
-									alt={props.alt}
-									decoding={"async"}
-									loading={props.loading ?? "lazy"}
-								/>
-								<figcaption>{props.alt}</figcaption>
-							</figure>
-						)
-					}
-
-					return (
-						<img
-							src={props.src}
-							alt={props.alt ?? ""}
-							decoding={"async"}
-							loading={props.loading ?? "lazy"}
-							width={props.width}
-							height={props.height}
-						/>
-					)
-				},
-				script: (props: any)=>{
-					const {children, ...otherProps} = props;
-
-					if (!!children){
-						return <EmbeddedScript content={props.children} />
-					}
-
-					return (
-						<script {...otherProps} />
-					)
-				},
-				pre: (props: any)=>{
-					return <CodeBlock>{props.children}</CodeBlock>
-				}
-			}
+			components: components
 		})
 		.use(rehypeHighlight)
 		.processSync(markdownToHtmlWithoutSanitization(markdown));

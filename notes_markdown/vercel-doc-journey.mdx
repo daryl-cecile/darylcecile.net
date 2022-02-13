@@ -1,13 +1,12 @@
 ---
-title: "Documentation Journey: Vercel Edition"
+title: "Doc Journey: ▲Vercel Edition"
 date: "2022-02-14"
 hidden: true
 ---
 
-**Disclaimer:** While this post outlines some of the issues I've had with the Vercel Documentation, it in no way discredits the amazing work the Vercel Team have been doing. Documentation in this industry needs work as a whole, and for the most part, Vercel's documentation has helped me out countless times. 
-This post is intended to note my discoveries, thought-processes, and eventual solution to the issues I came across, as I journey through the documentation. The outcome of this basic-level research will be published and open-sourced.
-
-<hr/>
+<InfoBox type="info">
+<strong>Disclaimer:</strong> While this post outlines some of the issues I've had with the Vercel documentation, it in no way discredits the amazing work the Vercel Team have been doing. Documentation in this industry needs work as a whole, and for the most part, Vercel's documentation has helped me out countless times. This post is intended to note my discoveries, thought-processes, and eventual solution to the issues I came across, as I journey through the documentation. The outcome of this basic-level research will be published and open-sourced.
+</InfoBox>
 
 Last week [Rizwana](https://twitter.com/rizbizkits) discovered a cute little [Co-working space](https://www.cobdenplace.co.uk/) in Nottingham. We had been on the lookout for a place where we could carry out some PF-related work, as well as potentially run some of our upcoming courses. At the time, I was making some upgrades to [PF Campus](https://projectfunction.io/how-we-teach), trying to enable deployments for students to be able to deploy their work to a portfolio as part of their submission process. With previous versions of Campus being on a dedicated server, we offered learners with the option to privately deploy (onto our infrastructure) or publicly via Netlify; however, now that it has moved onto a serverless model, it was time to revisit the options.
 
@@ -92,11 +91,14 @@ Looking at the deployment endpoint's query param options, I could see some prope
 
 ![](/images/Unknown-types-deploy.png)
 
-### WIP NOTES
+As ive mentioned before, this was less of an issue and more of an inconvenience as I was able to guess the data types for those parameters. 
 
-- incorrect expected types
-- acknowledge some of these might have cropped up in changelogs but as far as the docs went as a go-to for usage-knowledge it was a dead end
-- why i did all of this -> Campus -> Learners deploy
-  - Details of the journey for this
-  - Outcome so far
-  - Point out repo where this is again
+### Final Notes: PF + ▲ = 💜
+
+As noted by Vercel, changes that they make to the APIs will be outlined in their changelogs, and it is possible that some outlined issues above could have cropped up there, however, this exploration was purely to build a wrapper around the API for consumption by PF (as I couldn't find a suitable one that already existed).
+
+While this post outlines a couple of issues that I have personally come across while navigating the API endpoints that Vercel provides, It does not reflect the quality of their product or support that they provide. I personally use their platform for numerous projects, and it has served me well; I continue to recommend them to friends and learners at ProjectFunction.
+
+Eventually, I was able to wrap a couple of the endpoints that I thought would be useful for PF, and I have to admit, the journey was fun. Moving forward, I can now integrate Vercel into the core of PFCampus to allow learners to deploy their work to showcase their abilities.
+
+The resulting wrapper can be found on my [GitHub repo](https://github.com/daryl-cecile/next-deploy). Feel free to use and contribute!

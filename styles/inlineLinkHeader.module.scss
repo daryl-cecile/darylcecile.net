@@ -1,0 +1,15 @@
+
+.h {
+	
+	a {
+		opacity: 0;
+		font-weight: inherit;
+		margin-left: -1.75em;
+		margin-right: 0.5em;
+		color: inherit;
+	}
+	
+	&:hover a {
+		opacity: 1;
+	}
+}

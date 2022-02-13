@@ -12,7 +12,7 @@ export function getSortedNotesData():Note[] {
 
   for (let fileName of fileNames){
     // Remove ".md" from file name to get id
-    const slug = fileName.replace(/\.md$/, '')
+    const slug = fileName.replace(/\.(?:md|mdx)$/, '')
 
     // Read markdown file as string
     const fullPath = path.join(postsDirectory, fileName)
@@ -46,14 +46,14 @@ export function getAllNotesSlugs() {
   return fileNames.map(fileName => {
     return {
       params: {
-        slug: fileName.replace(/\.md$/, '')
+        slug: fileName.replace(/\.(?:md|mdx)$/, '')
       }
     }
   })
 }
 
 export async function getNoteData(slug: string) {
-  const fullPath = path.join(postsDirectory, `${slug}.md`)
+  const fullPath = path.join(postsDirectory, `${slug}.mdx`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const markdownParser = new Mark();
 
