@@ -2,8 +2,9 @@
 title: Something needs a Rejig 👀
 date: "2020-05-27"
 ---
-
-**Edit:** This post was scheduled to be published on the 8th of April, but due to the COVID pandemic and the uni-related consequences it brought about, I had to delay the post. However, I can now confirm that I am now working on another project idea that I have a genuine interest in and enjoy working on.
+<InfoBox type="warn">
+<strong>Edit:</strong> This post was scheduled to be published on the 8th of April, but due to the COVID pandemic and the uni-related consequences it brought about, I had to delay the post. However, I can now confirm that I am now working on another project idea that I have a genuine interest in and enjoy working on.
+</InfoBox>
 
 As some of you may know, I am currently in the process of completing my final year project (FYP). Up until recently, I have been doing a dementia based project for my FYP. This included a web portal for carers to manage patients, as well as an Android app which the patients would have on their phone. The app was to help assist with daily tasks such as reminders to take medication, assist in making calls to carer and family members, as well as provide daily mental stimulation games.
 
