@@ -53,7 +53,7 @@ export function getAllNotesSlugs() {
 }
 
 export async function getNoteData(slug: string) {
-  const fullPath = path.join(postsDirectory, `${slug}.mdx`)
+  const fullPath = path.join(postsDirectory, `${slug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const markdownParser = new Mark();
 

@@ -3,8 +3,7 @@ title: "Doc Journey: ▲Vercel Edition"
 date: "2022-02-14"
 hidden: true
 ---
-
-<InfoBox type="info">
+<InfoBox>
 <strong>Disclaimer:</strong> While this post outlines some of the issues I've had with the Vercel documentation, it in no way discredits the amazing work the Vercel Team have been doing. Documentation in this industry needs work as a whole, and for the most part, Vercel's documentation has helped me out countless times. This post is intended to note my discoveries, thought-processes, and eventual solution to the issues I came across, as I journey through the documentation. The outcome of this basic-level research will be published and open-sourced.
 </InfoBox>
 
