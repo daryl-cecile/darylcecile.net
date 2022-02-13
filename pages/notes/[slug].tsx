@@ -14,6 +14,7 @@ import Anchor from "../../components/Anchor";
 import rehypeHighlight from "rehype-highlight";
 import useMounted from "../../lib/useMounted";
 import EmbeddedScript from "../../components/EmbeddedScript";
+import CodeBlock from "../../components/CodeBlock";
 
 function markdownToHtmlWithoutSanitization(markdown:string){
 	return remark()
@@ -81,6 +82,9 @@ function markdownToReact(markdown:string){
 					return (
 						<script {...otherProps} />
 					)
+				},
+				pre: (props: any)=>{
+					return <CodeBlock>{props.children}</CodeBlock>
 				}
 			}
 		})

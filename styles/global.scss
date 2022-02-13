@@ -106,6 +106,15 @@ a:hover {
   display: block;
 }
 
+.content {
+  p > code {
+    background: #EEE;
+    padding: 0 0.3em;
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px #eee;
+  }
+}
+
 nav{
   width: 100%;
 }

@@ -1,4 +1,5 @@
 import '../styles/global.scss'
+import "highlight.js/styles/atom-one-dark.css"
 import { AppProps } from 'next/app'
 import {useRouter} from "next/router";
 import {useEffect} from "react";
