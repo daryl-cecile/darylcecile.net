@@ -1,6 +1,6 @@
 ---
 title: "Documentation Journey: Vercel Edition"
-date: "2022-02-11"
+date: "2022-02-14"
 hidden: true
 ---
 
