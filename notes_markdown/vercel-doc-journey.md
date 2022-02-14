@@ -7,7 +7,7 @@ hidden: true
 <strong>Disclaimer:</strong> While this post outlines some of the issues I've had with the Vercel documentation, it in no way discredits the amazing work the Vercel Team have been doing. Documentation in this industry needs work as a whole, and for the most part, Vercel's documentation has helped me out countless times. This post is intended to note my discoveries, thought-processes, and eventual solution to the issues I came across, as I journey through the documentation. The outcome of this basic-level research will be published and open-sourced.
 </InfoBox>
 
-Last week [Rizwana](https://twitter.com/rizbizkits) discovered a cute little [Co-working space](https://www.cobdenplace.co.uk/) in Nottingham. We had been on the lookout for a place where we could carry out some PF-related work, as well as potentially run some of our upcoming courses. At the time, I was making some upgrades to [PF Campus](https://projectfunction.io/how-we-teach), trying to enable deployments for students to be able to deploy their work to a portfolio as part of their submission process. With previous versions of Campus being on a dedicated server, we offered learners with the option to privately deploy (onto our infrastructure) or publicly via Netlify; however, now that it has moved onto a serverless model, it was time to revisit the options.
+Last week [Rizwana](https://twitter.com/rizbizkits) discovered a cute little [Co-working space](https://www.cobdenplace.co.uk/) in Nottingham. We had been on the lookout for a place where we could carry out some work for <abbr title="ProjectFunction">PF</abbr><sup>[[1]](#reference1)</sup>, as well as potentially run some of our upcoming courses. At the time, I was making some upgrades to [PF Campus](https://projectfunction.io/how-we-teach), trying to enable deployments for students to be able to deploy their work to a portfolio as part of their submission process. With previous versions of Campus being on a dedicated server, we offered learners with the option to privately deploy (onto our infrastructure) or publicly via Netlify; however, now that it has moved onto a serverless model, it was time to revisit the options.
 
 ![Campus v1 Deployment to Netlify](/images/campus-deploy1.png)
 
@@ -96,8 +96,18 @@ As ive mentioned before, this was less of an issue and more of an inconvenience 
 
 As noted by Vercel, changes that they make to the APIs will be outlined in their changelogs, and it is possible that some outlined issues above could have cropped up there, however, this exploration was purely to build a wrapper around the API for consumption by PF (as I couldn't find a suitable one that already existed).
 
-While this post outlines a couple of issues that I have personally come across while navigating the API endpoints that Vercel provides, It does not reflect the quality of their product or support that they provide. I personally use their platform for numerous projects, and it has served me well; I continue to recommend them to friends and learners at ProjectFunction.
+While this post outlines a couple of issues that I have personally come across while navigating the API endpoints that Vercel provides, It does not reflect the quality of their product or support that they provide. I personally<sup>[[2]](#reference2)</sup> use their platform for numerous projects, and it has served me well; I continue to recommend them to friends and learners at ProjectFunction.
 
 Eventually, I was able to wrap a couple of the endpoints that I thought would be useful for PF, and I have to admit, the journey was fun. Moving forward, I can now integrate Vercel into the core of PFCampus to allow learners to deploy their work to showcase their abilities.
 
 The resulting wrapper can be found on my [GitHub repo](https://github.com/daryl-cecile/next-deploy). Feel free to use and contribute!
+
+<strong>P.S.</strong> Make sure you [follow me](https://twitter.com/@darylcecile) on the bird app for updates ✌🏽
+
+<br/>
+
+---
+
+<sup id="reference1">[1]</sup> [ProjectFunction](https://projectfunction.io)
+
+<sup id="reference2">[2]</sup> This [website](https://darylcecile.net) was created using Next.js
