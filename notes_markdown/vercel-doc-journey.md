@@ -1,7 +1,6 @@
 ---
 title: "Doc Journey: ▲Vercel Edition"
-date: "2022-02-14"
-hidden: true
+date: "2022-02-16"
 ---
 <InfoBox>
 <strong>Disclaimer:</strong> While this post outlines some of the issues I've had with the Vercel documentation, it in no way discredits the amazing work the Vercel Team have been doing. Documentation in this industry needs work as a whole, and for the most part, Vercel's documentation has helped me out countless times. This post is intended to note my discoveries, thought-processes, and eventual solution to the issues I came across, as I journey through the documentation. The outcome of this basic-level research will be published and open-sourced.
@@ -27,7 +26,7 @@ Despite the issues with the doc, I decided to delve into it a bit more. If I cou
   - Work my way through the endpoints and create wrapper functions
   - Write a script that calls each wrapper function, setting up projects and deployments, checking the status, and tearing them down.
 
-I set up a [small project](https://github.com/daryl-cecile/next-deploy) locally, and once I had all the dependencies in place to package my Typescript project, the journey through the docs began. Going into it, I only hoped the docs would be enough to fill the gaps; however, after looking through the endpoint documentation, I immediately fell in love with the addition of the `interaface` and `type` definitions (written in TS) for responses! It made the guesswork a little easier; and seeing as I was already using Typescript, it was a case of copy-pasta 🍝.
+I set up a [small project](https://github.com/daryl-cecile/next-controls) locally, and once I had all the dependencies in place to package my Typescript project, the journey through the docs began. Going into it, I only hoped the docs would be enough to fill the gaps; however, after looking through the endpoint documentation, I immediately fell in love with the addition of the `interaface` and `type` definitions (written in TS) for responses! It made the guesswork a little easier; and seeing as I was already using Typescript, it was a case of copy-pasta 🍝.
 
 ![Sample response interface for the Aliases Endpoint](/images/vercel-docs-response-interface.png)
 
@@ -100,7 +99,7 @@ While this post outlines a couple of issues that I have personally come across w
 
 Eventually, I was able to wrap a couple of the endpoints that I thought would be useful for PF, and I have to admit, the journey was fun. Moving forward, I can now integrate Vercel into the core of PFCampus to allow learners to deploy their work to showcase their abilities.
 
-The resulting wrapper can be found on my [GitHub repo](https://github.com/daryl-cecile/next-deploy). Feel free to use and contribute!
+The resulting wrapper can be found on my [GitHub repo](https://github.com/daryl-cecile/next-controls). Feel free to use and contribute!
 
 <strong>P.S.</strong> Make sure you [follow me](https://twitter.com/@darylcecile) on the bird app for updates ✌🏽
 
