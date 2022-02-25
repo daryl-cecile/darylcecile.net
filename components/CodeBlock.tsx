@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {ReactNode, useCallback, useEffect, useRef, useState} from "react";
+import React, {ReactNode, useCallback, useEffect, useRef, useState} from "react";
 import styles from "./../styles/codeblock.module.scss";
 import {faCopy, faCheck} from "@fortawesome/free-solid-svg-icons";
 

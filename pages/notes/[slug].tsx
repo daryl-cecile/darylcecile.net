@@ -123,6 +123,9 @@ export default function NoteContentPage({postData }: { postData:Note }) {
 			<article className="content">
 				<h2>{postData.title}</h2>
 				<span className="datetime"><Date dateString={postData.date} /> &middot; {postData.readTime}</span>
+				{!!postData.lastUpdated && (
+					<span className="datetime">{'Last updated: '}<Date dateString={postData.lastUpdated} /></span>
+				)}
 				<br/>
 				<div className="wider-content content">{content}</div>
 			</article>

@@ -35,8 +35,8 @@ export default function HomePage({ allPostsData }: { allPostsData: Note[] }) {
 
           <br/>
 
-          {publicNotes.map( ({slug, date, title, readTime}) => (
-              <NotePreview key={slug} date={date} readTime={readTime} slug={slug} title={title}/>
+          {publicNotes.map( ({slug, lastUpdated, date, title, readTime}) => (
+              <NotePreview key={slug} date={date} lastUpdated={lastUpdated} readTime={readTime} slug={slug} title={title}/>
           ) )}
       </div>
 

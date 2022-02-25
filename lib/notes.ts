@@ -33,7 +33,7 @@ export function getSortedNotesData():Note[] {
 
   // Sort notes by date
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+    if ((a.lastUpdated ?? a.date) < (b.lastUpdated ?? b.date)) {
       return 1
     } else {
       return -1
