@@ -3,7 +3,7 @@ import { getAllNotesSlugs, getNoteData } from '../../lib/notes'
 import Head from 'next/head'
 import Date from '../../components/Date'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import React, {createElement, Fragment} from "react";
+import React, {createElement, Fragment, useEffect} from "react";
 import { Note } from '../../types'
 import {remark} from "remark";
 import html from "remark-html";
@@ -17,6 +17,7 @@ import EmbeddedScript from "../../components/EmbeddedScript";
 import CodeBlock from "../../components/CodeBlock";
 import InfoBox from "../../components/InfoBox";
 import InlineLinkHeader from "../../components/InlineLinkHeader";
+import withTimeout from "../../lib/withTimeout";
 
 function markdownToHtmlWithoutSanitization(markdown:string){
 	return remark()
@@ -29,7 +30,7 @@ function markdownToReact(markdown:string){
 	const components = {
 		a: (props: any)=>{
 			const {children, ...otherProps} = props;
-			return <Anchor {...otherProps}>{children}</Anchor>
+			return <Anchor {...otherProps} scroll={false}>{children}</Anchor>
 		},
 		p: (props: any)=>{
 			if (props.children.length === 1 && props.children[0]?.type?.name === "img"){
@@ -116,6 +117,16 @@ function markdownToReact(markdown:string){
 
 export default function NoteContentPage({postData }: { postData:Note }) {
 	const content = markdownToReact(postData.content);
+
+	useEffect(()=>{
+		return withTimeout(()=>{
+			const hash = document.location.hash;
+			if (hash.length > 1){
+				const el = document.querySelector(hash);
+				if (el) el.scrollIntoView({behavior:"auto"});
+			}
+		}, 250);
+	}, []);
 
 	return (
 		<Layout showBackBtn={true}>

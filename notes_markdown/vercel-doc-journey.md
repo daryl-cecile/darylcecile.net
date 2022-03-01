@@ -1,10 +1,18 @@
 ---
 title: "Doc Journey: ▲Vercel Edition"
 date: "2022-02-16"
+lastUpdated: "2022-03-01"
 ---
+
 <InfoBox>
 <strong>Disclaimer:</strong> While this post outlines some of the issues I've had with the Vercel documentation, it in no way discredits the amazing work the Vercel Team have been doing. Documentation in this industry needs work as a whole, and for the most part, Vercel's documentation has helped me out countless times. This post is intended to note my discoveries, thought-processes, and eventual solution to the issues I came across, as I journey through the documentation. The outcome of this basic-level research will be published and open-sourced.
 </InfoBox>
+
+
+<strong>Update:</strong> Last Thursday (24th Feb), I had the opportunity to chat to [Meg](https://twitter.com/itsmegbird) from Vercel about my experience and journey with the API docs. I have [extended](#update-improvement-suggestion) this note to include my take on how it could be improved.
+
+
+---
 
 Last week [Rizwana](https://twitter.com/rizbizkits) discovered a cute little [Co-working space](https://www.cobdenplace.co.uk/) in Nottingham. We had been on the lookout for a place where we could carry out some work for <abbr title="ProjectFunction">PF</abbr><sup>[[1]](#reference1)</sup>, as well as potentially run some of our upcoming courses. At the time, I was making some upgrades to [PF Campus](https://projectfunction.io/how-we-teach), trying to enable deployments for students to be able to deploy their work to a portfolio as part of their submission process. With previous versions of Campus being on a dedicated server, we offered learners with the option to privately deploy (onto our infrastructure) or publicly via Netlify; however, now that it has moved onto a serverless model, it was time to revisit the options.
 
@@ -102,6 +110,14 @@ Eventually, I was able to wrap a couple of the endpoints that I thought would be
 The resulting wrapper can be found on my [GitHub repo](https://github.com/daryl-cecile/next-controls). Feel free to use and contribute!
 
 <strong>P.S.</strong> Make sure you [follow me](https://twitter.com/@darylcecile) on the bird app for updates ✌🏽
+
+<br/>
+
+---
+### Update: Improvement suggestion
+As mentioned in my update note, I had a chance to chat to [Meg](https://twitter.com/itsmegbird) last Thursday (24th Feb) about my experience and journey with the API docs. At the end of our talk, Meg asked "If you could change anything about the docs site, what would it be?" and it got me thinking. I remembered not long ago, I had a play around with Slack's API and I really loved their [API Tester](https://api.slack.com/methods/admin.analytics.getFile/test) feature (This feature can be seen with Google's [API Explorer](https://developers.google.com/apis-explorer) too). This is what I think Vercel's API docs could use.
+
+It would help keep the docs somewhat in-date with API changes, as developers would be able to make a test API call with the required parameters within the doc, and see a realtime response; enabling them to see what is expected with the call, and what to expect as a response. By allowing the dev to select an Endpoint version, it puts emphasis on the idea that the endpoints are versioned, and allows users to see how calls and responses differ between versions. In a nutshell, the test API caller becomes the live documentation; Showing instead of telling.
 
 <br/>
 
