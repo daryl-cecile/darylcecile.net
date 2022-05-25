@@ -4,7 +4,7 @@ import utilsCss from "../styles/utils.module.scss"
 import SocialLinks from "./SocialLinks";
 
 export default function Footer() {
-	const footerParaRef = useRef();
+	const footerParaRef = useRef<HTMLParagraphElement>(null);
 	
 	useEffect(()=>{
 		if (!!footerParaRef.current) footerParaRef.current.innerText = `Daryl Cecile © ${(new Date()).getFullYear()}`;
