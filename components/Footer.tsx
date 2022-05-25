@@ -7,7 +7,7 @@ export default function Footer() {
 	const footerParaRef = useRef();
 	
 	useEffect(()=>{
-		footerRef.current?.innerText = `Daryl Cecile © ${(new Date()).getFullYear()}`;
+		footerParaRef.current?.innerText = `Daryl Cecile © ${(new Date()).getFullYear()}`;
 	}, []);
 	
 	return (
