@@ -1,4 +1,4 @@
-import {useRef}, React from "react";
+import React, {useRef, useEffect} from "react";
 import css from "../styles/footer.module.scss";
 import utilsCss from "../styles/utils.module.scss"
 import SocialLinks from "./SocialLinks";
