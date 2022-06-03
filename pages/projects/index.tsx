@@ -7,6 +7,7 @@ import { Project} from "../../types";
 import utilStyles from "../../styles/utils.module.scss";
 import ProjectPreview from "../../components/ProjectPreview";
 import {getSortedProjectsData} from "../../lib/projects";
+import Anchor from "../../components/Anchor";
 
 export default function ProjectsListingPage({ allProjectsData }: { allProjectsData: Project[] }) {
 
@@ -19,7 +20,7 @@ export default function ProjectsListingPage({ allProjectsData }: { allProjectsDa
       <div className="restrict">
           <h1 className={utilStyles.header}>Projects</h1>
           <p className={utilStyles.paragraph}>I'm constantly flowing with ideas for tools and projects 🧠; and sometimes, I manage to scrape together the time to work on them ✨. Here are some of the projects that made the cut.</p>
-          <p className={utilStyles.paragraph}>Check out my <a href="https://github.com/daryl-cecile" target={"_blank"} rel={"noopener"}>GitHub</a> for more up-to-date development and proof-of-concepts</p>
+          <p className={utilStyles.paragraph}>Check out my <Anchor href="https://github.com/daryl-cecile" isExternal>GitHub</Anchor> for more up-to-date development and proof-of-concepts</p>
 
           <hr className={utilStyles.push}/>
 

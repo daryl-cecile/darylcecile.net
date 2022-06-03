@@ -1,23 +1,69 @@
+
 .paragraph{
-  color: #3c535f;
+  text-rendering: optimizeLegibility;
+  color: var(--article-content-para-fg);
   font-family: 'Open Sans',sans-serif;
   font-size: 16.5px;
   letter-spacing: 1px;
   font-weight: 400;
   line-height: 1.6;
+  
+  @media (prefers-color-scheme: dark) {
+    font-weight: 300;
+  }
 }
 
 .paragraphStruck {
   @extend .paragraph;
   text-decoration: line-through;
-  color: rgba(#3c535f, 0.6);
+  color: var(--article-content-para-fg);
+  opacity: 0.6;
 }
 
 .header{
-  color: #546e7a;
+  color: var(--heading-fg);
 }
 
 .push{
   margin: 4.2rem auto;
   max-width: 720px;
+}
+
+.searchBox {
+  max-width: 720px;
+  margin: 2rem auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  grid-template-rows: 40px;
+  border: 1px solid var(--input-border);
+  border-radius: 3px;
+  
+  input {
+    border: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-right: 1px solid var(--input-border);
+    background: var(--input-bg);
+    
+    &:hover,
+    &:focus {
+      z-index: 50;
+    }
+  }
+  
+  button {
+    border: none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: var(--input-border);
+  
+    &:hover,
+    &:focus {
+      z-index: 50;
+      background: var(--input-border-active);
+    }
+  }
 }

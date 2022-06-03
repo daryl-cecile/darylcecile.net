@@ -1,9 +1,9 @@
 module.exports = {
-	// disable for now until esp ready for go-live
-	// i18n: {
-	// 	locales: ['en-GB'],
-	// 	localeDetection: false,
-	// },
+	i18n: {
+		locales: ['en'],
+		defaultLocale: "en",
+		localeDetection: false,
+	},
 	poweredByHeader: false,
 	async redirects() {
 		return [

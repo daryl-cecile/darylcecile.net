@@ -14,7 +14,7 @@ export default function Footer() {
 		<footer className={css.footer}>
 			<div className={css.footerContent}>
 				<div>
-					<img className={css.footerImage} src="/images/core/profile_full_color_144.png" alt="" aria-hidden="true"/>
+					<img className={css.footerImage} src="/images/core/profile_full_color_144.png" width={144} height={144} alt="" aria-hidden="true"/>
 					<div className={css.footerCopy}>
 						<p ref={footerParaRef} className={`${css.footerCopyText} ${utilsCss.paragraph}`}>Daryl Cecile © {(new Date()).getFullYear()}</p>
 						<SocialLinks/>

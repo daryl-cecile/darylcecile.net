@@ -2,7 +2,7 @@
 .footer{
 	margin-top: 6.2rem;
 	padding: 5.6rem 0;
-	background: #faf7ff;
+	background: var(--canvas-muted);
 }
 
 .footerContent{
@@ -27,6 +27,6 @@
 }
 
 .footerCopyText{
-	color: #546e7a;
+	color: var(--footer-fg);
 	font-weight: 500;
 }

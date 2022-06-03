@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import "./colorScheme";
 
 *, :after, :before {
   box-sizing: inherit;
@@ -7,11 +8,14 @@
 html {
   font-size: 18px;
   font-family: 'Open Sans',sans-serif;
-  background: #fff;
+  background: var(--canvas-default);
+  color-scheme: normal;
+  scrollbar-gutter: stable;
 }
 
 :focus{
-  outline-color: #c041ff;
+  outline-color: var(--hover-outline-color);
+  outline-offset: 0.3rem;
 }
 
 html,
@@ -36,11 +40,11 @@ header + hr{
 
 hr{
   border: 0 solid transparent;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--canvas-default-border);
 }
 
 a {
-  color: #7157ff;
+  color: var(--primary-link-fg);
   font-family: 'Open Sans',sans-serif;
   font-size: 16.5px;
   letter-spacing: 1px;
@@ -49,16 +53,7 @@ a {
 }
 
 a:hover {
-  color: #28a7ff;
-}
-
-.para{
-  color: #3c535f;
-  font-family: 'Open Sans',sans-serif;
-  font-size: 16.5px;
-  letter-spacing: 1px;
-  font-weight: 400;
-  line-height: 1.6;
+  color: var(--primary-link-hover-fg);
 }
 
 .container {
@@ -81,7 +76,8 @@ a:hover {
   figcaption {
     text-align: center;
     font-size: 0.85em;
-    color: rgba(#3c535f, 0.8);
+    color: var(--article-content-para-fg);
+    opacity: 0.8;
     font-style: italic;
     margin-top: 0.5em;
   }
@@ -108,15 +104,38 @@ a:hover {
 
 .content {
   p > code {
-    background: #EEE;
+    background: var(--canvas-default-border);
     padding: 0 0.3em;
     border-radius: 3px;
-    box-shadow: 0 0 0 1px #eee;
+    box-shadow: 0 0 0 1px var(--canvas-default-border);
   }
 }
 
 nav{
   width: 100%;
+  z-index: 999;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: transparent;
+  backdrop-filter: saturate(180%) blur( 20px );
+  border-bottom: 1px solid transparent;
+  margin-bottom: 0.5rem;
+  transition: all .3s;
+  
+  &[data-top=false]{
+    background-color: rgba(255,255,255, 0.4);
+    border-bottom: 1px solid var(--canvas-default-border);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: rgba(0, 0, 0, 0);
+    //backdrop-filter: saturate(180%) blur( 20px );
+  
+    &[data-top=false]{
+      background-color: rgba(0, 0, 0, 0.65);
+    }
+  }
 }
 
 nav > div {
@@ -156,18 +175,18 @@ nav > div > ul:nth-of-type(2) li {
 
 nav > div > ul > li a {
   text-decoration: none;
-  color: #546e7a;
+  color: var(--nav-link-fg);
   max-height: 100%;
   position: relative;
-}
-
-nav > div > ul > li a:visited {
-  color: #546e7a;
+  font-weight: 400;
+  
+  @media (prefers-color-scheme: light){
+    text-shadow: 0 0 5px rgba(255,255,255, 0.4);
+  }
 }
 
 nav > div > ul > li a:hover {
-  color: #c041ff;
-  font-weight: 500;
+  color: var(--nav-link-hover-fg);
 }
 
 nav > div > ul > li > a > img{
@@ -177,31 +196,51 @@ nav > div > ul > li > a > img{
   will-change: transform;
 }
 
+nav > div > ul > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav > div > ul > li > a > svg{
+  height: 24px;
+  width: 24px;
+  font-size: inherit;
+}
+
 article.content h2{
-  color: #546e7a;
+  color: var(--heading-fg);
 }
 
 article.content h3{
-  color: #546e7a;
+  color: var(--heading-fg);
   margin-top: 1.4em;
   font-size: 1.25em;
 }
 
 article.content .datetime{
-  color: #3a3f4a;
+  color: var(--article-content-date-fg);
   font-size: .75rem;
   font-style: italic;
   margin-bottom: .84em;
   display: block;
 }
 
+
+
+.para,
 article.content p {
-  color: #3c535f;
+  text-rendering: optimizeLegibility;
+  color: var(--article-content-para-fg);
   font-family: 'Open Sans',sans-serif;
   font-size: 16.5px;
   letter-spacing: 1px;
   font-weight: 400;
   line-height: 1.6;
+  
+  @media (prefers-color-scheme: dark) {
+    font-weight: 300;
+  }
 }
 
 article.content > img{
@@ -225,7 +264,7 @@ article.content > img{
   text-decoration: none;
   font-weight: 500;
   margin: 0;
-  color: #546e7a;
+  color: var(--heading-fg);
 }
 
 .project-preview h3 * {
@@ -239,7 +278,7 @@ article.content > img{
   border-radius: 3.8px;
   padding: 2px;
   box-sizing: border-box;
-  background: #faf7ff;
+  background: var(--project-preview-img-bg);
 }
 
 .project-preview h3 a {
@@ -275,8 +314,9 @@ article.content > img{
 }
 
 .project-preview h4{
-  margin: .6rem 0 .2rem;
-  color: #3c535f;
+  margin: .6rem 0 .4rem;
+  color: var(--article-content-date-fg);
+  font-size: 0.9em;
   font-weight: 600;
 }
 

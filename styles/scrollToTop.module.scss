@@ -1,0 +1,30 @@
+
+
+.main {
+	display: none;
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	width: 50px;
+	height: 50px;
+	font-size: 1.4rem;
+	padding: 0;
+	border-radius: 50%;
+	background: transparent;
+	border: 2px solid currentColor;
+	color: var(--heading-fg);
+	transition: all .3s;
+	
+	&:hover,
+	&:focus {
+		color: var(--nav-link-hover-fg);
+	}
+	
+	&[aria-disabled=true]{
+		opacity: 0;
+	}
+	
+	@media (min-width: 940px) {
+		display: block;
+	}
+}

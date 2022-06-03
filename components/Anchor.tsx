@@ -6,20 +6,22 @@ type AnchorProp = {
 	children: ReactNode,
 	href?: string,
 	onClick?: (ev:MouseEvent<HTMLButtonElement>)=>void,
-	className?: string
+	className?: string,
+	isExternal?: boolean
 }
 
 export default function Anchor(props:AnchorProp){
 	const isMounted = useMounted();
 
 	const isExternal = useMemo(()=>{
+		if (!!props.isExternal) return true;
 		if (!isMounted) return true;
 		if (!props.href) return false;
 
 		const tmp = document.createElement('a');
 		tmp.href = props.href;
 		return tmp.host !== window.location.host;
-	}, [props.href, isMounted]);
+	}, [props.href, !!props.isExternal, isMounted]);
 
 	if (!props.href){
 		return (

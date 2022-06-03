@@ -1,5 +1,4 @@
 
-
 .blogPreview {
 	border-radius: 3px;
 	border: 1px solid transparent;
@@ -11,6 +10,7 @@
 	.wrapper {
 		display: flex;
 		flex-direction: column;
+		outline-offset: 1rem;
 	}
 	
 	h3 {
@@ -19,11 +19,11 @@
 		font-weight: 500;
 		margin: 0;
 		font-size: 1.2rem;
-		color: #546e7a;
+		color: var(--heading-fg);
 	}
 	
 	span {
-		color: #3a3f4a;
+		color: var(--article-content-date-fg);
 		font-size: .75rem;
 		font-style: italic;
 		margin: .25rem 0 .4rem;

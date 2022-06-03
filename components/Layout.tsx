@@ -7,6 +7,8 @@ import React from "react";
 import Imports from "./Imports";
 import Nav from './Nav';
 import Footer from "./Footer";
+import ScrollToTop from "./scrollToTop";
+import Anchor from "./Anchor";
 
 const name = ' Hey! I\'m Daryl. '
 export const siteTitle = 'Daryl Cecile'
@@ -51,20 +53,23 @@ export default function Layout({ children, home, showBackBtn }:LayoutOptions) {
 							alt="Daryl's vector profile image"
 						/>
 						<h1 className={styles.heroTitle}>{name}</h1>
-						<p className={utilStyles.paragraph}>I'm a Software developer hopping between Nottingham 🎓 and London 🏡. I recently graduated with a BSc in Computer Science at NTU. In between work and travelling (pre-🦠), I spend my time <a href="/projects" hrefLang="en">making things</a> on the tippy tapper. ⌨️</p>
-						<p className={utilStyles.paragraph}>Check out my <a href="/CV/CV-2021.pdf" rel="noopener" target="_blank">CV</a> (<a href="/CV/CV-2021-ATS.pdf" rel="noopener" target="_blank">ATS</a>) from 2020-2021. <br/> My Career updates are on <a
-							href="https://linkedin.com/in/darylcecile" target={"_blank"} rel={"noopener"}>LinkedIn</a></p>
+						<p className={utilStyles.paragraph}>I'm a Software developer hopping between Nottingham 🎓 and London 🏡. I recently graduated with a BSc in Computer Science at NTU. In between work and travelling (pre-🦠), I spend my time <Anchor href="/projects">making things</Anchor> on the tippy tapper. ⌨️</p>
+						<p className={utilStyles.paragraph}>Check out my <Anchor isExternal href="/CV/CV-2021.pdf">CV</Anchor> (<Anchor isExternal href="/CV/CV-2021-ATS.pdf">ATS</Anchor>) from 2020-2021. <br/> My Career updates are on <Anchor
+							href="https://linkedin.com/in/darylcecile">LinkedIn</Anchor></p>
 					</header>
 					<hr className={utilStyles.push}/>
 				</>
 			)}
 			<main className="container">{children}</main>
 			{showBackBtn && (
-				<div className={styles.backToHome}>
-					<Link href="/">
-						<a>← Home</a>
-					</Link>
-				</div>
+				<>
+					<div className={styles.backToHome}>
+						<Link href="/">
+							<a>← Home</a>
+						</Link>
+					</div>
+					<ScrollToTop />
+				</>
 			)}
 			<Footer/>
 		</div>

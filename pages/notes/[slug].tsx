@@ -1,7 +1,7 @@
 import Layout from '../../components/Layout'
 import { getAllNotesSlugs, getNoteData } from '../../lib/notes'
 import Head from 'next/head'
-import Date from '../../components/Date'
+import LocalDate from '../../components/LocalDate'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import React, {createElement, Fragment, useEffect} from "react";
 import { Note } from '../../types'
@@ -133,9 +133,9 @@ export default function NoteContentPage({postData }: { postData:Note }) {
 			<Head> <title>{postData.title}</title> </Head>
 			<article className="content">
 				<h2>{postData.title}</h2>
-				<span className="datetime"><Date dateString={postData.date} /> &middot; {postData.readTime}</span>
+				<span className="datetime"><LocalDate dateString={postData.date} /> &middot; {postData.readTime}</span>
 				{!!postData.lastUpdated && (
-					<span className="datetime">{'Last updated: '}<Date dateString={postData.lastUpdated} /></span>
+					<span className="datetime">{'Last updated: '}<LocalDate dateString={postData.lastUpdated} /></span>
 				)}
 				<br/>
 				<div className="wider-content content">{content}</div>

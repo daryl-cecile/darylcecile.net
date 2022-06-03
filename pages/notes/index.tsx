@@ -40,7 +40,7 @@ export default function NotesListingPage({ allPostsData }: { allPostsData: Note[
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedNotesData();
+  const allPostsData = getSortedNotesData(true);
   return {
     props: {
       allPostsData

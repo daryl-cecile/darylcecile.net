@@ -5,7 +5,7 @@ import {Note} from "../types";
 
 const postsDirectory = path.join(process.cwd(), 'notes_markdown')
 
-export function getSortedNotesData():Note[] {
+export function getSortedNotesData(ignoreContent?:boolean):Note[] {
   // Get file names under /notes
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData:Note[] = [];
@@ -27,7 +27,9 @@ export function getSortedNotesData():Note[] {
     // Combine the data with the id
     allPostsData.push(<Note>{
       slug,
-      ...matterResult
+      ...matterResult,
+      content: !!ignoreContent ? null : matterResult.content,
+      renderedContent: !!ignoreContent ? null : matterResult.renderedContent
     });
   }
 

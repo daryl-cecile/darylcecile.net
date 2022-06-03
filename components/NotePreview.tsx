@@ -1,4 +1,4 @@
-import Date from "./Date";
+import LocalDate from "./LocalDate";
 import React from "react";
 import Link from "next/link";
 import styles from "./../styles/blog.module.scss";
@@ -12,9 +12,9 @@ export default function NotePreview({slug, title, date, lastUpdated, readTime}){
 					<h3>{title}</h3>
 					<span>
 						{!!lastUpdated ? (
-							<>Updated on <Date dateString={lastUpdated} /></>
+							<>Updated on <LocalDate dateString={lastUpdated} /></>
 						) : (
-							<><Date dateString={date} /></>
+							<><LocalDate dateString={date} /></>
 						)}
 						{' '} &middot; {readTime}
 					</span>
