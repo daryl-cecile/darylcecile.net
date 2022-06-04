@@ -109,6 +109,12 @@ a:hover {
     border-radius: 3px;
     box-shadow: 0 0 0 1px var(--canvas-default-border);
   }
+  
+  a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--primary-link-fg);
+  }
 }
 
 nav{
@@ -186,6 +192,7 @@ nav > div > ul > li a {
 }
 
 nav > div > ul > li a:hover {
+  text-decoration: none;
   color: var(--nav-link-hover-fg);
 }
 
