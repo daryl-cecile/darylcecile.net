@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Daryl Cecile</title>
+        <link>https://darylcecile.net</link>
+        <description>My notes</description>
+        <lastBuildDate>Sun, 05 Jun 2022 15:53:53 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>mFeed</generator>
+        <language>en</language>
+        <image>
+            <title>Daryl Cecile</title>
+            <url>https://darylcecile.net/images/core/header.png</url>
+            <link>https://darylcecile.net</link>
+        </image>
+        <copyright>Daryl Cecile © 2022</copyright>
+        <item>
+            <title><![CDATA[Exploring the Chrome Extension context gaps]]></title>
+            <link>https://darylcecile.net/notes/excom-chrome-extension</link>
+            <guid>excom-chrome-extension</guid>
+            <pubDate>Fri, 03 Jun 2022 23:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[
+
+A couple of weeks ago, a conversation at work with my manager prompted me to revisit an old chrome extension I created a while
+back to help me manage my tab usage better.
+
+The extension was born out of frustration for tab management; I was simply out of control.
+A simple workday could easily land me with 50+ tabs. So I created an extension called [Alfred](https://chrome.google.com/webstore/detail/alfred/mjlmoifgncbednjccpnhcjeifpfnjeon)
+that would automatically close tabs that I hadn't used in a while. The experience was not something I enjoyed... or wanted to repeat. So I pushed that side-project aside like a typical developer
+and avoided going back to it.
+
+Fast-forward to the conversation with my manager, I realised it was time to give Chrome extension development another shot. This time,
+I had another motive; I wanted to prove that developing a Chrome extension using [React](https://reactjs.org/), 
+[TypeScript](https://typescriptlang.org/), and [esbuild](https://esbuild.github.io/) could make the development
+process enjoyable.
+
+So I set off creating a folder to house my project, and `yarn add`-ed esbuild, typescript, and react. I had a rough idea
+of what I wanted; react for the content script (to inject into the page), and esbuild to transpile and bundle my .tsx into .js that
+Chrome could consume directly. I started to plan down what I would make my extension do, and remembered why I didn't enjoy developing
+extensions - runtime realms. 
+
+Chrome's extension [runtime](https://developer.chrome.com/docs/extensions/mv3/architecture-overview/#arch) is essentially 
+split into three 'realms' (I'm not sure if this is the correct name for it, but this is my post, so I'll call it that going 
+forward); the content script, the background script, and the popup. (I know chrome also allows for new tab pages and the like, 
+but from my _limited_ experience these act more or less like popups). Due to the sandboxing
+nature and the way the extension-land is set up, most cross-realm communication need to take place 
+via [message passing](https://developer.chrome.com/docs/extensions/mv3/messaging/). So one realm needs to send, and 
+the receiving end needs to have a listener set up to respond to the messages. This is all fine and understandable, but when you look deeper
+it becomes clear that the three realms don't behave the same way and don't have the same lifecycle steps. Now this is what annoyed me, 
+because as the developer, I had to manage not only the communication between the realms, but the fact that they are all in their own separate
+contexts. Surely there was something I could do to bridge this gap and abstract it behind an api that would handle that for me?
+
+![Extensions Architecture as seen on developer.chrome.com](/images/chrome-extension-architecture.png)
+
+I started by thinking of a simple (probably useless) scenario. I'd have the content-script injecting a React component with a simple
+counter state. Then I should be able to update the state from the extension popup by calling the same function as the content-script - 
+all without having to think about messaging and listeners. And to be extra spicy, be able to trigger a 'open new tab' function that lives
+in the background-script, from both the content-script and the popup.
+
+First thing was to create a class that would handle the communication itself between realm boundaries, making sure to handle function calls
+from different realms first. I didn't want to make every function in a realm accessible to other realms, so I added a `registerInterfaces(...)`
+method that would allow you to expose specific functions to other realms. This would then become accessible on that realm's script instance.
+After this I had to make sure that the incoming-messages listeners where set up, so I moved that to a `tap()` method that should be called
+to set up the listeners. This was mostly done to satisfy my future react-related use-case where I'd need to be able to `untap()` to clean up
+in `useEffect(...)` calls.
+
+After some playing about and end-to-end user-testing, I ended up with something that completed my initial plan, so 
+I [published](https://www.npmjs.com/package/@projectfunction/excom). Now I can have a handler in any realm, and easily 
+send messages and call exposed functions in other realms without having to think too hard about messaging and checking each message. 
+Instead, I can do this:
+
+```typescript
+// In my background.ts
+import {backgroundScriptHandler} from "@projectfunction/excom";
+
+backgroundScriptHandler.tap();
+
+backgroundScriptHandler.registerInterfaces({
+	openTab: async function(url){
+		let tab = await chrome.tabs.create({ url, active: false });
+		console.log(`opened tab with id ${tab.id}, from background script`);
+		return 25;
+	}
+});
+```
+
+and then in my content-script or popup, I can do:
+
+```typescript
+import {popupScriptHandler} from "@projectfunction/excom";
+
+popupScriptHandler.tap(); //somewhere at the start so it runs once
+
+const returnValue = await popupScriptHandler.backgroundMethods.openTab('https://youtube.com');
+
+// returnValue is 25
+```
+
+Once this was made and published<sup>[[1]](#reference1)</sup>, I decided to create a dummy extension
+that allows me to search through my open tabs through a search box that is injected on any page I'm on, with the background script
+handling the actual search and filtering. The experience was so much nicer; I could focus purely on calling methods and UI, and the library
+did the rest.
+
+Who knows where this may lead me? Maybe I'll become a full-time extensions developer 😏
+
+--
+
+P.S. I am aware there may be other ways to tackle this and that this potentially has flaws that I am too tired to look into, but this
+little exploration was worth it - and if anything, it was just the push I needed to get into extensions.
+
+---
+
+<sup id="reference1">[1]</sup> [Excom Repository](https://github.com/daryl-cecile/excom)]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+        </item>
+        <item>
+            <title><![CDATA[Doc Journey: ▲Vercel Edition]]></title>
+            <link>https://darylcecile.net/notes/vercel-doc-journey</link>
+            <guid>vercel-doc-journey</guid>
+            <pubDate>Wed, 16 Feb 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[
+
+<InfoBox>
+<strong>Disclaimer:</strong> While this post outlines some of the issues I've had with the Vercel documentation, it in no way discredits the amazing work the Vercel Team have been doing. Documentation in this industry needs work as a whole, and for the most part, Vercel's documentation has helped me out countless times. This post is intended to note my discoveries, thought-processes, and eventual solution to the issues I came across, as I journey through the documentation. The outcome of this basic-level research will be published and open-sourced.
+</InfoBox>
+
+
+<strong>Update:</strong> Last Thursday (24th Feb), I had the opportunity to chat to [Meg](https://twitter.com/itsmegbird) from Vercel about my experience and journey with the API docs. I have [extended](#update-improvement-suggestion) this note to include my take on how it could be improved.
+
+
+---
+
+Last week [Rizwana](https://twitter.com/rizbizkits) discovered a cute little [Co-working space](https://www.cobdenplace.co.uk/) in Nottingham. We had been on the lookout for a place where we could carry out some work for <abbr title="ProjectFunction">PF</abbr><sup>[[1]](#reference1)</sup>, as well as potentially run some of our upcoming courses. At the time, I was making some upgrades to [PF Campus](https://projectfunction.io/how-we-teach), trying to enable deployments for students to be able to deploy their work to a portfolio as part of their submission process. With previous versions of Campus being on a dedicated server, we offered learners with the option to privately deploy (onto our infrastructure) or publicly via Netlify; however, now that it has moved onto a serverless model, it was time to revisit the options.
+
+![Campus v1 Deployment to Netlify](/images/campus-deploy1.png)
+
+As the great advocate that she is, she asked if there was a reason we weren't deploying on Vercel. After all, Campus v2 was already deployed on there, so it only made sense.
+
+Early on in 2021, I had the exact same thought. However, after doing a deep dive, I realised that there was no available packages at the time that interfaced well with Vercel to allow us to programmatically manage projects and deployments the way we needed. And upon further venturing, I came to accept that (a) the available REST APIs was in too much of an early stage, and (b) developing a wrapper around it would be more work than I was able to put in given my day-to-day schedules, and the state of Vercel Documentation back then. In fact the latter was the exact reason that initially pushed me to use Netlify to deploy.
+
+Now before anyone jumps onto the "but Daryl, they provide a CLI" - I know! But it was not convenient and using it programmatically in our setup felt like a hack (we weren't using a command-line interface). So it was best to avoid it. 🤷🏽‍♂️
+
+After a nudge to give the APIs a second consideration, I thought '*Well surely the REST APIs would have matured a little by now*', and it did ...kind of. While the APIs looked a lot more stable with [different versions](https://vercel.com/docs/rest-api#introduction/api-basics/versioning) to avoid breaking changes, it still felt a little overwhelming; it felt like a lot of work had to be done on my part to figure out how things work and what the processes were. Some pages had incomplete documentation, while others had incorrect data-types listed for parameters.
+
+### Potential Solution? 🥊
+
+Despite the issues with the doc, I decided to delve into it a bit more. If I could figure out the missing details and expected data for the API endpoints, I could create a wrapper around the API. This became the plan:
+  - Set up a project for the wrapper
+  - Consolidate the must-have features (based on PF use-case)
+  - Work my way through the endpoints and create wrapper functions
+  - Write a script that calls each wrapper function, setting up projects and deployments, checking the status, and tearing them down.
+
+I set up a [small project](https://github.com/daryl-cecile/next-controls) locally, and once I had all the dependencies in place to package my Typescript project, the journey through the docs began. Going into it, I only hoped the docs would be enough to fill the gaps; however, after looking through the endpoint documentation, I immediately fell in love with the addition of the `interaface` and `type` definitions (written in TS) for responses! It made the guesswork a little easier; and seeing as I was already using Typescript, it was a case of copy-pasta 🍝.
+
+![Sample response interface for the Aliases Endpoint](/images/vercel-docs-response-interface.png)
+
+Seeing the typescript interface and type definitions brought about a sense of excitement but that feeling was quickly followed by a sense of defeat once I remembered how incomplete the documentation was as a whole. 
+
+### Missing Definition
+
+The first gripe was to do with the [Create new deployment](https://vercel.com/docs/rest-api#endpoints/deployments/create-a-new-deployment) endpoint. It allows you to create deployments using a git source or by attaching files as part of the request. The latter made more sense for our use-case, so I tried to find out what the format and properties should be. Unfortunately, there was no information on this - the little bit of info I found suggested that the `files` property accepted "a list of objects with the files to be deployed". What was this file object? I set up a quick function which made the call to the API endpoint, and attempted to pass the files as a simple key-value object:
+
+```typescript jsx
+function CreateDeployment({bearer, forceNew, ...body}:CreateDeploymentParams){
+    return axios.request<CreateDeploymentResponse>({
+        method: "post",
+        url: DEPLOYMENTS_ENDPOINT_V13,
+        headers: {
+            "Authorization": `BEARER ${bearer}`,
+            "Content-Type": "application/json",
+        },
+        data: {
+            name: body.projectId,
+            files: body.files,
+            target: body.target
+        },
+        validateStatus: () => true // prevent rejection on failed request
+    });
+}
+
+CreateDeployment({
+  target: "staging",
+  projectId: "prj_Ze66UvH4X9...t",
+  bearer: process.ENV.VERCEL_TOKEN,
+  forceNew: true,
+  files: [
+    {name: "index.html", data: "<h1>Test</h1>"}
+  ]
+}).then(res => {
+	console.log('Result:', res)
+})
+```
+
+After giving this a quick run, I received an error `bad_request` with the following message: `Invalid request: 'files[0]' should NOT have additional property 'name'.` This was interesting 🤔 Even though the documentation didnt seem to point out what was needed, the endpoint was doing some type of check to see what properties are expected. Based on the response, it seems `data` is likely expected, but surely there must be a property to specify the file name. After giving 'fileName', and 'filePath' a try (both returning similar errors), I became frustrated and decided to rethink; even if I did manage to guess the name, there is no way data would work without additional formatting - how would I upload image content as a reasonably-lengthened string? 
+
+This realization drove me back to GitHub. Maybe (hopefully?) someone had the same question and found a solution? I searched through all repos including Vercel, but GitHub search really lived up to its bad reputation when it came to code-searching. Luckily they had another tool I could use (currently in beta). Enter [GitHub CodeSearch](https://cs.github.com). 
+
+![GitHub CodeSearch Homepage](/images/Github-CodeSearch.png)
+
+I began searching globally on CodeSearch for the Vercel deployment endpoint and in no time, I came across [TeleportHQ's repo](https://github.com/teleporthq/teleport-code-generators) which defined an [interface](https://cs.github.com/teleporthq/teleport-code-generators/blob/9f86b0edd484ae9cf6e93849d7f7d3924ce3daa0/packages/teleport-publisher-vercel/src/types.ts#L10) named `VercelFile`. I was a little annoyed I didn't try `file` as a property, but so relieved that there was a drop-in definition I could use.
+
+After dropping in the definition and updating the above code, I gave it another run, and alas the deployment succeeded!
+
+![Successful deployment shown in Vercel](/images/vercel-deploy-result1.png)
+
+Once this step was cleared, I decided to go back to the documentation and see whether any of the optional query parameters for this endpoint would be of use for PF's use-case; and that's when I came across the second issue.
+
+### Unknown Types
+
+This issue ended up being less of a blocker as some guesswork closed the gaps and allowed me to move forward, however I thought it was notable enough as in some cases, there were discrepancies between types. 
+
+Looking at the deployment endpoint's query param options, I could see some properties were unknown. I checked the documentation's own [Types](https://vercel.com/docs/rest-api#introduction/api-basics/types) section to see if this had some explanation, but it didn't.  
+
+![](/images/Unknown-types-deploy.png)
+
+As ive mentioned before, this was less of an issue and more of an inconvenience as I was able to guess the data types for those parameters. 
+
+### Final Notes: PF + ▲ = 💜
+
+As noted by Vercel, changes that they make to the APIs will be outlined in their changelogs, and it is possible that some outlined issues above could have cropped up there, however, this exploration was purely to build a wrapper around the API for consumption by PF (as I couldn't find a suitable one that already existed).
+
+While this post outlines a couple of issues that I have personally come across while navigating the API endpoints that Vercel provides, It does not reflect the quality of their product or support that they provide. I personally<sup>[[2]](#reference2)</sup> use their platform for numerous projects, and it has served me well; I continue to recommend them to friends and learners at ProjectFunction.
+
+Eventually, I was able to wrap a couple of the endpoints that I thought would be useful for PF, and I have to admit, the journey was fun. Moving forward, I can now integrate Vercel into the core of PFCampus to allow learners to deploy their work to showcase their abilities.
+
+The resulting wrapper can be found on my [GitHub repo](https://github.com/daryl-cecile/next-controls). Feel free to use and contribute!
+
+<strong>P.S.</strong> Make sure you [follow me](https://twitter.com/@darylcecile) on the bird app for updates ✌🏽
+
+<br/>
+
+---
+### Update: Improvement suggestion
+As mentioned in my update note, I had a chance to chat to [Meg](https://twitter.com/itsmegbird) last Thursday (24th Feb) about my experience and journey with the API docs. At the end of our talk, Meg asked "If you could change anything about the docs site, what would it be?" and it got me thinking. I remembered not long ago, I had a play around with Slack's API and I really loved their [API Tester](https://api.slack.com/methods/admin.analytics.getFile/test) feature (This feature can be seen with Google's [API Explorer](https://developers.google.com/apis-explorer) too). This is what I think Vercel's API docs could use.
+
+It would help keep the docs somewhat in-date with API changes, as developers would be able to make a test API call with the required parameters within the doc, and see a realtime response; enabling them to see what is expected with the call, and what to expect as a response. By allowing the dev to select an Endpoint version, it puts emphasis on the idea that the endpoints are versioned, and allows users to see how calls and responses differ between versions. In a nutshell, the test API caller becomes the live documentation; Showing instead of telling.
+
+<br/>
+
+---
+
+<sup id="reference1">[1]</sup> [ProjectFunction](https://projectfunction.io)
+
+<sup id="reference2">[2]</sup> This [website](https://darylcecile.net) was created using Next.js]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+        </item>
+        <item>
+            <title><![CDATA[useReact: My go-to React Hooks]]></title>
+            <link>https://darylcecile.net/notes/hooked-on-react</link>
+            <guid>hooked-on-react</guid>
+            <pubDate>Tue, 01 Feb 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[
+
+<InfoBox type="warn">
+<strong>WIP:</strong> This post is WIP. I plan to continue to update it as my React journey continues. 
+</InfoBox>
+
+Two years ago, there was a hype around React; and after a couple of months of trying to avoid 
+yet-another-javascript-framework, I gave up and decided to see what all the hype was all about. Since that time, Ive not
+looked back.
+
+Fast-forward to today, I've used React (specifically with Next.js) to create over 4 professional sites, and over 7 side
+projects. And throughout that time I have created a few custom hooks that I found myself reusing across projects. These
+hooks help simplify my flow of data, and give me finer control over my components. These hooks may not be applicable to 
+all types of applications, but for the most part they have been super useful for my use-cases:
+
+### UseAsync
+
+I use this hook to control data flow from async methods. This is usually from using third-party libraries, but can be 
+useful in other cases:
+
+```typescript jsx
+import {useCallback, useEffect, useState} from "react";
+
+export default function useAsync<T>(method: () => Promise<T>, dependencies:Array<any> = []) {
+	const methodCaller = useCallback(()=>{
+		setError(null);
+		setStatus("pending");
+		method().then(response => {
+			setData(response);
+			setStatus("fulfilled");
+		}).catch(err => {
+			setError(err);
+			setStatus("rejected");
+		});
+	}, [method, ...dependencies]);
+	const [data, setData] = useState<T>(null);
+	const [status, setStatus] = useState<"fulfilled" | "pending" | "rejected">("pending");
+	const [error, setError] = useState<Error>(null);
+	
+	return {status, data, error, run:methodCaller};
+}
+
+// USAGE
+function MyComponent(){
+	const {data, run, status} = useAsync(()=> fetchMovieDetail('harry potter'));
+
+	return (
+		<div>
+			<pre>{status === 'fulfilled' && JSON.stringify(data, null, '\t')}</pre>
+			<button onClick={run}>{status === 'pending' ? 'Pending' : 'Fetch'}</button>
+		</div>
+	)
+}
+```
+
+### UseRender
+
+Occasionally, I find myself needing to interface with third-party libraries and need to control the rendering cycle
+manually. React is good at managing rendering cycles in most cases, but in those rare situations like when you are using
+third-parties like Monaco, this may come in handy:
+
+```typescript jsx
+import {useReducer} from "react";
+
+export default function useRender() {
+	const [count, increment] = useReducer(n => n + 1, 0);
+	
+	return {render:increment}
+}
+```
+
+### UseEvent
+
+While working on a previous side project, I found myself adding event listeners to dom events on a regular basis, so I
+ended up with the following:
+
+```typescript jsx
+import {useCallback, useEffect, useState} from "react";
+
+export default function useEvent(element?: EventTarget) {
+	const [eventListeners, setEventListeners] = useState<Record<string, ((ev: Event) => void)>>({});
+	
+	const addEventListener = useCallback((eventName:string, eventHandler)=>{
+		setEventListeners(prev => {
+			return {
+				...prev,
+				[eventName]: eventHandler
+			}
+		});
+	}, [eventTarget]);
+	const removeEventListener = useCallback((eventName:string)=>{
+		setEventListeners(prev => {
+			const draft = {...prev};
+			delete draft[eventName];
+			return draft;
+		});
+	}, [eventTarget]);
+
+	useEffect(() => {
+		const target = element ?? window;
+		const listeners = {...eventListeners};
+		
+		// addListeners
+		Object.entries(listeners).forEach(entry => {
+			eventTarget.addEventListener(entry[0], entry[1]);
+		});
+		
+		// remove old listeners
+		return ()=> {
+			Object.entries(listeners).forEach(entry => {
+				eventTarget.removeEventListener(entry[0], entry[1]);
+			});
+		}
+	}, [eventListeners]);
+
+	return {
+		on:addEventListener,
+		off:removeEventListener
+	}
+}
+```
+
+### UseLockScroll
+
+For accessibility-related work, I ended up needing a way to disable scroll lock when a modal component is mounted.
+
+```typescript jsx
+import {useLayoutEffect} from "react";
+
+export default function useLockScroll() {
+	useLayoutEffect(() => {
+		const previous = window.getComputedStyle(document.body).overflow;
+
+		document.body.style.overflow = "hidden";
+		
+		// undo on unmount
+		return () => {
+			document.body.style.overflow = previous
+		};
+	}, []);
+}
+```
+
+### Note
+
+For now these have been my most used hooks. As my React journey continues, I may update this post to include
+new hooks and explain their uses.
+
+✌🏽]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+        </item>
+        <item>
+            <title><![CDATA[Something needs a Rejig 👀]]></title>
+            <link>https://darylcecile.net/notes/something-needs-a-rejig</link>
+            <guid>something-needs-a-rejig</guid>
+            <pubDate>Tue, 26 May 2020 23:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[
+<InfoBox type="warn">
+<strong>Edit:</strong> This post was scheduled to be published on the 8th of April, but due to the COVID pandemic and the uni-related consequences it brought about, I had to delay the post. However, I can now confirm that I am now working on another project idea that I have a genuine interest in and enjoy working on.
+</InfoBox>
+
+As some of you may know, I am currently in the process of completing my final year project (FYP). Up until recently, I have been doing a dementia based project for my FYP. This included a web portal for carers to manage patients, as well as an Android app which the patients would have on their phone. The app was to help assist with daily tasks such as reminders to take medication, assist in making calls to carer and family members, as well as provide daily mental stimulation games.
+
+The completed app itself would be designed with little-to-no learning curve, so that patients with stage 1 to 3 of dementia and those with memory deficiency would be able to use it with no problem. This would have relied heavily on the principal of repetition and inforcement.
+
+The web platform would be accessible by the carer (who could potentially be assigned to multiple patients) and would allow them to remotely update medication reminders, update contact information, change the mental stimulation games and track behavioural changed based on time taken to carry out each task over time.
+
+Initially, I had so much excitement and ideas for this project, but over time I became more and more demotivated and lost all excitement and will to work on it. This got to the point where it made development depressing and I hated it 😭😭
+
+So I got in touch with my Tutor and Module leader and requested a change of topic. The initial response was "Normally; we'd say its too late, but due to circumstances we could look into the possibility. Do you have a rough idea of how long it will take?". Once I calculated the time and sent a response I felt pretty sure this would be it... I'm still waiting.
+
+I've decided to take the risk and start working on the new project (called *rejig* - thanks to my friend [@rizbizkits](https://twitter.com/rizbizkits) for the name idea) despite the fact I am yet to hear back from the module leader. What i've discovered is that i'm much happier doing this work than I was when I was doing work on the previous topic.
+
+"*I kindly await your response...*"
+]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+        </item>
+        <item>
+            <title><![CDATA[I did a thing... PyroGist 👨🏽‍💻]]></title>
+            <link>https://darylcecile.net/notes/did-a-thing-pyro</link>
+            <guid>did-a-thing-pyro</guid>
+            <pubDate>Thu, 05 Mar 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[
+
+As some of you might have heard, ProjectFunction is partnering up with NTU to deliver a 2 weeks intensive course. As with other PF courses we have run in the past, this one will be open to those who are under-represented in the industry. As part of this programme, learners will have the opportunity to take part in workshops and attend talks related to working in tech. Additionally, they will have the opportunity to apply all the skills they gather and the knowledge they gain, to design and implement their own website.
+
+In preparation for this, I have started writing up some documentation and tasks for the learners. While doing the documentation for this, I came across 2 issues; firstly, there was no way to natively embed non-gist GitHub code into webpages, and secondly the option provided by GitHub does not make it difficult, if not impossible to restyle.
+
+As it currently stands, GitHub allows you to embed gists into your webpage using the _embed_ option. But this comes in the form of a `<script>` tag that you insert into the page. This makes embedding simple, but at the cost of interface customizations. So I made my own. Now I know there are other solutions out there such as [_gist-it_](https://github.com/robertkrimen/gist-it) but I thought it would be a good challenge to implement my own.
+
+My main priority when creating this was simplicity and customizability. I wanted the library to be easy to use, but also provide some customization options. Furthermore, I wanted to keep the element in the light DOM (outside of the shadow DOM) to ensure users could go even further with their customizations by using custom CSS.
+
+Here is what I ended up creating:
+
+![Screenshot of PyroGist in use](/images/PyroGist_Example_Screenshot.png)
+
+As pictured above, the result allows the user to match the style of the embedded content to fit their page design. In order to use the library, you first have to link the stylesheet and put the script in the `<head>` of the destination document. Once you have this, PyroGist can be initialized.
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/github.min.css">
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+
+<link rel="stylesheet" href="//darylcecile.net/scripts/PyroGist_v1/PyroGist.css">
+<script src="//darylcecile.net/scripts/PyroGist_v1/PyroGist.js"></script>
+
+<div id="preview">
+PyroGist("#preview",{
+    url: "https://github.com/daryl-cecile/MiniTest-1/blob/master/test.js",
+    theme: "normal",
+    autoFit: true,
+    highlight: true
+});
+</div>
+
+The example above shows how to embed a simple mock test file from a GitHub repository. If you wish to embed custom content (not hosted on GitHub), you can put the content directly into the body of the containing element and ignore the 'url' option.
+
+<div id="preview2">
+PyroGist("#preview2",{
+    name: "My custom file",
+    theme: "normal",
+    autoFit: true,
+    highlight: true
+});
+</div>
+
+Currently, the highlighting is done by the highlightjs library (which users have to link themselves if they want syntax highlighting). However, the default colors can be easily overridden using custom CSS.
+
+<script>
+PyroGist("#preview",{
+    name: "test.js",
+    theme: "normal",
+    autoFit: true,
+    highlight: true
+});
+    
+PyroGist("#preview2",{
+    name: "example",
+    theme: "normal",
+    autoFit: true,
+    highlight: true
+});
+
+console.log('Loaded PyroGist instances');
+</script>
+
+Even though this library has a long way to go, I feel fairly comfident that it has met my initial goals and can serve its original purpose. In the near future, I intend to make GitHub gists embeddable via url. Additionally, I may create an adapter or customElement to automatically load the previews directly from markup (something like `<pyro-gist url="/file/example.js"></pyro-gist>`).
+
+
+Until then... ✌🏽
+
+--
+
+_P.S. This library can be found [here](https://github.com/daryl-cecile/PyroGist), on my GitHub account!_
+]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+        </item>
+        <item>
+            <title><![CDATA[PF February Update ⚡️🧙🏽‍♂️]]></title>
+            <link>https://darylcecile.net/notes/pf-february-update</link>
+            <guid>pf-february-update</guid>
+            <pubDate>Sat, 29 Feb 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[
+
+This month's entry is comparatively short to the last, as it is not what I had initially planned to post. This is due to me spending almost an hour and half doing the write up for the original post to then decide at the very last minute that I needed more time to refine the wording of the content. So here is a short post 😂
+
+As of two weeks ago, Rizwana and I have made the decision to overhaul the ProjectFunction website. This decision is a result of the increased intake in students. When I first wrote the original website, It was done very haphazardly. At the time, it felt more important to launch something that the learners could make use of to enhance their experience of ProjectFunction; and so I prioritised meeting a delivery deadline over maintainability, and as you can guess, this has not gone down well. 🤦🏽‍♂️
+
+The backend for the original database was written in PHP and the data was maintained in a (very) _loosely_ relational MySQL database. Even though this allowed me to make changes to the database structure within minutes without losing any data, it did lead to a lot of redundant data. During the development of the website, I knew deep down it would need rewriting from the ground up. After all, the website was made as a proof-of-concept, and it was so well received that we ended up adding more features instead of re-writing. But now it is time.
+
+Due to our future plans and use-cases involving user-automated-tests, we have decided to move over to a NodeJS backend. This would mean we could re-use some of the libraries we have created over the year in both the front and backend, as well as run all user-automated-tests on our own end (instead of using heroku and hooks and hacky magic stuff 🧙🏽‍♂️)
+
+Last week, I started some work on the new system, setting up the server, services, and database structure. The number one difficulty I had with this process was moving the data we had over from the current (un)relational database, to our new one. Because of how much redundant data there was, as well as the lack of relations between some of the tables, I ended up having to create a data dump of the old database, then use a js script to read, analyse and re-associate each of the data entries so that they could be seeded into the new fully-relational database. Surprisingly, this process only took 4 minutes.
+
+So far, the database is fully set up and functional. All that is left to do now is move-over some of the old php-based views to EJS, and create routers for the new website. As for the design of the new website, we intend to keep the same look and feel, so the stylesheets we already have will be reused.
+
+As we've done in the past, we wont be minifying or obfuscating any of the resources. This was a conscious decision to enable learners to view the source of our website and see an untouched version of the resources. And based on the feedback we got from some learners, this was a good move as it enabled them to understand how we implemented some parts of our website.⚡️
+
+Over the next few weeks, we intend on working solely on the LMS side of the ProjectFunction website, so that it is ready for use in June. During this time, some parts of the website may change (for the better) as we decide what to keep, remove, and update. Once the site is ready for launch, we shall decomission the old LMS, and start working on moving the current visitor-facing site (i.e. The ProjectFunction homepage) over to NodeJS.
+
+Until then... ✌🏽
+
+--
+_P.S. I realise now that this wasn't exactly a "short" entry, but I know if I go back to make changes, this post wont be out on time... So, here_ 🤷🏽‍♂️
+
+_P.P.S. We got us some customized ProjectFunction business cards!_
+
+
+![Me holding my new PF business card](/images/business_card_1.jpeg)]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+        </item>
+        <item>
+            <title><![CDATA[Futuristic Pursuit 🐣]]></title>
+            <link>https://darylcecile.net/notes/futuristic-pursuit</link>
+            <guid>futuristic-pursuit</guid>
+            <pubDate>Fri, 31 Jan 2020 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[
+
+For the past 4 years, I've been telling myself that I will be ready for adult life when it comes - and until recently, that was true. I've always had a clear image of what I wanted to achieve in the future; Since college, I knew that I wanted to start my own (side?) project/company, and find a job in development somewhere that is chill. But now that I am finally about to step into proper "adult life", I cant help but feel like i'm not as ready as I thought 😬
+
+The plan throughout uni was that i'd move back to London once my degree was over, find a job somewhere there as a software developer, and maybe start a company of my own (on the side). In fact, I was so confident in that plan until recently. Last year, during my time on placement at a company in Nottingham called ERT, a dear friend of mine ([@rizbizkits](https://twitter.com/rizbizkits)) and I co-founded an initiative called ProjectFunction (find out about it [here](https://projectfunction.io)).
+
+ProjectFUnction has been quite successful, however, I never expected it to gain so much traction in the Nottingham Tech community. This made me realize that I would need to stick around in Notts a bit longer after uni to see it through its untapped potential. After some mental back and forth, I accepted that my plans to go back home to London would have to be put on hold. So now, I find myself looking for a place to stay for next year (as I'm currently staying in a student-only accomondation).
+
+I've been looking around Nottingham for a chill 2 bedroom flat - ideally one with parking, cat-friendly and on the ground floor. After all, Panther needs a place to stay too 😼
+
+![Panther cat doing a big stretch on the bed](/images/pantherCat.jpg)
+
+The places i've seen so far are quite afordable too, but then I realized, if I'm staying in Nottingham, I need to start looking for places _in_ Notts 🤦🏽‍♂️. So I started looking...
+
+_In retrospect, I realize that moving away from home to university in Nottingham was nothing compared to the "adult life" im finding myself flying towards this year. In fact, I'm not even sure I am ready for it in all honesty. But here we are 🤷🏽‍♂️_
+
+In December, my friend Rizwana and I were discussing what kind of places I was looking for in terms of jobs, and after giving it some thought, considering my past experiences, it became clear that I had a rough idea of what I wanted 👇🏽
+
+- A startup-like environment would be great (1 - 30 people)
+- Being flexible enough to work from home
+- Having personal-development budget and opportunities
+- No crunch-time (clear seperation of work and personal life)
+- Countless opportunities for career-progression
+- Diverse and inclusive teams
+- Experimental when it comes to implementing new ideas
+- A place that is not afraid to make their own tools to aid development
+- Open-souce contributors would be nice
+- Friendly/community-like team
+- A place that is happy to work and give back to the community
+- Somewhere that uses cutting edge technology
+
+All in all, I have a clear idea of the kind of workplace where I want to work as a Web developer 👨🏽‍💻. Now I just need to find it and make it happen. I guess i'll find out when it gets to it. I just hope that the place I find meets those points as closely as possible 🤞🏽. Once I do that, I can finally start focusing on ProjectFunction, and the many plans we have for it in the near future!]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+        </item>
+    </channel>
+</rss>

@@ -9,6 +9,7 @@ import Nav from './Nav';
 import Footer from "./Footer";
 import ScrollToTop from "./scrollToTop";
 import Anchor from "./Anchor";
+import CookieBanner from "./cookieBanner";
 
 const name = ' Hey! I\'m Daryl. '
 export const siteTitle = 'Daryl Cecile'
@@ -71,6 +72,7 @@ export default function Layout({ children, home, showBackBtn }:LayoutOptions) {
 					<ScrollToTop />
 				</>
 			)}
+			{/*<CookieBanner />*/}
 			<Footer/>
 		</div>
 	)

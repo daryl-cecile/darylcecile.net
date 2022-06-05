@@ -14,7 +14,7 @@ module.exports = {
 			{
 				source: "/_hive/:slug",
 				destination: "https://hive.splitbee.io/:slug",
-			},
+			}
 		];
 	},
 	async redirects() {
@@ -30,5 +30,5 @@ module.exports = {
 				permanent: true,
 			},
 		]
-	},
+	}
 }

@@ -7,7 +7,7 @@ export default function Imports() {
 	{/*integrity="sha384-Hk1aFY5x9VcMk6YL/QL4mcEbhmtSnlGOPlbh8j75qYmxiRPrhDKPiwRWng8w7aGI" async/>*/}
 
 			<script src="/scripts/twemojiWrapper.js" async/>
-			<script async data-api="/_hive" src="/bee.js"/>
+			<script async /*data-no-cookie*/ data-api="/_hive" src="/bee.js"/>
 		</>
 	)
 }
