@@ -31,7 +31,7 @@ getSortedNotesData(false).forEach(note => {
 		id: note.slug,
 		link: `https://darylcecile.net/notes/${note.slug}`,
 		description: '',
-		content: note.content,
+		content: note.renderedContent,
 		author: [
 			{
 				name: 'Daryl Cecile',
