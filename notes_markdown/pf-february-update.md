@@ -22,6 +22,7 @@ Over the next few weeks, we intend on working solely on the LMS side of the Proj
 Until then... ✌🏽
 
 --
+
 _P.S. I realise now that this wasn't exactly a "short" entry, but I know if I go back to make changes, this post wont be out on time... So, here_ 🤷🏽‍♂️
 
 _P.P.S. We got us some customized ProjectFunction business cards!_
