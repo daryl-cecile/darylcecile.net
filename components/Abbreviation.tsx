@@ -26,15 +26,14 @@ function useMeta(url:string){
 		(async ()=> {
 			let response = await fetch(`/api/fetch?url=${encodeURIComponent(url)}`, { method: 'GET' });
 
-			let template = document.createElement('template');
-			document.body.appendChild(template);
-			template.innerHTML = await response.text();
+			const PARSER = new DOMParser()
+			const DOC = PARSER.parseFromString( await response.text() , 'text/html')
 
 			setMeta({
-				title: template.content?.querySelector('title')?.innerText,
-				favicon: [...template.content?.querySelectorAll('[rel=icon]')].reverse()[0]?.getAttribute('href'),
-				image: template.content?.querySelector('[property="og:image"]')?.getAttribute('content'),
-				description: ( template.content?.querySelector('[name=description]') ?? template.content?.querySelector('[property="og:description"]') )?.getAttribute('content'),
+				title: DOC.querySelector('title')?.innerText,
+				favicon: [...DOC.querySelectorAll('[rel=icon]')].reverse()[0]?.getAttribute('href'),
+				image: DOC.querySelector('[property="og:image"]')?.getAttribute('content'),
+				description: ( DOC.querySelector('[name=description]') ?? DOC.querySelector('[property="og:description"]') )?.getAttribute('content'),
 			});
 			setIsReady(true);
 		})();
