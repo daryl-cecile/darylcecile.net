@@ -1,4 +1,4 @@
-import {ReactNode, MouseEvent, useMemo} from "react";
+import {ReactNode, MouseEvent, useMemo, useState} from "react";
 import useMounted from "../lib/useMounted";
 import Link from "next/link";
 
@@ -8,6 +8,9 @@ type AnchorProp = {
 	onClick?: (ev:MouseEvent<HTMLButtonElement>)=>void,
 	className?: string,
 	isExternal?: boolean
+
+	onFocusGain?: any,
+	onFocusLoss?: any
 }
 
 export default function Anchor(props:AnchorProp){
@@ -25,13 +28,22 @@ export default function Anchor(props:AnchorProp){
 
 	if (!props.href){
 		return (
-			<button onClick={props.onClick} className={props.className}>{props.children}</button>
+			<button
+				onClick={props.onClick}
+				className={props.className}
+				onMouseOver={props.onFocusGain}
+				onMouseLeave={props.onFocusLoss}
+				onBlur={props.onFocusLoss}
+			>{props.children}</button>
 		)
 	}
 
 	return (
 		<Link href={props.href} passHref={true}>
 			<a
+				onMouseOver={props.onFocusGain}
+				onMouseLeave={props.onFocusLoss}
+				onBlur={props.onFocusLoss}
 				hrefLang={"en"}
 				target={isExternal ? "_blank" : undefined}
 				rel={isExternal ? "noopener" : undefined}

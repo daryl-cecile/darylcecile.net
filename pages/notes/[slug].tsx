@@ -18,6 +18,7 @@ import CodeBlock from "../../components/CodeBlock";
 import InfoBox from "../../components/InfoBox";
 import InlineLinkHeader from "../../components/InlineLinkHeader";
 import withTimeout from "../../lib/withTimeout";
+import {Abbreviation} from "../../components/Abbreviation";
 
 function markdownToHtmlWithoutSanitization(markdown:string){
 	return remark()
@@ -30,7 +31,11 @@ function markdownToReact(markdown:string){
 	const components = {
 		a: (props: any)=>{
 			const {children, ...otherProps} = props;
-			return <Anchor {...otherProps} scroll={false}>{children}</Anchor>
+			return <Anchor {...otherProps} withPreview={true} scroll={false}>{children}</Anchor>
+		},
+		abbr: (props:any)=>{
+			const {children, ...otherProps} = props;
+			return <Abbreviation {...otherProps}>{children}</Abbreviation>
 		},
 		p: (props: any)=>{
 			if (props.children.length === 1 && props.children[0]?.type?.name === "img"){

@@ -37,6 +37,7 @@ export default function Layout({ children, home, showBackBtn }:LayoutOptions) {
 				<meta name="MobileOptimized" content="320" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
 				<meta httpEquiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+				<link rel="alternate" type="application/rss+xml" title="RSS Feed for darylcecile.net" href="/rss.xml" />
 
 				<link rel="me" href="https://twitter.com/darylcecile"/>
 				<link rel="webmention" href="https://webmention.io/darylcecile.net/webmention" />
