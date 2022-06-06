@@ -129,13 +129,13 @@ nav{
   position: -webkit-sticky;
   top: 0;
   background-color: transparent;
-  backdrop-filter: saturate(180%) blur( 20px );
   border-bottom: 1px solid transparent;
   margin-bottom: 0.5rem;
   transition: all .3s;
   
   &[data-top=false]{
     background-color: rgba(255,255,255, 0.4);
+    backdrop-filter: saturate(180%) blur( 20px );
     border-bottom: 1px solid var(--canvas-default-border);
   }
   
