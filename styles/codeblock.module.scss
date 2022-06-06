@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/jetbrains-mono');
 
 .block{
 	overflow: hidden;
@@ -43,18 +44,56 @@
 			pointer-events: auto;
 		}
 	}
-}
-
-.main {
-	font-size: 0.8em;
-	border-radius: 4px;
-	overflow: hidden;
-	padding: 0;
-	margin: 0;
 	
-	code {
-		tab-size: 4;
-		line-height: 1.5;
+	.main {
+		font-size: 0.8em;
+		border-radius: 4px;
+		overflow: hidden;
+		padding: 0;
+		margin: 0;
+		
+		code {
+			counter-reset: step;
+			counter-increment: step 0;
+			tab-size: 4;
+			line-height: 1.5;
+			font-size: 0.72rem;
+			font-family: 'JetBrains Mono', sans-serif;
+			
+			:global {
+				.line {
+					display: block;
+					
+					&:not(:empty:last-of-type){
+						min-height: 1em;
+						
+						&::before {
+							content: counter(step);
+							counter-increment: step;
+							width: 1rem;
+							margin-right: 1.5rem;
+							display: inline-block;
+							text-align: right;
+							color: rgba(115,138,148,.4)
+						}
+					}
+				}
+				
+			}
+		}
+		
+	}
+	
+	&[data-open=true] {
+		code{
+			:global {
+				.line {
+					&:hover {
+						background: #333842;
+					}
+				}
+			}
+		}
 	}
 }
 

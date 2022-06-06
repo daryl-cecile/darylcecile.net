@@ -12,7 +12,6 @@ import rehypeParse from "rehype-parse";
 import rehypeReact from "rehype-react";
 import Anchor from "../../components/Anchor";
 import rehypeHighlight from "rehype-highlight";
-import useMounted from "../../lib/useMounted";
 import EmbeddedScript from "../../components/EmbeddedScript";
 import CodeBlock from "../../components/CodeBlock";
 import InfoBox from "../../components/InfoBox";
