@@ -134,7 +134,15 @@ export default function NoteContentPage({postData }: { postData:Note }) {
 
 	return (
 		<Layout showBackBtn={true}>
-			<Head> <title>{postData.title}</title> </Head>
+			<Head>
+				<title>{postData.title}</title>
+				{postData.image && (
+					<>
+						<meta name={"twitter:card"} content={"summary"}/>
+						<meta property={"og:image"} content={postData.image}/>
+					</>
+				)}
+			</Head>
 			<article className="content">
 				<h1>{postData.title}</h1>
 				<span className="datetime"><LocalDate dateString={postData.date} /> &middot; {postData.readTime}</span>
