@@ -14,6 +14,10 @@ module.exports = {
 			{
 				source: "/_hive/:slug",
 				destination: "https://hive.splitbee.io/:slug",
+			},
+			{
+				source: "/r/images.unsplash.com/:path*",
+				destination: "https://images.unsplash.com/:path*"
 			}
 		];
 	},
