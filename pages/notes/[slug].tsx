@@ -139,6 +139,7 @@ export default function NoteContentPage({postData }: { postData:Note }) {
 				{postData.image && (
 					<>
 						<meta name={"twitter:card"} content={"summary"}/>
+						<meta property={"twitter:image"} content={postData.image}/>
 						<meta property={"og:image"} content={postData.image}/>
 					</>
 				)}
