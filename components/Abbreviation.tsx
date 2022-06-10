@@ -59,6 +59,7 @@ export function Abbreviation(props:AbbreviationProps){
 	const [previewVisible, setPreviewVisible] = useState(false);
 	const isMobile = useMemo(()=> !mounted || (mounted && window.innerWidth <= 560), [mounted]);
 	const {isReady, meta} = useMeta(previewVisible ? props.link : undefined);
+	const canExpand = (!!props.link && !isMobile) || (!props.link && !!props.title)
 	const isVisible = useMemo(()=>{
 		if (isMobile) return false;
 		return isReady && previewVisible;
@@ -71,12 +72,12 @@ export function Abbreviation(props:AbbreviationProps){
 	return (
 		<div className={styles.abbr}>
 			<abbr
-				title={!isVisible ? (props.title ?? meta.title) : undefined}
-				onMouseOver={!!props.link && !isMobile ? () => { setPreviewVisible(true) } : undefined}
+				title={!(isVisible || (previewVisible && !props.link)) ? (props.title ?? meta.title) : undefined}
+				onMouseOver={canExpand ? () => { setPreviewVisible(true) } : undefined}
 				onMouseLeave={() => setPreviewVisible(false)}
 				onBlur={() => setPreviewVisible(false)}
 			>{props.children}</abbr>
-			{isVisible && (
+			{(isVisible || (previewVisible && !props.link)) && (
 				<AbbrPreview
 					onEnter={!!props.link && !isMobile ? () => { setPreviewVisible(true) } : undefined}
 					onLeave={() => setPreviewVisible(false)}

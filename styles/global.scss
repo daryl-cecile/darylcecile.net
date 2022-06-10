@@ -220,7 +220,9 @@ nav > div > ul > li > a > svg{
   font-size: inherit;
 }
 
-article.content h2{
+article.content h1{
+  font-size: 2em;
+  margin-bottom: 0.2em;
   color: var(--heading-fg);
 }
 
@@ -228,6 +230,13 @@ article.content h3{
   color: var(--heading-fg);
   margin-top: 1.4em;
   font-size: 1.25em;
+}
+
+article.content h5{
+  color: var(--heading-fg);
+  margin-top: 1.2em;
+  font-size: 1.12em;
+  font-weight: 500;
 }
 
 article.content .datetime{
@@ -264,6 +273,20 @@ article.content > img{
           0 26.5px 21.2px rgba(0, 0, 0, 0.031),
           0 46.2px 37px rgba(0, 0, 0, 0.037),
           0 100px 80px rgba(0, 0, 0, 0.05);
+}
+
+article.content blockquote {
+  padding: 0.25rem 1rem;
+  box-sizing: border-box;
+  font-size: 1.05em;
+  font-weight: 200;
+  border-left: 0.3rem solid var(--canvas-default-border);
+  
+  p {
+    font-size: inherit;
+    font-weight: inherit;
+    margin: 0;
+  }
 }
 
 .project-preview{

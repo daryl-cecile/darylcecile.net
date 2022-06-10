@@ -52,6 +52,11 @@
 			color: var(--heading-fg);
 			margin: 0;
 			padding: 0.72rem 1rem 0;
+			
+			&:last-child {
+				padding-bottom: 0.72rem;
+				text-align: center;
+			}
 		}
 		
 		p{

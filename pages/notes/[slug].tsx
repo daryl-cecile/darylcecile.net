@@ -136,7 +136,7 @@ export default function NoteContentPage({postData }: { postData:Note }) {
 		<Layout showBackBtn={true}>
 			<Head> <title>{postData.title}</title> </Head>
 			<article className="content">
-				<h2>{postData.title}</h2>
+				<h1>{postData.title}</h1>
 				<span className="datetime"><LocalDate dateString={postData.date} /> &middot; {postData.readTime}</span>
 				{!!postData.lastUpdated && (
 					<span className="datetime">{'Last updated: '}<LocalDate dateString={postData.lastUpdated} /></span>
