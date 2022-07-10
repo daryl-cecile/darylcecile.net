@@ -100,15 +100,16 @@ export function Abbreviation(props:AbbreviationProps){
 	const {top, left, pointerContained} = useMemo(()=>{
 		if (!containerRef.current) return {
 			top: 0,
-			left: 0
+			left: 0,
+			pointerContained: false
 		}
 
 		const rect = containerRef.current.getBoundingClientRect();
-		const previewWidth = Math.min(320, window.innerWidth - 20);
+		const previewWidth = Math.min(320, windowContext.innerWidth - 20);
 
-		const containerTop = rect.top + window.scrollY;
-		const containerLeft = rect.left + window.scrollX;
-		const containerRight = rect.right + window.scrollX;
+		const containerTop = rect.top + windowContext.scrollY;
+		const containerLeft = rect.left + windowContext.scrollX;
+		const containerRight = rect.right + windowContext.scrollX;
 
 		let newLeft = containerLeft + (rect.width / 2) - (previewWidth / 2);
 
@@ -117,7 +118,7 @@ export function Abbreviation(props:AbbreviationProps){
 			left: Math.min(Math.max(newLeft, 10), windowContext.innerWidth - 10 - previewWidth),
 			pointerContained: (newLeft > 10) && (containerRight < windowContext.innerWidth - 10)
 		}
-	}, [containerRef.current, windowContext.innerWidth]);
+	}, [containerRef.current, windowContext.innerWidth, windowContext.scrollY, windowContext.scrollX]);
 
 	if (!mounted){
 		return <abbr title={props.title ?? meta.title ?? props.children as string}>{props.children}</abbr>
