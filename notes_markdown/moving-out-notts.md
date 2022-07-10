@@ -17,12 +17,12 @@ amazing people, forged new connections, made life-long friends, shared some amaz
 [NTU Pride Society](https://twitter.com/NTUPrideSociety), and [Tech Nottingham](https://twitter.com/technottingham). These are the ones I will
 cherish forever; they have helped me discover who I am, and have helped shape who I want to be and what I want to achieve. 💕
 
-![Pride Soc Group Pic on the Left, ProjectFunction Group Pic on the right](/images/nottingham-memory.png)
+![Pride Soc Group Pic on the Left, ProjectFunction Group Pic on the right](/images/nottingham-memory.jpeg)
 
 As some of you may know, I moved to Nottingham a little over 6 years ago for University; I did a Bachelor's degree in Computer Science. Since then
 I made great new friends, co-founded an amazing community-driven company called <Abbr link="https://projectfunction.io">ProjectFunction</Abbr>, and
-made Nottingham my home. After leaving <Abbr link="https://ntu.ac.uk">NTU</Abbr>, I went straight into work, working for a clinical trial company,
-then a local web agency, before moving to my current Job as a Software Development Engineer at CapitalOne. I've learned a lot along the way but
+made Nottingham my home. After leaving <Abbr link="https://ntu.ac.uk" title="Nottingham Trent University">NTU</Abbr>, I went straight into work, working for a clinical trial company,
+then a local web agency before moving to my current Job as a Software Development Engineer at CapitalOne. I've learned a lot along the way but
 eventually started wondering whether there was more to it. As much as I love Notts, I ended up outgrowing it. Covid didn't help; a lot of the places I
 enjoyed frequenting have either closed down (looking at 
 you [Propaganda](https://www.nottinghampost.com/whats-on/music-nightlife/end-era-nottingham-nightclub-closes-4140415)), or changed 

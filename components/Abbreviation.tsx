@@ -1,7 +1,9 @@
-import {ReactNode, useEffect, useMemo, useRef, useState} from "react";
+import React, {ReactNode, useEffect, useMemo, useRef, useState} from "react";
 import styles from "./../styles/abbr.module.scss";
 import useMounted from "../lib/useMounted";
 import Anchor from "./Anchor";
+import {faSpinner} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 type AbbreviationProps = {
 	title?:string,
@@ -13,7 +15,7 @@ function useMeta(url:string){
 	const isFirstRender = useRef(true);
 	const [isReady, setIsReady] = useState(false);
 	const [meta, setMeta] = useState({
-		title: '',
+		title: undefined as string,
 		favicon: null as string,
 		image: null as string,
 		description: null as string,
@@ -66,7 +68,7 @@ export function Abbreviation(props:AbbreviationProps){
 	}, [isMobile, isReady, previewVisible]);
 
 	if (!mounted){
-		return <abbr title={props.title}>{props.children}</abbr>
+		return <abbr title={props.title ?? meta.title}>{props.children}</abbr>
 	}
 
 	return (
@@ -74,9 +76,10 @@ export function Abbreviation(props:AbbreviationProps){
 			<abbr
 				title={!(isVisible || (previewVisible && !props.link)) ? (props.title ?? meta.title) : undefined}
 				onMouseOver={canExpand ? () => { setPreviewVisible(true) } : undefined}
+				onFocusCapture={canExpand ? () => { setPreviewVisible(true) } : undefined}
 				onMouseLeave={() => setPreviewVisible(false)}
-				onBlur={() => setPreviewVisible(false)}
-			>{props.children}</abbr>
+				onBlurCapture={() => setPreviewVisible(false)}
+			>{!!props.link ? <Anchor href={props.link} ariaDesc={props.title ?? meta.title ?? ''}>{props.children}</Anchor> : props.children}</abbr>
 			{(isVisible || (previewVisible && !props.link)) && (
 				<AbbrPreview
 					onEnter={!!props.link && !isMobile ? () => { setPreviewVisible(true) } : undefined}
@@ -84,6 +87,9 @@ export function Abbreviation(props:AbbreviationProps){
 					{...meta}
 					title={props.title ?? meta.title}
 				/>
+			)}
+			{(!isReady) && (
+				<FontAwesomeIcon icon={faSpinner} spin />
 			)}
 		</div>
 	)

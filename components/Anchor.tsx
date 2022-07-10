@@ -7,7 +7,8 @@ type AnchorProp = {
 	href?: string,
 	onClick?: (ev:MouseEvent<HTMLButtonElement>)=>void,
 	className?: string,
-	isExternal?: boolean
+	isExternal?: boolean,
+	ariaDesc?: string,
 
 	onFocusGain?: any,
 	onFocusLoss?: any
@@ -34,6 +35,7 @@ export default function Anchor(props:AnchorProp){
 				onMouseOver={props.onFocusGain}
 				onMouseLeave={props.onFocusLoss}
 				onBlur={props.onFocusLoss}
+				aria-label={props.ariaDesc}
 			>{props.children}</button>
 		)
 	}
@@ -46,6 +48,7 @@ export default function Anchor(props:AnchorProp){
 				onBlur={props.onFocusLoss}
 				hrefLang={"en"}
 				target={isExternal ? "_blank" : undefined}
+				aria-label={props.ariaDesc}
 				rel={isExternal ? "noopener" : undefined}
 				className={props.className}
 				>{props.children}</a>
