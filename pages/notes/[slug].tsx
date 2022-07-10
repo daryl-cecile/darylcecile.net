@@ -3,7 +3,7 @@ import { getAllNotesSlugs, getNoteData } from '../../lib/notes'
 import Head from 'next/head'
 import LocalDate from '../../components/LocalDate'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import React, {createElement, Fragment, useEffect} from "react";
+import React, {createElement, Fragment, useEffect, useMemo} from "react";
 import { Note } from '../../types'
 import {remark} from "remark";
 import html from "remark-html";
