@@ -87,9 +87,10 @@ export function Abbreviation(props:AbbreviationProps){
 	const mounted = useMounted();
 	const windowContext = useWindowContext();
 	const [previewVisible, setPreviewVisible] = useState(false);
-	const isMobile = useMemo(()=> !mounted || (mounted && window.innerWidth <= 560), [mounted]);
+	const isMobile = useMemo(()=> !mounted || (mounted && windowContext.innerWidth <= 560), [mounted, windowContext.innerWidth]);
 	const {isReady, meta} = useMeta(previewVisible ? props.link : undefined);
-	const canExpand = (!!props.link && !isMobile) || (!props.link && !!props.title)
+	const canNavigate = !!props.link && !props.static;
+	const canExpand = !canNavigate || (!!props.link && !isMobile);
 	const isVisible = useMemo(()=>{
 		if (isMobile) return false;
 		return isReady && previewVisible;
@@ -103,16 +104,17 @@ export function Abbreviation(props:AbbreviationProps){
 		}
 
 		const rect = containerRef.current.getBoundingClientRect();
+		const previewWidth = Math.min(320, window.innerWidth - 20);
 
 		const containerTop = rect.top + window.scrollY;
 		const containerLeft = rect.left + window.scrollX;
 		const containerRight = rect.right + window.scrollX;
 
-		let newLeft = containerLeft + (rect.width / 2) - 160;
+		let newLeft = containerLeft + (rect.width / 2) - (previewWidth / 2);
 
 		return {
 			top: containerTop + rect.height,
-			left: Math.min(Math.max(newLeft, 10), windowContext.innerWidth - 30 - 320),
+			left: Math.min(Math.max(newLeft, 10), windowContext.innerWidth - 10 - previewWidth),
 			pointerContained: (newLeft > 10) && (containerRight < windowContext.innerWidth - 10)
 		}
 	}, [containerRef.current, windowContext.innerWidth]);
@@ -121,12 +123,10 @@ export function Abbreviation(props:AbbreviationProps){
 		return <abbr title={props.title ?? meta.title ?? props.children as string}>{props.children}</abbr>
 	}
 
-	const canNavigate = !!props.link && !props.static;
-
 	return (
-		<span className={styles.abbr}>
+		<span className={styles.abbr} data-can-expand={canExpand}>
 			<abbr
-				data-mobile={!canNavigate && isMobile ? 'true' : 'false'} data-nav={!props.noNav}
+				data-mobile={!canNavigate && isMobile ? 'true' : 'false'} data-nav={!props.static}
 				title={!(isVisible || (previewVisible && !props.link)) ? (props.title ?? meta.title ?? props.children as string) : undefined}
 				onMouseOver={canExpand ? () => { setPreviewVisible(true) } : undefined}
 				onFocusCapture={canExpand ? () => { setPreviewVisible(true) } : undefined}

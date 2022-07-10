@@ -7,6 +7,11 @@
 		// force this on mobile
 		text-decoration: underline dotted;
 	}
+	
+	sup {
+		margin-left: 0.2rem;
+		font-size: 12px;
+	}
 }
 
 .preview {
@@ -17,6 +22,7 @@
 	position: absolute;
 	background: red;
 	width: 320px;
+	max-width: calc(100% - 20px);
 	border-radius: 4px;
 	padding: 1px;
 	border: 1px solid var(--canvas-default-border);
