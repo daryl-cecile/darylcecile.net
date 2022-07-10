@@ -11,9 +11,9 @@ The main purpose of this post is to share how I approach burnout, and the mental
 better understand how it affects me, in the hope that it may help others.
 </InfoBox>
 
-One of the biggest epidemic in software engineering at the moment, is <abbr link="https://mentalhealth-uk.org/burnout/">burnout</abbr>; 
+One of the biggest epidemic in software engineering at the moment, is <abbr link="https://mentalhealth-uk.org/burnout/" title="Burnout">burnout</abbr>; 
 A word that has almost become synonymous with working in tech over the past couple of years. According 
-to <abbr title="World Health Organisation">WHO</abbr>'s definition,
+to the <abbr title="World Health Organisation">WHO</abbr> definition,
 an individual suffering from burnout is known to experience feelings of exhaustion, mental numbness, demotivation, and cynicism — often 
 in relation to hobbies or occupation.
 

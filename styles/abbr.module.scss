@@ -67,5 +67,19 @@
 			color: var(--article-content-para-fg);
 			font-family: 'Open Sans',sans-serif;
 		}
+		
+		.previewSpinner {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1.6rem;
+			padding: 2rem;
+			
+		}
+	}
+	
+	[data-mobile=true]{
+		// force this on mobile
+		text-decoration: underline dotted;
 	}
 }

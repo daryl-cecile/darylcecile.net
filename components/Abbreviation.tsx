@@ -2,7 +2,7 @@ import React, {ReactNode, useEffect, useMemo, useRef, useState} from "react";
 import styles from "./../styles/abbr.module.scss";
 import useMounted from "../lib/useMounted";
 import Anchor from "./Anchor";
-import {faSpinner} from "@fortawesome/free-solid-svg-icons";
+import {faCircleInfo, faSpinner} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 type AbbreviationProps = {
@@ -46,7 +46,19 @@ function useMeta(url:string){
 	return {isReady, meta}
 }
 
-function AbbrPreview({title, image, favicon, description, onEnter, onLeave}){
+function AbbrPreview({title, image, favicon, description, onEnter, onLeave, isVisible}){
+	if (!isVisible) return null;
+
+	if (!title && !description && !image){
+		return (
+			<div className={styles.preview} onMouseOver={onEnter} onMouseLeave={onLeave}>
+				<div className={styles.previewSpinner}>
+					<FontAwesomeIcon icon={faSpinner} spin />
+				</div>
+			</div>
+		)
+	}
+
 	return (
 		<div className={styles.preview} onMouseOver={onEnter} onMouseLeave={onLeave}>
 			{!!image && <img src={`/api/fetchRaw?url=${encodeURIComponent(image)}`} alt=""/>}
@@ -68,29 +80,31 @@ export function Abbreviation(props:AbbreviationProps){
 	}, [isMobile, isReady, previewVisible]);
 
 	if (!mounted){
-		return <abbr title={props.title ?? meta.title}>{props.children}</abbr>
+		return <abbr title={props.title ?? meta.title ?? props.children as string}>{props.children}</abbr>
 	}
 
 	return (
 		<div className={styles.abbr}>
 			<abbr
-				title={!(isVisible || (previewVisible && !props.link)) ? (props.title ?? meta.title) : undefined}
+				data-mobile={!props.link && isMobile ? 'true' : 'false'}
+				title={!(isVisible || (previewVisible && !props.link)) ? (props.title ?? meta.title ?? props.children as string) : undefined}
 				onMouseOver={canExpand ? () => { setPreviewVisible(true) } : undefined}
 				onFocusCapture={canExpand ? () => { setPreviewVisible(true) } : undefined}
 				onMouseLeave={() => setPreviewVisible(false)}
 				onBlurCapture={() => setPreviewVisible(false)}
-			>{!!props.link ? <Anchor href={props.link} ariaDesc={props.title ?? meta.title ?? ''}>{props.children}</Anchor> : props.children}</abbr>
-			{(isVisible || (previewVisible && !props.link)) && (
-				<AbbrPreview
-					onEnter={!!props.link && !isMobile ? () => { setPreviewVisible(true) } : undefined}
-					onLeave={() => setPreviewVisible(false)}
-					{...meta}
-					title={props.title ?? meta.title}
-				/>
-			)}
-			{(!isReady) && (
-				<FontAwesomeIcon icon={faSpinner} spin />
-			)}
+			>
+				{!!props.link ? <Anchor href={props.link} ariaDesc={props.title ?? meta.title ?? ''}>{props.children}</Anchor> : props.children}
+				{!props.link && isMobile && (
+					<sup><FontAwesomeIcon icon={faCircleInfo}/></sup>
+				)}
+			</abbr>
+			<AbbrPreview
+				isVisible={previewVisible}
+				onEnter={!!props.link && !isMobile ? () => { setPreviewVisible(true) } : undefined}
+				onLeave={() => setPreviewVisible(false)}
+				{...meta}
+				title={props.title ?? meta.title}
+			/>
 		</div>
 	)
 }
