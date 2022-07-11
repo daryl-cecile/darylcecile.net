@@ -29,7 +29,7 @@ you [Propaganda](https://www.nottinghampost.com/whats-on/music-nightlife/end-era
 [beyond recognition](https://newforestersnottingham.co.uk/). I needed space to stretch. London was the ideal next candidate having grown up there and
 having family based there. I just needed one more reason to make the life-changing move.
 
-Earlier this year, my partner got a job in London; this was the perfect opportunity to make the move - and so the wheels were put in motion. I spoke
+Last week, my partner started a new job in London; this was the perfect opportunity to make the move - and so the wheels were put in motion. I spoke
 to work and got the green light to transfer to their london office, and then announced to my closest and dearest friends and family. I don't know what
 awaits, but I can truly say that I am ready for the next chapter of this adventure, and I'm excited to share my learnings and experiences in London.
 This isn't the last Notts will see of me; I will return to visit regularly. 🫶🏽
