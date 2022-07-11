@@ -49,6 +49,11 @@ hr{
   border-bottom: 1px solid var(--canvas-default-border);
 }
 
+svg {
+  display: inline-block;
+  width: 1em;
+}
+
 a {
   color: var(--primary-link-fg);
   font-family: 'Open Sans',sans-serif;
