@@ -1,6 +1,6 @@
 ---
 name: ProjectFunction
-logo: logos/projectfunction.svg
+image: screenshots/projectfunction.png
 startYear: 2018
 link: https://projectfunction.io
 tokens: [web]

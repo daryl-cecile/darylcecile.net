@@ -1,6 +1,6 @@
 ---
 name: SlantedPods
-logo: logos/slantedpods.svg
+image: screenshots/slantedpods.png
 startYear: 2018
 link: https://pods.slantedpress.com
 tokens: [web]

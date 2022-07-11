@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import React from "react";
-import {getSortedNotesData} from "../../lib/notes";
 import Layout, {siteTitle} from "../../components/Layout";
 import { Project} from "../../types";
 import utilStyles from "../../styles/utils.module.scss";
@@ -24,8 +23,8 @@ export default function ProjectsListingPage({ allProjectsData }: { allProjectsDa
 
           <hr className={utilStyles.push}/>
 
-          {allProjectsData.map( ({id, name, summary,startYear,link,logo,tokens,endYear}) => (
-              <ProjectPreview key={id} name={name} summary={summary} id={id} startYear={startYear} link={link} logo={logo} tokens={tokens} endYear={endYear}/>
+          {allProjectsData.map( ({id, name, summary,startYear,link,image, tokens,endYear}) => (
+              <ProjectPreview key={id} name={name} summary={summary} id={id} startYear={startYear} link={link} image={image} tokens={tokens} endYear={endYear}/>
           ) )}
       </div>
 

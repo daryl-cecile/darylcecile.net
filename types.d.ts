@@ -24,7 +24,7 @@ declare type Project = {
 	summary: string
 	startYear: number
 	endYear?: number
-	logo:string
+	image?:string
 	link:string
 	tokens:string[]
 }

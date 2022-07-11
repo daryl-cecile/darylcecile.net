@@ -1,6 +1,6 @@
 ---
 name: SlantedPress
-logo: logos/slantedpress.svg
+image: screenshots/slantedpress.png
 startYear: 2017
 link: https://slantedpress.com
 tokens: [web]

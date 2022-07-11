@@ -1,6 +1,6 @@
 ---
 name: AlphaDeck
-logo: logos/alphadeck.svg
+image: screenshots/alphadeck.png
 startYear: 2019
 endYear: 2020
 link: https://alphadeck.herokuapp.com/

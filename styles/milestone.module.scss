@@ -1,0 +1,53 @@
+
+.milestoneItem {
+	margin-bottom: 3rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	position: relative;
+
+	& > p {
+		color: var(--article-content-date-fg);
+		font-size: 1rem;
+		margin: 0 0 1em;
+	}
+	
+	@media (screen and min-width: 720px){
+		grid-template-columns: 150px 1fr;
+	
+		& > p {
+			margin: 0;
+		}
+	}
+}
+
+.milestoneBody {
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.milestoneBody h3{
+	color: var(--heading-fg);
+	font-weight: 600;
+	margin: 0;
+	font-size: 1rem;
+	text-rendering: optimizeLegibility;
+	font-family: "Open Sans", sans-serif;
+	letter-spacing: 1px;
+	line-height: 1.6;
+	box-sizing: inherit;
+	
+	span {
+		color: var(--dimmed-fg);
+	}
+}
+
+.milestoneBody > div{
+	margin: 0;
+	color: var(--footer-fg);
+	
+	@media (screen and max-width: 420px){
+		font-size: 12.5px;
+	}
+}
