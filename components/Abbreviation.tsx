@@ -124,7 +124,7 @@ export function Abbreviation(props:AbbreviationProps){
 		return <abbr title={props.title ?? meta.title ?? props.children as string}>{props.children}</abbr>
 	}
 	
-	const isSafari = navigator.vendor ==  "Apple Computer, Inc.";
+	const isSafari = mounted && navigator.vendor ==  "Apple Computer, Inc.";
 
 	return (
 		<span className={styles.abbr} data-can-expand={canExpand}>
@@ -155,4 +155,5 @@ export function Abbreviation(props:AbbreviationProps){
 			</Portal>
 		</span>
 	)
+	
 }
