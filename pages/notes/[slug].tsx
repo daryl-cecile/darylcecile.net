@@ -18,6 +18,7 @@ import InfoBox from "../../components/InfoBox";
 import InlineLinkHeader from "../../components/InlineLinkHeader";
 import withTimeout from "../../lib/withTimeout";
 import {Abbreviation} from "../../components/Abbreviation";
+import Gallery from '../../components/Gallery'
 
 function markdownToHtmlWithoutSanitization(markdown:string){
 	return remark()
@@ -90,6 +91,9 @@ function markdownToReact(markdown:string){
 		},
 		infobox: (props: any)=>{
 			return <InfoBox {...props}>{props.children}</InfoBox>
+		},
+		gallery: (props: any)=> {
+			return <Gallery {...props}/>
 		},
 		h3: (props: any) => {
 			return <InlineLinkHeader>{props.children}</InlineLinkHeader>

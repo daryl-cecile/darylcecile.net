@@ -40,7 +40,7 @@ export default function ExperienceListingPage() {
           <Milestone
               title={"Distinction Ltd"}
               subtitle={"Software Engineer"}
-              date={"2021 - 2022"}
+              date={"2020 - 2021"}
           >
              <p>
                  Work with clients across a wide range of domains, to create, maintain, and migrate their websites . As a software engineer at

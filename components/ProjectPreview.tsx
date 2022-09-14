@@ -10,7 +10,7 @@ export default function ProjectPreview({id, name, startYear, summary, image, lin
 	return (
 		<div className={styles.projectItem}>
 			<p>{startYear} - {endYear ?? 'Current'}</p>
-			<article key={id}>
+			<article key={id} id={name.replace(/(?: |-)+/gm, '-')}>
 				<Anchor isExternal href={link} className={styles.projectPreview}>
 					{!!image && <img src={image.startsWith("https://") ? image : `/images/projects/${image}`} alt=''/>}
 					<div className={styles.projectPreviewBody}>
