@@ -31,9 +31,16 @@ export default function ExperienceListingPage() {
               date={"2021 - Now"}
           >
               <p>
-                  Working in a dev-tooling team; creating infrastructure, internal developer tools, and sharing knowledge of AWS Cloud solutions. This
-                  role encompasses DevRel and developer advocacy as we work with the US enterprise as well as the UK business to encourage uptake of
-                  AWS cloud services over on-prem, providing training where required, and ensuring developers are onboarded in an industry-compliant way.
+                    Working in a developer-tooling team; creating infrastructure, internal developer tools, and sharing knowledge of AWS Cloud solutions. This
+                    role covers some DevRel and developer advocacy work through encouragement and support of migrations to AWS Cloud services from on-prem.
+              </p>
+              <p>
+                    Additionally workingon tooling to simplify developer experience, and providing dev resources when capacity allows; all while providing training 
+                    where required, and ensuring developers are onboarded in an industry-compliant way.
+              </p>
+              <p>
+                    When not assisting with migration and CICD pipeline work, I work on tools ranging from package-management, chrome extension, dev-env automation,
+                    and more.
               </p>
           </Milestone>
 
