@@ -17,9 +17,8 @@ export default function ExperienceListingPage() {
       <div className="restrict">
           <h1 className={utilStyles.header}>CV</h1>
           <p className={utilStyles.paragraph}>Check out my experiences, achievements, and milestones below.</p>
-          <p className={utilStyles.paragraph}>
-              Alternatively, you can view my <Anchor isExternal href="/CV/CV-2021.pdf">CV</Anchor> (<Anchor isExternal href="/CV/CV-2021-ATS.pdf">ATS</Anchor>) from 2020-2021, or Follow my career updates on <Anchor
-              href="https://linkedin.com/in/darylcecile">LinkedIn</Anchor>
+          <p className={utilStyles.paragraph}>My CV is available in <Anchor href="/cv">digital</Anchor> and <Anchor isExternal href="/CV/CV-2022.pdf">PDF</Anchor> formats. <br/> My Career updates are on <Anchor
+							href="https://linkedin.com/in/darylcecile">LinkedIn</Anchor></p>
           </p>
 
           <hr className={utilStyles.push}/>
