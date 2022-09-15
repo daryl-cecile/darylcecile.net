@@ -15,9 +15,9 @@ export default function ExperienceListingPage() {
       </Head>
 
       <div className="restrict">
-          <h1 className={utilStyles.header}>CV</h1>
+          <h1 className={utilStyles.header}>Milestones</h1>
           <p className={utilStyles.paragraph}>Check out my experiences, achievements, and milestones below.</p>
-          <p className={utilStyles.paragraph}>My CV is available in <Anchor href="/cv">digital</Anchor> and <Anchor isExternal href="/CV/CV-2022.pdf">PDF</Anchor> formats. <br/> My Career updates are on <Anchor
+          <p className={utilStyles.paragraph}>These milestones are also in my <Anchor isExternal href="/CV/CV-2022.pdf">CV</Anchor>. <br/> For major career updates, check my <Anchor
 							href="https://linkedin.com/in/darylcecile">LinkedIn</Anchor></p>
 
           <hr className={utilStyles.push}/>
