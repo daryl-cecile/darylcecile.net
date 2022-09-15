@@ -29,6 +29,7 @@ export function getSortedProjectsData():Project[] {
   })
   // Sort notes by date
   return allProjectsData.sort((a,b)=>{
+    // if (!a.endYear || !b.endYear) return 0;
     let ae = a.endYear ?? (new Date()).getUTCFullYear();
     let be = b.endYear ?? (new Date()).getUTCFullYear();
     if (ae < be){
@@ -40,6 +41,10 @@ export function getSortedProjectsData():Project[] {
     if (!!a.endYear) return 0;
     if (a.startYear <  b.startYear) return 1;
     return -1;
+  }).sort((a,b)=>{
+    if (a.sticky && !b.sticky) return -1;
+    if (!a.sticky && b.sticky) return 1;
+    return 0;
   })
 }
 

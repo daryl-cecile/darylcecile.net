@@ -26,5 +26,6 @@ declare type Project = {
 	endYear?: number
 	image?:string
 	link:string
+	sticky?: boolean;
 	tokens:string[]
 }
