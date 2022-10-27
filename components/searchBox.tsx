@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import utilStyles from "./../styles/utils.module.scss";
-import {useRouter} from "next/router";
+import {useSearchParams} from "next/navigation";
 
 type SearchBoxProps = {
 	onChange: (value:string) => void,
@@ -9,16 +9,15 @@ type SearchBoxProps = {
 
 export default function SearchBox(props:SearchBoxProps){
 	const [value, setValue] = useState('');
-	const router = useRouter();
+	const query = useSearchParams();
 
 	useEffect(()=>{
-		console.log(value, value.length, router.query.q)
-		if (value.length === 0 && router.query.q?.length > 0) {
-			let newValue = router.query.q.toString().trim().toLowerCase();
+		if (value.length === 0 && query.has("q")) {
+			let newValue = query.get("q").trim().toLowerCase();
 			setValue(newValue);
 			props.onChange(newValue);
 		}
-	}, [router.query.q ?? '']);
+	}, [query.get("q") ?? '']);
 
 	useEffect(()=>{ setValue(props.value) }, [props.value]);
 

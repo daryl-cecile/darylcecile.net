@@ -8,6 +8,7 @@ declare type LayoutOptions = {
 
 declare type Note = {
 	[name:string]:any
+	title:string,
 	date: string
 	lastUpdated?: string
 	slug:string

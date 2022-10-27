@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./../styles/scrollToTop.module.scss";
 import {useScroll} from "../lib/useScroll";
 import {useCallback, useEffect, useState} from "react";

@@ -1,3 +1,5 @@
+"use client";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, {ReactNode, useCallback, useEffect, useRef, useState} from "react";
 import styles from "./../styles/codeblock.module.scss";

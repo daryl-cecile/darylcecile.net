@@ -1,20 +1,12 @@
-import Head from 'next/head'
-import React from "react";
-import Layout, {siteTitle} from "../components/Layout";
-import utilStyles from "../styles/utils.module.scss";
-import Anchor from "../components/Anchor";
-import Milestone from "../components/Milestone";
-import { Abbreviation } from '../components/Abbreviation';
 
-export default function ExperienceListingPage() {
+import Anchor from "../../components/Anchor";
+import Milestone from "../../components/Milestone";
+import utilStyles from "../../styles/utils.module.scss";
 
-  return (
-    <Layout>
-      <Head>
-        <title>{siteTitle} &middot; CV</title>
-      </Head>
+export default function MilestonePage(){
 
-      <div className="restrict">
+    return (
+        <div className="restrict">
           <h1 className={utilStyles.header}>Milestones</h1>
           <p className={utilStyles.paragraph}>Check out my experiences, achievements, and milestones below.</p>
           <p className={utilStyles.paragraph}>These milestones are also in my <Anchor isExternal href="/CV/CV-2022.pdf">CV</Anchor>. <br/> For major career updates, check my <Anchor
@@ -133,7 +125,5 @@ export default function ExperienceListingPage() {
               </p>
           </Milestone>
       </div>
-
-    </Layout>
-  )
+    )
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import React, {ReactNode, useEffect, useMemo, useRef, useState} from "react";
 import styles from "./../styles/abbr.module.scss";
 import useMounted from "../lib/useMounted";
@@ -5,7 +7,7 @@ import Anchor from "./Anchor";
 import {faCircleInfo, faSpinner} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Portal} from "next/dist/client/portal";
-import {useWindowContext} from "../lib/WindowContext";
+import useWindow from "../lib/useWindow";
 
 type AbbreviationProps = {
 	title?:string,
@@ -85,7 +87,7 @@ function AbbrPreview({title, image, favicon, description, onEnter, onLeave, isVi
 
 export function Abbreviation(props:AbbreviationProps){
 	const mounted = useMounted();
-	const windowContext = useWindowContext();
+	const windowContext = useWindow();
 	const [previewVisible, setPreviewVisible] = useState(false);
 	const isMobile = useMemo(()=> !mounted || (mounted && windowContext.innerWidth <= 560), [mounted, windowContext.innerWidth]);
 	const {isReady, meta} = useMeta(previewVisible ? props.link : undefined);

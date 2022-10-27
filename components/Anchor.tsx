@@ -1,3 +1,5 @@
+"use client";
+
 import {ReactNode, MouseEvent, useMemo, useState} from "react";
 import useMounted from "../lib/useMounted";
 import Link from "next/link";
@@ -41,17 +43,19 @@ export default function Anchor(props:AnchorProp){
 	}
 
 	return (
-		<Link href={props.href} passHref={true}>
-			<a
-				onMouseOver={props.onFocusGain}
-				onMouseLeave={props.onFocusLoss}
-				onBlur={props.onFocusLoss}
-				hrefLang={"en"}
-				target={isExternal ? "_blank" : undefined}
-				aria-label={props.ariaDesc}
-				rel={isExternal ? "noopener" : undefined}
-				className={props.className}
-				>{props.children}</a>
+		<Link 
+			href={props.href} 
+			passHref={true}
+			onMouseOver={props.onFocusGain}
+			onMouseLeave={props.onFocusLoss}
+			onBlur={props.onFocusLoss}
+			hrefLang={"en"}
+			target={isExternal ? "_blank" : undefined}
+			aria-label={props.ariaDesc}
+			rel={isExternal ? "noopener" : undefined}
+			className={props.className}
+		>
+			{props.children}
 		</Link>
 	)
 }

@@ -34,5 +34,8 @@ module.exports = {
 				permanent: true,
 			},
 		]
+	},
+	experimental: {
+		appDir: true
 	}
 }

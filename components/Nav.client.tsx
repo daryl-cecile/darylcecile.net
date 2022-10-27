@@ -1,36 +1,14 @@
-import React, {ReactNode, useCallback, useEffect, useRef, useState} from "react";
-import {useScroll} from "../lib/useScroll";
-import Link from "next/link";
+"use client";
 
-function NavLink(props:{href:string, children:ReactNode}){
-	return (
-		<Link href={props.href} passHref={true}>
-			<a hrefLang="en">
-				{props.children}
-			</a>
-		</Link>
-	)
-}
+import React from "react";
+import useWindow from "../lib/useWindow";
+import NavLink from "./NavLink";
 
 export default function Nav(){
-	const [isAtTop, setIsAtTop] = useState(true);
-	const {onScrollEventDebounced} = useScroll(50);
-
-	const scrollHandler = useCallback(()=>{
-		onScrollEventDebounced(scrollPosition => {
-			if (scrollPosition.y > 0) return setIsAtTop(false);
-			if (scrollPosition.y === 0) return setIsAtTop(true);
-		});
-	}, []);
-
-	useEffect(()=>{
-		document.addEventListener('scroll', scrollHandler);
-
-		return ()=> document.removeEventListener('scroll', scrollHandler);
-	}, []);
+	const {scrollY} = useWindow();
 
 	return (
-		<nav data-top={isAtTop}>
+		<nav data-top={scrollY === 0}>
 			<div>
 				<ul>
 					<li>
