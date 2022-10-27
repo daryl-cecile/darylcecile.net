@@ -5,7 +5,7 @@ import Link from 'next/link'
 import {LayoutOptions} from "../types";
 import React from "react";
 import Imports from "./Imports";
-import Nav from './Nav';
+import Nav from './Nav.client';
 import Footer from "./Footer";
 import ScrollToTop from "./scrollToTop";
 import Anchor from "./Anchor";
@@ -16,7 +16,7 @@ export const siteTitle = 'Daryl Cecile'
 
 export default function Layout({ children, home, showBackBtn }:LayoutOptions) {
 	return (
-		<div>
+        <div>
 			<Head>
 				<link rel="apple-touch-icon" sizes="180x180" href="/images/core/profile_180.png"/>
 				<link rel="icon" type="image/png" sizes="32x32" href="/images/core/profile_32.png"/>
@@ -67,7 +67,7 @@ export default function Layout({ children, home, showBackBtn }:LayoutOptions) {
 				<>
 					<div className={styles.backToHome}>
 						<Link href="/">
-							<a>← Home</a>
+							← Home
 						</Link>
 					</div>
 					<ScrollToTop />
@@ -76,5 +76,5 @@ export default function Layout({ children, home, showBackBtn }:LayoutOptions) {
 			{/*<CookieBanner />*/}
 			<Footer/>
 		</div>
-	)
+    );
 }

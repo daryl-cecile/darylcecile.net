@@ -1,7 +1,7 @@
+"use client";
+
 import React, {useRef, useEffect, useState, useMemo} from "react";
 import css from "../styles/gallery.module.scss";
-import utilsCss from "../styles/utils.module.scss"
-import SocialLinks from "./SocialLinks";
 
 type GalleryProps = {
     imageUrls?: {
@@ -48,6 +48,7 @@ export default function Gallery({imageUrls, children}:GalleryProps) {
                         {urls.map((url, idx) => {
                             return (
                                 <button 
+                                    key={url + idx}
                                     data-active={url === currentImageUrl}
                                     aria-label={"go to image " + (idx + 1)} 
                                     onClick={ev=>{

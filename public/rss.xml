@@ -4,7 +4,7 @@
         <title>Daryl Cecile</title>
         <link>https://darylcecile.net</link>
         <description>My notes</description>
-        <lastBuildDate>Sun, 05 Jun 2022 17:21:07 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 27 Oct 2022 21:28:46 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>mFeed</generator>
         <language>en</language>
@@ -14,6 +14,195 @@
             <link>https://darylcecile.net</link>
         </image>
         <copyright>Daryl Cecile © 2022</copyright>
+        <item>
+            <title><![CDATA[Project Spotlight: Campus LMS]]></title>
+            <link>https://darylcecile.net/notes/project-spotlight-campus</link>
+            <guid>project-spotlight-campus</guid>
+            <pubDate>Fri, 02 Sep 2022 23:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<InfoBox type="info">
+    This LMS was created for ProjectFunction, which closed its doors in May 2022. See an archive of it on the <i><a href="/projects#ProjectFunction">project page</a></i>.
+</InfoBox>
+<p>For those of you who have not been keeping up with my adventures lately, <a href="https://twitter.com/rizbizkits" target="_blank" rel="noopener" class="l" hreflang="en">Rizwana</a> and I <a href="https://web.archive.org/web/20220711151132/https%3A%2F%2Fprojectfunction.io%2Fnotes%2Fthis-isnt-farewell" target="_blank" rel="noopener" class="l" hreflang="en">ended a PF session for the last time</a> in May after the successful completion of wave 9. Since then, I have gone for a well-needed holiday, replacing my mental and emotional burns with physical ones.</p>
+<p>Despite existing and providing a digital learning experience for the past 3 years, Campus has never been seen outside of ProjectFunction. So I thought id take a moment to spotlight Campus - the LMS that I have been working on and maintaining for PF for a couple of years.</p>
+<img src="/images/spotlight/campus/campus_login_page.png" alt="Campus Login screen" loading="lazy" />
+<p>Since the inception of v0.1, Campus has had 3 major updates; bringing about a new look, scalable infrastructure, and user-segmented data storage. These changes allowed Campus to grow with PF, as demand and userbase grew.</p>
+<p>By the final version of Campus, we were able to bring about the following features which helped improve the experience for individual instructors, as well as learners:</p>
+<ul class="para">
+<li><strong>Knowledge tracking</strong>: Allows instructors to review cohort progress and adjust content delivery methods to optimize learning</li>
+<li><strong>Lesson recaps</strong>: Learners were able to review any previous lessons and access the relevant assignments, worksheets, and cheatsheets</li>
+<li><strong>Automatic feedback</strong>: Provided instructors with the ability to configure assignment grading options so that assignment submissions could be automatically and instantly graded with feedback when learners submitted work</li>
+<li><strong>Engagement tracking</strong>: Instructors can view learner engagement to provide additional support to those who may need it. Engagement scores are used to guide instructors so they can maximize the engagement of their courses</li>
+<li><strong>Knowledge base</strong>: Each learner has the ability to create their own (or link to other) knowledge bases - enabling knowledge sharing and knowledge consolidation</li>
+<li>Attendance monitoring: Allows instructors to gauge attendance in relation to content delivery</li>
+<li><strong>Automatic assignments publication</strong>: Instructors could opt-in to automatic assignments so take-away tasks could be scheduled, created, and shared between instructors for their learners.</li>
+<li><strong>Github integration</strong>: Lets learners link to GitHub to manage their assignment submissions, while learning the basics of git</li>
+</ul>
+<p>All in all, this platform has grown with ProjectFunction to meet its growing demands. It’s been an amazing experience to build and maintain, but as with all good things, it is now time to put it to rest.</p>
+<Gallery>
+    { 
+        "/images/spotlight/campus/campus_login_page.png": "Campus login page", 
+        "/images/spotlight/campus/campus_dashboard.png": "Dashboard showing articles from dev.to", 
+        "/images/spotlight/campus/campus_assignments.png": "Assigment page showing a list of outstanding tasks", 
+        "/images/spotlight/campus/campus_assignment_detail.png": "Assignment detail page", 
+        "/images/spotlight/campus/campus_submissions.png": "User assignment submission page", 
+        "/images/spotlight/campus/campus_submission_detail.png": "Submission detail page showing automatic testing results", 
+        "/images/spotlight/campus/fizzbuzz_assignment.png": "Sample assignment: Fizzbuzz", 
+        "/images/spotlight/campus/create_from_template.png": "Github 6showing flow from Campus for learner to create repo", 
+        "/images/spotlight/campus/user_account.png": "User account showing engagement rating and attendance", 
+        "/images/spotlight/campus/manage_permissions.png": "In dark mode: Admin page showing permission settings",
+        "/images/spotlight/campus/campus_lesson.png": "Lesson page allows user to recap the sessions they attend",
+        "/images/spotlight/campus/lesson_resources.png": "Any resources used throughout the lesson are available on lesson pages",
+        "/images/spotlight/campus/campus_quick_jump.png": "Learners can use quick jump to access lessons, resources, and more"
+    }
+</Gallery>
+<p>I’ve personally learned a lot along the way, and there are many lessons to take away from the experiences ive gained by building and scaling this platform. Im excited to see where this knowledge takes me 🚀</p>
+]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og-note?slug=project-spotlight-campus" length="0" type="image//api/og-note"/>
+        </item>
+        <item>
+            <title><![CDATA[Moving out]]></title>
+            <link>https://darylcecile.net/notes/moving-out-notts</link>
+            <guid>moving-out-notts</guid>
+            <pubDate>Sat, 02 Jul 2022 23:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>This post has been a long time in the making. I’ve been scratching my head, wondering how to announce this<br />
+major milestone in my life. When writing notes for my website, I often like to form a story to help me get my thought process across;<br />
+but the thing is, this doesn’t need a story because it is already a story on its own. And after many unsuccessful attempts at starting this<br />
+post, I’ll cut straight to the chase; I’m moving back to London.</p>
+<p>This decision had been settled for a while now, and when I first announced it to my closest, everyone was somewhat shocked but supportive. After<br />
+spending 6+ years in Nottingham, I feel like it is finally time to move on and move out. I’ve made so many memories along the way, met so many<br />
+amazing people, forged new connections, made life-long friends, shared some amazing experiences<br />
+(see <a href="https://projectfunction.io/notes/this-isnt-farewell" target="_blank" rel="noopener" class="l" hreflang="en">PF</a>), and was welcomed into great communities like the<br />
+<a href="https://twitter.com/NTUPrideSociety" target="_blank" rel="noopener" class="l" hreflang="en">NTU Pride Society</a>, and <a href="https://twitter.com/technottingham" target="_blank" rel="noopener" class="l" hreflang="en">Tech Nottingham</a>. These are the ones I will<br />
+cherish forever; they have helped me discover who I am, and have helped shape who I want to be and what I want to achieve. 💕</p>
+<p><img src="/images/nottingham-memory.jpeg" alt="Pride Soc Group Pic on the Left, ProjectFunction Group Pic on the right" loading="lazy" /></p>
+<p>As some of you may know, I moved to Nottingham a little over 6 years ago for University; I did a Bachelor’s degree in Computer Science. Since then<br />
+I made great new friends, co-founded an amazing community-driven company called <Abbr link="https://projectfunction.io">ProjectFunction</Abbr>, and<br />
+made Nottingham my home. After leaving <Abbr link="https://ntu.ac.uk" static=true title="Nottingham Trent University">NTU</Abbr>, I went straight into work, working for a clinical trial company,<br />
+then a local web agency before moving to my current Job as a Software Development Engineer at CapitalOne. I’ve learned a lot along the way but<br />
+eventually started wondering whether there was more to it. As much as I love Notts, I ended up outgrowing it. Covid didn’t help; a lot of the places I<br />
+enjoyed frequenting have either closed down (looking at<br />
+you <a href="https://www.nottinghampost.com/whats-on/music-nightlife/end-era-nottingham-nightclub-closes-4140415" target="_blank" rel="noopener" class="l" hreflang="en">Propaganda</a>), or changed<br />
+<a href="https://newforestersnottingham.co.uk/" target="_blank" rel="noopener" class="l" hreflang="en">beyond recognition</a>. I needed space to stretch. London was the ideal next candidate having grown up there and<br />
+having family based there. I just needed one more reason to make the life-changing move.</p>
+<p>Last week, my partner started a new job in London; this was the perfect opportunity to make the move - and so the wheels were put in motion. I spoke<br />
+to work and got the green light to transfer to their london office, and then announced to my closest and dearest friends and family. I don’t know what<br />
+awaits, but I can truly say that I am ready for the next chapter of this adventure, and I’m excited to share my learnings and experiences in London.<br />
+This isn’t the last Notts will see of me; I will return to visit regularly. 🫶🏽</p>
+]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og-note?slug=moving-out-notts" length="0" type="image//api/og-note"/>
+        </item>
+        <item>
+            <title><![CDATA[Burning bright without burning out]]></title>
+            <link>https://darylcecile.net/notes/burning-bright-without-burning-out</link>
+            <guid>burning-bright-without-burning-out</guid>
+            <pubDate>Sat, 11 Jun 2022 23:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<InfoBox type="success">
+<strong>Opinion:</strong> This post is based mostly on my opinion, and experiences that I have gained and/or that have been shared with me. I
+am not a mental health specialist. 
+The main purpose of this post is to share how I approach burnout, and the mental model that has helped me to 
+better understand how it affects me, in the hope that it may help others.
+</InfoBox>
+<p>One of the biggest epidemic in software engineering at the moment, is <abbr link="https://mentalhealth-uk.org/burnout/" title="Burnout">burnout</abbr>;<br />
+A word that has almost become synonymous with working in tech over the past couple of years. According<br />
+to the <abbr title="World Health Organisation">WHO</abbr> definition,<br />
+an individual suffering from burnout is known to experience feelings of exhaustion, mental numbness, demotivation, and cynicism — often<br />
+in relation to hobbies or occupation.</p>
+<p>As both a software engineer, and a tech mentor, I have seen both sides of this in action; Many people (including myself) aren’t able to<br />
+recognise the slippery slope that leads to burnout straight away, and when they do it’s often too late. This sort of behaviour seems to stem<br />
+from a lack of understanding of how burnout takes place, as well as a lack of self-reflection; often forgetting that we need to check in on<br />
+ourselves. This is not to say that we lack the ability to take care of ourselves — we do! It’s just that sometimes, after a full session of<br />
+working, we have no mental capacity left for ourselves.</p>
+<p><img src="https://images.unsplash.com/photo-1517026575980-3e1e2dedeab4?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1098&amp;q=80" alt="Car accelerometer at 0. Photo by Chris Liverani on Unsplash" loading="lazy" /></p>
+<p>When I first started in the industry, I was a buzzing young developer who wanted to do many things all at once; so many ideas to explore,<br />
+concepts to learn, and tools to make. On numerous occasions, I would find myself attending conferences, signing up to events, starting (but<br />
+rarely finishing) side-projects, and refreshing twitter — all while managing studies and work. I barely had time left to afford myself the<br />
+luxury of self-reflexion and checking in on my mental well-being. And whenever id feel exhausted from the constant juggling id just brush it<br />
+off as <em>‘it’s <strong>just</strong> been a long day’</em>, and id go to bed to “recover”. Little did I know at the time that this was the start of my<br />
+occupational burnout.</p>
+<p>Understanding burnout and how it affects you as an individual is important in figuring out the steps you need to take to properly recover from<br />
+it. It is also important to be mindful that some steps may not be as easy or straightforward for everyone; The quickest route<br />
+may rely on some level of privilege that not everyone can afford.</p>
+<h3>Burnout expressions</h3>
+<p>Through conversations with colleagues, friends, and mentees, I’ve put together a mental model that represents how <em>I</em> experience burnout, and<br />
+the common expressions of burnout shared by others who have also experienced it.  You may find that your experiences of burnout are not the<br />
+same and therefore not reflected in this model, but use this as an idea to form your own model to better understand how you experience<br />
+burnout. Who knows, the model may help you discover new ways to approach managing your burnout rate.</p>
+<p>In order to better understand this mental model, we need to establish the foundation.</p>
+<h5>1. Burnout rate increases exponentially</h5>
+<p>It is important to note that burnout is not binary; Like most things it’s a scale. Signs of burnout may appear<br />
+quite early before it becomes burdensome and causes your productivity to tank. It is only when you ignore these signs and continue to pile<br />
+on the triggers that the affects accumulate exponentially.</p>
+<p>I personally believe that people don’t run out of energy; instead, energy gets<br />
+redirected and used to deal with the effects of burnout, leaving a little less each time for focusing on the task at hand. We often<br />
+spend so much of our capacity on workarounds for the symptoms of burnout that we have less capacity for the stuff that matters and tasks that<br />
+we actually want to do or makes use feel better.</p>
+<h5>2. It’s easier to burnout than to re-ignite</h5>
+<p>The more burnt-out you get, the harder and longer it takes to recover. Burning out is a slippery slope which many of us tend to blindly fall victim<br />
+to.</p>
+<p>Common tasks that contribute to burnout tend to be ones founded in habit; and so many people including myself, may struggle to break away from<br />
+those habits to allow for recovery to take place — further complicating the recovery process. For example, I love keeping tabs on how the web<br />
+is changing, so I often find myself doom-scrolling twitter, reddit, or hackernews for any piece of new tech-related news I can find; this habit<br />
+sometimes even extends to when I go on holiday — any idle time I could use<br />
+to <a href="https://www.helpguide.org/meditations/mindful-breathing-meditation.htm" target="_blank" rel="noopener" class="l" hreflang="en">take a breather</a> ends up being spent on these platforms.</p>
+<h5>3. Physical and mental stress work hand in hand, but they are not the same</h5>
+<p>A common phrase that often pops up when working with colleagues and people I mentor is <em>‘I shouldn’t feel this tired, I’ve barely done anything today’</em>.<br />
+And admittedly, I’m culprit of this too. It’s easy to forget that physical and mental pressures are not the same despite the fact that they<br />
+work hand in hand. Being mentally exhausted is not the same as being physically exhausted, and often people experience one without experiencing the<br />
+other; so it’s important to keep an eye out for this as it is one of the signals of burnout. Being able to detect this and changing your routine<br />
+will help decrease the burnout rate.</p>
+<p><img src="https://images.unsplash.com/photo-1654805540365-f5f7c81dfadf?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1280&amp;h=680&amp;q=90" alt="Mist spreading throughout a forest. Photo by Hans Isaacson on Unsplash" loading="lazy" /></p>
+<h3>Visualizing the burnout process</h3>
+<p>Picture this: Your mind is a forest, and the trees represent our ideas, energy, and motivation. When we focus intensively on specific tasks, the forest<br />
+gets misty, preventing us from focusing on other things. In order for the trees to grow and thrive, we need to occasionally see to it and water it,<br />
+and nurture it. But when we are too occupied and stressed trying to meet deadlines, we forget to look after it and the trees disappears. Everytime a tree<br />
+disappears, the landscape of our forest changes.</p>
+<p>Changes to the landscape of our forest makes us less productive as more time is spent remapping our forest and finding our way through it. This constant<br />
+remapping also tires us out. As a response to this, we start to limit our how we spend energy and stop checking the outer perimeters of our forest; causing<br />
+those trees to disappear.</p>
+<InfoBox type="warn">
+	WIP!
+</InfoBox>
+<h3>Can we recover from Burnout?</h3>
+<p>Trees grow, but they take time. And like most wounds, they heal. This is a process that can’t be rushed, and depending on how far they’ve pushed it, it may<br />
+take longer for some to recover than others. But if there is something we can all do straight away, it’s to watch out for the signs and make sure we take a<br />
+step back every now and then to evaluate how we are feeling, and where we are on our burnout scale. Seeding and growing a couple of trees is far less work<br />
+than re-growing an entire forest. 🌱</p>
+]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og-note?slug=burning-bright-without-burning-out" length="0" type="image//api/og-note"/>
+        </item>
+        <item>
+            <title><![CDATA[Adding RSS Autodiscovery to your site]]></title>
+            <link>https://darylcecile.net/notes/rss-autodiscovery</link>
+            <guid>rss-autodiscovery</guid>
+            <pubDate>Sat, 04 Jun 2022 23:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>Recently, I’ve discovered a new-found love for <abbr title="Really Simple Syndication" link="https://rss.com/blog/how-do-rss-feeds-work/">RSS</abbr>. It gives<br />
+me the best of both worlds; fast access to content, and a way to subscribe to content from sites I frequently visit - without<br />
+having to share my email address. Coincidentally, over the Jubilee weekend, I’ve been updating my website; adding dark mode,<br />
+writing new content, and even adding an RSS feed. So I thought id write a mini tutorial guide on adding autodiscovery to a website.</p>
+<h3>Getting started</h3>
+<p>Firstly, put together an RSS feed. Most frameworks have their own way of implementing this. For my website, I had to do this<br />
+manually by writing a small pre-build script that utilizes the <a href="https://www.npmjs.com/package/feed" target="_blank" rel="noopener" class="l" hreflang="en">Feed NPM Package</a> to create<br />
+the xml, atom, and json feeds. Once you have a feed and a way to access it (i.e. the link where the feed is hosted), you can<br />
+go ahead with autodiscovery.</p>
+<p>Adding auto-discovery is as easy as adding the following snippet into the <code>&lt;head&gt;</code> tag of your page:</p>
+<pre><code class="lang-html">&lt;link rel=&quot;alternate&quot; 
+      type=&quot;application/rss+xml&quot; 
+      title=&quot;RSS Feed for darylcecile.net&quot; 
+      href=&quot;/rss.xml&quot; /&gt;
+</code></pre>
+<p>Make sure to update the <code>href</code> and <code>title</code> attributes to match your website content!</p>
+<p>If you are using an ATOM feed, you will need to change the <code>type</code> attribute value to <code>application/atom+xml</code>. This will tell the<br />
+feed crawlers that come across your site how to handle the feed you provide.</p>
+<p>After enabling autodiscovery, browsers and feed aggregators will be able to automatically detect that your website has a feed, making<br />
+it easier for visitors to subscribe to it. My <em>current</em> feed aggregator of choice is currently <a href="https://feeder.co" target="_blank" rel="noopener" class="l" hreflang="en">feeder</a>; It automatically<br />
+detects RSS, ATOM, and JSON feeds on pages that I visit, and allows me to subscribe to it with two clicks.</p>
+]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og-note?slug=rss-autodiscovery" length="0" type="image//api/og-note"/>
+        </item>
         <item>
             <title><![CDATA[Exploring the Chrome Extension context gaps]]></title>
             <link>https://darylcecile.net/notes/excom-chrome-extension</link>
@@ -92,6 +281,7 @@ little exploration was worth it - and if anything, it was just the push I needed
 <p><sup id="reference1">[1]</sup> <a href="https://github.com/daryl-cecile/excom" target="_blank" rel="noopener" class="l" hreflang="en">Excom Repository</a></p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og-note?slug=excom-chrome-extension" length="0" type="image//api/og-note"/>
         </item>
         <item>
             <title><![CDATA[Doc Journey: ▲Vercel Edition]]></title>
@@ -103,7 +293,7 @@ little exploration was worth it - and if anything, it was just the push I needed
 </InfoBox>
 <p><strong>Update:</strong> Last Thursday (24th Feb), I had the opportunity to chat to <a href="https://twitter.com/itsmegbird" target="_blank" rel="noopener" class="l" hreflang="en">Meg</a> from Vercel about my experience and journey with the API docs. I have <a href="#update-improvement-suggestion" target="_blank" rel="noopener" class="l" hreflang="en">extended</a> this note to include my take on how it could be improved.</p>
 <hr />
-<p>Last week <a href="https://twitter.com/rizbizkits" target="_blank" rel="noopener" class="l" hreflang="en">Rizwana</a> discovered a cute little <a href="https://www.cobdenplace.co.uk/" target="_blank" rel="noopener" class="l" hreflang="en">Co-working space</a> in Nottingham. We had been on the lookout for a place where we could carry out some work for <abbr title="ProjectFunction">PF</abbr><sup><a href="#reference1" target="_blank" rel="noopener" class="l" hreflang="en">[1]</a></sup>, as well as potentially run some of our upcoming courses. At the time, I was making some upgrades to <a href="https://projectfunction.io/how-we-teach" target="_blank" rel="noopener" class="l" hreflang="en">PF Campus</a>, trying to enable deployments for students to be able to deploy their work to a portfolio as part of their submission process. With previous versions of Campus being on a dedicated server, we offered learners with the option to privately deploy (onto our infrastructure) or publicly via Netlify; however, now that it has moved onto a serverless model, it was time to revisit the options.</p>
+<p>Last week <a href="https://twitter.com/rizbizkits" target="_blank" rel="noopener" class="l" hreflang="en">Rizwana</a> discovered a cute little <a href="https://www.cobdenplace.co.uk/" target="_blank" rel="noopener" class="l" hreflang="en">Co-working space</a> in Nottingham. We had been on the lookout for a place where we could carry out some work for <abbr link="https://projectfunction.io" title="ProjectFunction">PF</abbr><sup><a href="#reference1" target="_blank" rel="noopener" class="l" hreflang="en">[1]</a></sup>, as well as potentially run some of our upcoming courses. At the time, I was making some upgrades to <a href="https://projectfunction.io/how-we-teach" target="_blank" rel="noopener" class="l" hreflang="en">PF Campus</a>, trying to enable deployments for students to be able to deploy their work to a portfolio as part of their submission process. With previous versions of Campus being on a dedicated server, we offered learners with the option to privately deploy (onto our infrastructure) or publicly via Netlify; however, now that it has moved onto a serverless model, it was time to revisit the options.</p>
 <p><img src="/images/campus-deploy1.png" alt="Campus v1 Deployment to Netlify" loading="lazy" /></p>
 <p>As the great advocate that she is, she asked if there was a reason we weren’t deploying on Vercel. After all, Campus v2 was already deployed on there, so it only made sense.</p>
 <p>Early on in 2021, I had the exact same thought. However, after doing a deep dive, I realised that there was no available packages at the time that interfaced well with Vercel to allow us to programmatically manage projects and deployments the way we needed. And upon further venturing, I came to accept that (a) the available REST APIs was in too much of an early stage, and (b) developing a wrapper around it would be more work than I was able to put in given my day-to-day schedules, and the state of Vercel Documentation back then. In fact the latter was the exact reason that initially pushed me to use Netlify to deploy.</p>
@@ -180,6 +370,7 @@ CreateDeployment({
 <p><sup id="reference2">[2]</sup> This <a href="https://darylcecile.net" target="_blank" rel="noopener" class="l" hreflang="en">website</a> was created using Next.js</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og-note?slug=vercel-doc-journey" length="0" type="image//api/og-note"/>
         </item>
         <item>
             <title><![CDATA[useReact: My go-to React Hooks]]></title>
@@ -314,6 +505,7 @@ new hooks and explain their uses.</p>
 <p>✌🏽</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og-note?slug=hooked-on-react" length="0" type="image//api/og-note"/>
         </item>
         <item>
             <title><![CDATA[Something needs a Rejig 👀]]></title>
@@ -332,6 +524,7 @@ new hooks and explain their uses.</p>
 <p>“<em>I kindly await your response…</em>”</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og-note?slug=something-needs-a-rejig" length="0" type="image//api/og-note"/>
         </item>
         <item>
             <title><![CDATA[I did a thing... PyroGist 👨🏽‍💻]]></title>
@@ -390,6 +583,7 @@ console.log('Loaded PyroGist instances');
 <p><em>P.S. This library can be found <a href="https://github.com/daryl-cecile/PyroGist" target="_blank" rel="noopener" class="l" hreflang="en">here</a>, on my GitHub account!</em></p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og-note?slug=did-a-thing-pyro" length="0" type="image//api/og-note"/>
         </item>
         <item>
             <title><![CDATA[PF February Update ⚡️🧙🏽‍♂️]]></title>
@@ -405,12 +599,13 @@ console.log('Loaded PyroGist instances');
 <p>As we’ve done in the past, we wont be minifying or obfuscating any of the resources. This was a conscious decision to enable learners to view the source of our website and see an untouched version of the resources. And based on the feedback we got from some learners, this was a good move as it enabled them to understand how we implemented some parts of our website.⚡️</p>
 <p>Over the next few weeks, we intend on working solely on the LMS side of the ProjectFunction website, so that it is ready for use in June. During this time, some parts of the website may change (for the better) as we decide what to keep, remove, and update. Once the site is ready for launch, we shall decomission the old LMS, and start working on moving the current visitor-facing site (i.e. The ProjectFunction homepage) over to NodeJS.</p>
 <p>Until then… ✌🏽</p>
-<p>–<br />
-<em>P.S. I realise now that this wasn’t exactly a “short” entry, but I know if I go back to make changes, this post wont be out on time… So, here</em> 🤷🏽‍♂️</p>
+<p>–</p>
+<p><em>P.S. I realise now that this wasn’t exactly a “short” entry, but I know if I go back to make changes, this post wont be out on time… So, here</em> 🤷🏽‍♂️</p>
 <p><em>P.P.S. We got us some customized ProjectFunction business cards!</em></p>
 <img src="/images/business_card_1.jpeg" alt="Me holding my new PF business card" loading="lazy" />
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og-note?slug=pf-february-update" length="0" type="image//api/og-note"/>
         </item>
         <item>
             <title><![CDATA[Futuristic Pursuit 🐣]]></title>
@@ -442,6 +637,7 @@ console.log('Loaded PyroGist instances');
 <p>All in all, I have a clear idea of the kind of workplace where I want to work as a Web developer 👨🏽‍💻. Now I just need to find it and make it happen. I guess i’ll find out when it gets to it. I just hope that the place I find meets those points as closely as possible 🤞🏽. Once I do that, I can finally start focusing on ProjectFunction, and the many plans we have for it in the near future!</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og-note?slug=futuristic-pursuit" length="0" type="image//api/og-note"/>
         </item>
     </channel>
 </rss>

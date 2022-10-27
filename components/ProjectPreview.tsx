@@ -1,26 +1,28 @@
+"use client";
+
+import componentStyles from "../styles/projectPreview.module.scss";
 import utilsCss from "../styles/utils.module.scss"
-import React, {Fragment, useEffect, useState} from "react";
+import React, {Fragment} from "react";
 import Anchor from "./Anchor";
-import styles from "../styles/projectPreview.module.scss";
 import useUnstableValue from "../lib/useUnstableValue";
 
 export default function ProjectPreview({id, name, startYear, summary, image, link, tokens, endYear}){
 	const stableSummary = useUnstableValue(summary);
 
 	return (
-		<div className={styles.projectItem}>
+        <div className={componentStyles.projectItem}>
 			{startYear !== endYear ? (<p>{startYear} - {endYear ?? 'Current'}</p>) : (<p>{startYear}</p>)}
 			<article key={id} id={name.replace(/(?: |-)+/gm, '-')}>
-				<Anchor isExternal href={link} className={styles.projectPreview}>
+				<Anchor isExternal href={link} className={componentStyles.projectPreview}>
 					{!!image && <img src={image.startsWith("https://") ? image : `/images/projects/${image}`} alt=''/>}
-					<div className={styles.projectPreviewBody}>
+					<div className={componentStyles.projectPreviewBody}>
 						<h3>{name}</h3>
 						<div className={utilsCss.paragraph} dangerouslySetInnerHTML={{__html: stableSummary}}/>
-						<div className={styles.tokens}>
-							<span className={styles.token}>project</span> &middot;
+						<div className={componentStyles.tokens}>
+							<span className={componentStyles.token}>project</span> &middot;
 							{tokens.map((token,index) => (
 								<Fragment key={index + '_' + token}>
-									<span className={styles.token}>{token}</span>
+									<span className={componentStyles.token}>{token}</span>
 									{tokens.length - 1 !== index && <>&middot;</>}
 								</Fragment>
 							))}
@@ -29,5 +31,5 @@ export default function ProjectPreview({id, name, startYear, summary, image, lin
 				</Anchor>
 			</article>
 		</div>
-	)
+    );
 }

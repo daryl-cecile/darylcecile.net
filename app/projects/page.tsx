@@ -1,22 +1,16 @@
-import Head from 'next/head'
-import { GetStaticProps } from 'next'
-import React from "react";
-import Layout, {siteTitle} from "../../components/Layout";
-import { Project} from "../../types";
-import utilStyles from "../../styles/utils.module.scss";
-import ProjectPreview from "../../components/ProjectPreview";
-import {getSortedProjectsData} from "../../lib/projects";
 import Anchor from "../../components/Anchor";
+import ProjectPreview from "../../components/ProjectPreview";
+import { getAllProjectsDataSorted } from "../../lib/projects";
+import utilStyles from "../../styles/utils.module.scss";
+import componentStyles from "../../styles/projectPreview.module.scss";
 
-export default function ProjectsListingPage({ allProjectsData }: { allProjectsData: Project[] }) {
+export const revalidate = 30;
 
-  return (
-    <Layout>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
+export default function ProjectListPage(){
+    const allProjectsData = getAllProjectsDataSorted();
 
-      <div className="restrict">
+    return (
+        <div className="restrict">
           <h1 className={utilStyles.header}>Projects</h1>
           <p className={utilStyles.paragraph}>I'm constantly flowing with ideas for tools and projects 🧠; and sometimes, I manage to scrape together the time to work on them ✨. Here are some of the projects that made the cut.</p>
           <p className={utilStyles.paragraph}>Check out my <Anchor href="https://github.com/daryl-cecile" isExternal>GitHub</Anchor> for more up-to-date development and proof-of-concepts</p>
@@ -26,17 +20,8 @@ export default function ProjectsListingPage({ allProjectsData }: { allProjectsDa
           {allProjectsData.map( ({id, name, summary,startYear,link,image, tokens,endYear}) => (
               <ProjectPreview key={id} name={name} summary={summary} id={id} startYear={startYear} link={link} image={image} tokens={tokens} endYear={endYear}/>
           ) )}
+
+          <div className={componentStyles.workAroundTodoForceImportToEnsureStylesWork} />
       </div>
-
-    </Layout>
-  )
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const allProjectsData = getSortedProjectsData();
-  return {
-    props: {
-        allProjectsData
-    }
-  }
+    )
 }

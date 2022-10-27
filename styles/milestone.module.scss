@@ -11,7 +11,7 @@
 		margin: 0 0 1em;
 	}
 	
-	@media (screen and min-width: 720px){
+	@media screen and (min-width: 720px){
 		grid-template-columns: 150px 1fr;
 	
 		& > p {
@@ -47,7 +47,7 @@
 	margin: 0;
 	color: var(--footer-fg);
 	
-	@media (screen and max-width: 420px){
+	@media screen and (max-width: 420px){
 		font-size: 12.5px;
 	}
 }

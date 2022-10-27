@@ -3,7 +3,6 @@ import "highlight.js/styles/atom-one-dark.css"
 import { AppProps } from 'next/app'
 import {useRouter} from "next/router";
 import {useEffect} from "react";
-import {WindowContextProvider} from "../lib/WindowContext";
 
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter()
@@ -27,9 +26,5 @@ export default function App({ Component, pageProps }: AppProps) {
 		}
 	}, [router])
 
-	return (
-		<WindowContextProvider>
-			<Component {...pageProps} />
-		</WindowContextProvider>
-	)
+	return <Component {...pageProps} />
 }
