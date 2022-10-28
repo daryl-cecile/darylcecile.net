@@ -27,10 +27,10 @@ export default function DocumentHead(props:HeadProps){
             <meta name="og:title" content={props.socialTitleOverride ?? siteTitle} />
 
             <meta name="description" content={props.socialDescriptionOverride ?? description}/>
-            <meta property="og:image" content={props.socialImageOverride ?? "/images/core/header.png"}/>
+            <meta property="og:image" content={props.socialImageOverride ?? "/api/og"}/>
             <meta name="twitter:card" content={props.twitterCardOverride ?? "summary_large_image"} />
 			<meta property="twitter:title" content={props.socialTitleOverride ?? siteTitle}/>
-			<meta property="twitter:image" content={props.socialImageOverride ?? "/images/core/header.png"}/>
+			<meta property="twitter:image" content={props.socialImageOverride ?? "/api/og"}/>
             <meta name="twitter:site" content="@darylcecile" />
             <meta name="twitter:creator" content="@darylcecile" />
             <meta name="theme-color" content="#ffffff"/>
