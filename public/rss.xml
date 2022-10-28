@@ -58,7 +58,7 @@
 <p>I’ve personally learned a lot along the way, and there are many lessons to take away from the experiences ive gained by building and scaling this platform. Im excited to see where this knowledge takes me 🚀</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og-note?slug=project-spotlight-campus" length="0" type="image//api/og-note"/>
+            <enclosure url="https://darylcecile.net/api/og?slug=project-spotlight-campus" length="0" type="image//api/og"/>
         </item>
         <item>
             <title><![CDATA[Moving out]]></title>
@@ -91,7 +91,7 @@ awaits, but I can truly say that I am ready for the next chapter of this adventu
 This isn’t the last Notts will see of me; I will return to visit regularly. 🫶🏽</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og-note?slug=moving-out-notts" length="0" type="image//api/og-note"/>
+            <enclosure url="https://darylcecile.net/api/og?slug=moving-out-notts" length="0" type="image//api/og"/>
         </item>
         <item>
             <title><![CDATA[Burning bright without burning out]]></title>
@@ -171,7 +171,7 @@ step back every now and then to evaluate how we are feeling, and where we are on
 than re-growing an entire forest. 🌱</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og-note?slug=burning-bright-without-burning-out" length="0" type="image//api/og-note"/>
+            <enclosure url="https://darylcecile.net/api/og?slug=burning-bright-without-burning-out" length="0" type="image//api/og"/>
         </item>
         <item>
             <title><![CDATA[Adding RSS Autodiscovery to your site]]></title>
@@ -201,7 +201,7 @@ it easier for visitors to subscribe to it. My <em>current</em> feed aggregator o
 detects RSS, ATOM, and JSON feeds on pages that I visit, and allows me to subscribe to it with two clicks.</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og-note?slug=rss-autodiscovery" length="0" type="image//api/og-note"/>
+            <enclosure url="https://darylcecile.net/api/og?slug=rss-autodiscovery" length="0" type="image//api/og"/>
         </item>
         <item>
             <title><![CDATA[Exploring the Chrome Extension context gaps]]></title>
@@ -281,7 +281,7 @@ little exploration was worth it - and if anything, it was just the push I needed
 <p><sup id="reference1">[1]</sup> <a href="https://github.com/daryl-cecile/excom" target="_blank" rel="noopener" class="l" hreflang="en">Excom Repository</a></p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og-note?slug=excom-chrome-extension" length="0" type="image//api/og-note"/>
+            <enclosure url="https://darylcecile.net/api/og?slug=excom-chrome-extension" length="0" type="image//api/og"/>
         </item>
         <item>
             <title><![CDATA[Doc Journey: ▲Vercel Edition]]></title>
@@ -370,7 +370,7 @@ CreateDeployment({
 <p><sup id="reference2">[2]</sup> This <a href="https://darylcecile.net" target="_blank" rel="noopener" class="l" hreflang="en">website</a> was created using Next.js</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og-note?slug=vercel-doc-journey" length="0" type="image//api/og-note"/>
+            <enclosure url="https://darylcecile.net/api/og?slug=vercel-doc-journey" length="0" type="image//api/og"/>
         </item>
         <item>
             <title><![CDATA[useReact: My go-to React Hooks]]></title>
@@ -505,7 +505,7 @@ new hooks and explain their uses.</p>
 <p>✌🏽</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og-note?slug=hooked-on-react" length="0" type="image//api/og-note"/>
+            <enclosure url="https://darylcecile.net/api/og?slug=hooked-on-react" length="0" type="image//api/og"/>
         </item>
         <item>
             <title><![CDATA[Something needs a Rejig 👀]]></title>
@@ -524,7 +524,7 @@ new hooks and explain their uses.</p>
 <p>“<em>I kindly await your response…</em>”</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og-note?slug=something-needs-a-rejig" length="0" type="image//api/og-note"/>
+            <enclosure url="https://darylcecile.net/api/og?slug=something-needs-a-rejig" length="0" type="image//api/og"/>
         </item>
         <item>
             <title><![CDATA[I did a thing... PyroGist 👨🏽‍💻]]></title>
@@ -583,7 +583,7 @@ console.log('Loaded PyroGist instances');
 <p><em>P.S. This library can be found <a href="https://github.com/daryl-cecile/PyroGist" target="_blank" rel="noopener" class="l" hreflang="en">here</a>, on my GitHub account!</em></p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og-note?slug=did-a-thing-pyro" length="0" type="image//api/og-note"/>
+            <enclosure url="https://darylcecile.net/api/og?slug=did-a-thing-pyro" length="0" type="image//api/og"/>
         </item>
         <item>
             <title><![CDATA[PF February Update ⚡️🧙🏽‍♂️]]></title>
@@ -605,7 +605,7 @@ console.log('Loaded PyroGist instances');
 <img src="/images/business_card_1.jpeg" alt="Me holding my new PF business card" loading="lazy" />
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og-note?slug=pf-february-update" length="0" type="image//api/og-note"/>
+            <enclosure url="https://darylcecile.net/api/og?slug=pf-february-update" length="0" type="image//api/og"/>
         </item>
         <item>
             <title><![CDATA[Futuristic Pursuit 🐣]]></title>
@@ -637,7 +637,7 @@ console.log('Loaded PyroGist instances');
 <p>All in all, I have a clear idea of the kind of workplace where I want to work as a Web developer 👨🏽‍💻. Now I just need to find it and make it happen. I guess i’ll find out when it gets to it. I just hope that the place I find meets those points as closely as possible 🤞🏽. Once I do that, I can finally start focusing on ProjectFunction, and the many plans we have for it in the near future!</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og-note?slug=futuristic-pursuit" length="0" type="image//api/og-note"/>
+            <enclosure url="https://darylcecile.net/api/og?slug=futuristic-pursuit" length="0" type="image//api/og"/>
         </item>
     </channel>
 </rss>
