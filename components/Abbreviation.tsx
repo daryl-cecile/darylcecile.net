@@ -131,7 +131,8 @@ export function Abbreviation(props:AbbreviationProps){
 	return (
 		<span className={styles.abbr} data-can-expand={canExpand}>
 			<abbr
-				data-mobile={!canNavigate && isMobile ? 'true' : (isSafari ? 'true' : 'false')} data-nav={!props.static}
+				data-mobile={!canNavigate && isMobile ? 'true' : (isSafari ? 'true' : 'false')} 
+				data-nav={!props.static}
 				title={!(isVisible || (previewVisible && !props.link)) ? (props.title ?? meta.title ?? props.children as string) : undefined}
 				onMouseOver={canExpand ? () => { setPreviewVisible(true) } : undefined}
 				onFocusCapture={canExpand ? () => { setPreviewVisible(true) } : undefined}
