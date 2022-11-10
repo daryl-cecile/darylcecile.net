@@ -1,6 +1,6 @@
-"use client";
+bbr"use client";
 
-import React, {ReactNode, useEffect, useMemo, useRef, useState} from "react";
+import React, {ReactNode, useMemo, useRef, useState} from "react";
 import styles from "./../styles/abbr.module.scss";
 import useMounted from "../lib/useMounted";
 import Anchor from "./Anchor";
@@ -8,7 +8,6 @@ import {faCircleInfo, faSpinner} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Portal} from "next/dist/client/portal";
 import useWindow from "../lib/useWindow";
-import useFetch from "../lib/useFetch";
 
 type AbbreviationProps = {
 	title?:string,
@@ -30,38 +29,33 @@ type AbbrPreviewProps = {
 }
 
 function useMeta(url:string){
-	const [isReady, setIsReady] = useState(false);
-	const [meta, setMeta] = useState({
-		title: undefined as string,
-		favicon: null as string,
-		image: null as string,
-		description: null as string,
-	});
-	const fetchResults = useFetch('/api/fetch', {
-	  queryParams: {
-	    url: encodeURIComponent(url)
-	  }
-	});
-    console.log('fetchResults', fetchResults?.data);
-	
-    useEffect(()=>{
-    if (fetchResults.state === "ready"){
-      let text = fetchResults.data;
-      const PARSER = new DOMParser();
-      const DOC = PARSER.parseFromString( text , 'text/html');
+  const [isReady, setIsReady] = useState(false);
+  const [meta, setMeta] = useState({
+    title: undefined as string,
+    favicon: null as string,
+    image: null as string,
+    description: null as string,
+  });
+  useMemo(async ()=>{
+    console.log('fetching a', url);
+    setIsReady(false);
+    let params = new URLSearchParams({url: encodeURIComponent(url)});
+    let req = await fetch('https://darylcecile.net/api/fetch?' + params);
+    if (!req.ok) return;
+    let text = await req.text();
+    const PARSER = new DOMParser();
+    const DOC = PARSER.parseFromString( text , 'text/html');
 			
-      console.log('doc', DOC);
+    console.log('doc', DOC);
 
-      setMeta({
-        title: DOC.querySelector('title')?.innerText,
-        favicon: [...DOC.querySelectorAll('[rel=icon]')].reverse()[0]?.getAttribute('href'),
-        image: DOC.querySelector('[property="og:image"]')?.getAttribute('content'),
-        description: ( DOC.querySelector('[name=description]') ?? DOC.querySelector('[property="og:description"]') )?.getAttribute('content'),
-      });
-      setIsReady(true);
-	  
-    }
-  }, [fetchResults.state]);
+    setMeta({
+      title: DOC.querySelector('title')?.innerText,
+      favicon: [...DOC.querySelectorAll('[rel=icon]')].reverse()[0]?.getAttribute('href'),
+      image: DOC.querySelector('[property="og:image"]')?.getAttribute('content'),
+      description: ( DOC.querySelector('[name=description]') ?? DOC.querySelector('[property="og:description"]') )?.getAttribute('content'),
+    });
+    setIsReady(true);
+  }, [url]);
 
   return {isReady, meta}
 }
