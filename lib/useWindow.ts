@@ -20,12 +20,14 @@ export function useWindowEvents(){
     }, []);
 
     useEffect(()=>{
+      resize();
+      scroll();
         window.addEventListener("resize", resize);
         window.addEventListener("scroll", scroll);
         return ()=>{
             window.removeEventListener("resize", resize);
             window.removeEventListener("scroll", scroll);
-        }
+        } 
     }, []);
 
     return {
@@ -35,8 +37,7 @@ export function useWindowEvents(){
 }
 
 export function useWindowExternalStore(){
-    let subscribe = useCallback((cb)=>{
-        cb = ()=>{console.log('hit'); cb()}
+    let subscribe = useCallback((cb:any)=>{
         console.log('subbed');
         window.addEventListener("resize", cb);
         window.addEventListener("scroll", cb);

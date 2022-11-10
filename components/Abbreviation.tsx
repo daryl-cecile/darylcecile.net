@@ -8,6 +8,7 @@ import {faCircleInfo, faSpinner} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Portal} from "next/dist/client/portal";
 import useWindow from "../lib/useWindow";
+import useFetch from "../lib/useFetch";
 
 type AbbreviationProps = {
 	title?:string,
@@ -29,7 +30,6 @@ type AbbrPreviewProps = {
 }
 
 function useMeta(url:string){
-	const isFirstRender = useRef(true);
 	const [isReady, setIsReady] = useState(false);
 	const [meta, setMeta] = useState({
 		title: undefined as string,
@@ -37,30 +37,33 @@ function useMeta(url:string){
 		image: null as string,
 		description: null as string,
 	});
+	const fetchResults = useFetch('/api/fetch', {
+	  queryParams: {
+	    url: encodeURIComponent(url)
+	  }
+	});
+    console.log('fetchResults', fetchResults?.data);
+	
+    useEffect(()=>{
+    if (fetchResults.state === "ready"){
+      let text = fetchResults.data;
+      const PARSER = new DOMParser();
+      const DOC = PARSER.parseFromString( text , 'text/html');
+			
+      console.log('doc', DOC);
 
-	useEffect(()=>{
-		if (!url) return;
-		if (!isFirstRender.current) return;
+      setMeta({
+        title: DOC.querySelector('title')?.innerText,
+        favicon: [...DOC.querySelectorAll('[rel=icon]')].reverse()[0]?.getAttribute('href'),
+        image: DOC.querySelector('[property="og:image"]')?.getAttribute('content'),
+        description: ( DOC.querySelector('[name=description]') ?? DOC.querySelector('[property="og:description"]') )?.getAttribute('content'),
+      });
+      setIsReady(true);
+	  
+    }
+  }, [fetchResults.state]);
 
-		(async ()=> {
-			let response = await fetch(`/api/fetch?url=${encodeURIComponent(url)}`, { method: 'GET' });
-
-			const PARSER = new DOMParser()
-			const DOC = PARSER.parseFromString( await response.text() , 'text/html')
-
-			setMeta({
-				title: DOC.querySelector('title')?.innerText,
-				favicon: [...DOC.querySelectorAll('[rel=icon]')].reverse()[0]?.getAttribute('href'),
-				image: DOC.querySelector('[property="og:image"]')?.getAttribute('content'),
-				description: ( DOC.querySelector('[name=description]') ?? DOC.querySelector('[property="og:description"]') )?.getAttribute('content'),
-			});
-			setIsReady(true);
-		})();
-
-		isFirstRender.current = false;
-	}, [url]);
-
-	return {isReady, meta}
+  return {isReady, meta}
 }
 
 function AbbrPreview({title, image, favicon, description, onEnter, onLeave, isVisible, css, hideOriginPointer}:AbbrPreviewProps){
@@ -86,11 +89,11 @@ function AbbrPreview({title, image, favicon, description, onEnter, onLeave, isVi
 }
 
 export function Abbreviation(props:AbbreviationProps){
-	const mounted = useMounted();
+    const mounted = useMounted();
 	const windowContext = useWindow();
 	const [previewVisible, setPreviewVisible] = useState(false);
-	const isMobile = useMemo(()=> !mounted || (mounted && windowContext.innerWidth <= 560), [mounted, windowContext.innerWidth]);
-	const {isReady, meta} = useMeta(previewVisible ? props.link : undefined);
+	const isMobile = windowContext.innerWidth <= 560;
+	const {isReady, meta} = useMeta(props.link);
 	const canNavigate = !!props.link && !props.static;
 	const canExpand = !canNavigate || (!!props.link && !isMobile);
 	const isVisible = useMemo(()=>{
@@ -121,6 +124,8 @@ export function Abbreviation(props:AbbreviationProps){
 			pointerContained: (newLeft > 10) && (containerRight < windowContext.innerWidth - 10)
 		}
 	}, [containerRef.current, windowContext.innerWidth, windowContext.scrollY, windowContext.scrollX]);
+	
+	console.log('meta', meta);
 
 	if (!mounted){
 		return <abbr title={props.title ?? meta.title ?? props.children as string}>{props.children}</abbr>
@@ -129,7 +134,7 @@ export function Abbreviation(props:AbbreviationProps){
 	const isSafari = mounted && navigator.vendor ==  "Apple Computer, Inc.";
 
 	return (
-		<span className={styles.abbr} data-can-expand={canExpand}>
+		<span className={styles.abbr} data-can-expand={canExpand} data-mob={isMobile}>
 			<abbr
 				data-mobile={!canNavigate && isMobile ? 'true' : (isSafari ? 'true' : 'false')} 
 				data-nav={!props.static}

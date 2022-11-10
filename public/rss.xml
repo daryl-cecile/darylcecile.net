@@ -4,7 +4,7 @@
         <title>Daryl Cecile</title>
         <link>https://darylcecile.net</link>
         <description>My notes</description>
-        <lastBuildDate>Thu, 27 Oct 2022 21:28:46 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 09 Nov 2022 17:23:51 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>mFeed</generator>
         <language>en</language>
@@ -15,10 +15,52 @@
         </image>
         <copyright>Daryl Cecile © 2022</copyright>
         <item>
+            <title><![CDATA[Building in public]]></title>
+            <link>https://darylcecile.net/notes/building-in-public</link>
+            <guid>building-in-public</guid>
+            <pubDate>Tue, 08 Nov 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>For a couple of weeks (months?) now, I have been playing around with the idea of a small API-first headless <Abbr title="Content management system" link="https://en.wikipedia.org/wiki/Headless_content_management_system">CMS</Abbr>. I started forming building blocks and planning they way it would look and behave.</p>
+]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og?slug=building-in-public" length="0" type="image//api/og"/>
+        </item>
+        <item>
+            <title><![CDATA[November life update]]></title>
+            <link>https://darylcecile.net/notes/november-life-updates</link>
+            <guid>november-life-updates</guid>
+            <pubDate>Sat, 05 Nov 2022 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>So im pulling this from <a href="https://carol.gg/" target="_blank" rel="noopener" class="l" hreflang="en">Carol</a>’s book an attempt to provide you with a <a href="https://twitter.com/carolsaysthings/status/1587174153190268929?s=61&amp;t=jXDDwfGAQLaMRy52o0w4Qg" target="_blank" rel="noopener" class="l" hreflang="en">lifenote</a>-esque life update. Since my <Abbr link="/notes/moving-out-notts" title="Moving out">last post</Abbr>, a lot has happened;</p>
+<ul class="para">
+<li>Ive done a couple of house viewings throughout London</li>
+<li>Panther has officially moved down to London</li>
+<li>Ive completed work-related paper work in preparation for the move</li>
+<li>Booked a couple more viewings</li>
+<li>Finalized the <a href="https://web.archive.org/web/20220711151132/https%3A%2F%2Fprojectfunction.io%2Fnotes%2Fthis-isnt-farewell" target="_blank" rel="noopener" class="l" hreflang="en">closure of PF</a> 🥹</li>
+<li>Started putting together a rough plan for my next side project (Exciting times ahead - Keep an eye out for a post 🤞🏾)</li>
+<li>Panther and <a href="https://twitter.com/rizbizkits/status/1545162625411153923?s=46&amp;t=B1zScKx5_gYSKx0sedQ1-w" target="_blank" rel="noopener" class="l" hreflang="en">Mastoo</a> have found comfort in each-others company 🖤</li>
+</ul>
+<p><img src="/images/mastoo-and-panther-stairs.png" alt="Mastoo and Panther on the stairs" loading="lazy" /></p>
+<p>Two weeks ago, I found myself in a bit of a rut. The hectic lifestyle i’ve been trying to keep up with, together with the extremely brutal renting market had led to me spiralling a litte — and it wast until my manager had brought it up that I had realised that I had not been spending any time on myself. Since then i’ve been trying to make more time for self-care:</p>
+<ul class="para">
+<li>I started watching Netflix again (My latest watch being <Abbr title="From Scratch" link="https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi2yNmljpX7AhWIZ8AKHdlpA4cQFnoECEoQAQ&url=https%3A%2F%2Fwww.netflix.com%2Ftitle%2F81104486&usg=AOvVaw0LrPqvBVfWDOg0KdjX4ww1">From Scratch</Abbr> - which I highly recommend!)</li>
+<li>Treated Will and I to a Spa day at Bannatyne Health Spa in Mansfield</li>
+<li>Made some time to work on the designs for my upcoming side-project</li>
+<li>Signed up to <a href="https://bere.al/dcjoa" target="_blank" rel="noopener" class="l" hreflang="en">BeReal</a> to see what the hype is all about 👴🏾</li>
+<li>Endulged in a Portobello Mushroom, Ricotta and Garlic brunch at a newly discovered <a href="https://maps.app.goo.gl/VfbxqFcovcLhof3Y6?g_st=ic" target="_blank" rel="noopener" class="l" hreflang="en">eatery</a></li>
+</ul>
+<p>All of this made possible by finding a temporary home for Panther, which allows me to stay down in London for viewings - rather than travelling down every weekend.</p>
+<p>Last weekend, Panther and I made our way down to London from Nottingham, and then trekked across the city to <a href="https://twitter.com/@AugustukazB" target="_blank" rel="noopener" class="l" hreflang="en">Augustina</a> who had kindly offered to house Panther until our housing situation was sorted. The poor boy had a very stressful trip but thankfully he has recovered and and is now enjoying the company of Aira 🖤</p>
+<p><img src="/images/aira-cat.jpg" alt="Aira in her elements" loading="lazy" /></p>
+<p>Stay tuned for some incoming pictures of Aira and Panther together 🐈‍⬛</p>
+]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og?slug=november-life-updates" length="0" type="image//api/og"/>
+        </item>
+        <item>
             <title><![CDATA[Project Spotlight: Campus LMS]]></title>
             <link>https://darylcecile.net/notes/project-spotlight-campus</link>
             <guid>project-spotlight-campus</guid>
-            <pubDate>Fri, 02 Sep 2022 23:00:00 GMT</pubDate>
+            <pubDate>Sat, 03 Sep 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<InfoBox type="info">
     This LMS was created for ProjectFunction, which closed its doors in May 2022. See an archive of it on the <i><a href="/projects#ProjectFunction">project page</a></i>.
 </InfoBox>
@@ -64,7 +106,7 @@
             <title><![CDATA[Moving out]]></title>
             <link>https://darylcecile.net/notes/moving-out-notts</link>
             <guid>moving-out-notts</guid>
-            <pubDate>Sat, 02 Jul 2022 23:00:00 GMT</pubDate>
+            <pubDate>Sun, 03 Jul 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>This post has been a long time in the making. I’ve been scratching my head, wondering how to announce this<br />
 major milestone in my life. When writing notes for my website, I often like to form a story to help me get my thought process across;<br />
 but the thing is, this doesn’t need a story because it is already a story on its own. And after many unsuccessful attempts at starting this<br />
@@ -97,7 +139,7 @@ This isn’t the last Notts will see of me; I will return to visit regularly. �
             <title><![CDATA[Burning bright without burning out]]></title>
             <link>https://darylcecile.net/notes/burning-bright-without-burning-out</link>
             <guid>burning-bright-without-burning-out</guid>
-            <pubDate>Sat, 11 Jun 2022 23:00:00 GMT</pubDate>
+            <pubDate>Sun, 12 Jun 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<InfoBox type="success">
 <strong>Opinion:</strong> This post is based mostly on my opinion, and experiences that I have gained and/or that have been shared with me. I
 am not a mental health specialist. 
@@ -177,7 +219,7 @@ than re-growing an entire forest. 🌱</p>
             <title><![CDATA[Adding RSS Autodiscovery to your site]]></title>
             <link>https://darylcecile.net/notes/rss-autodiscovery</link>
             <guid>rss-autodiscovery</guid>
-            <pubDate>Sat, 04 Jun 2022 23:00:00 GMT</pubDate>
+            <pubDate>Sun, 05 Jun 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>Recently, I’ve discovered a new-found love for <abbr title="Really Simple Syndication" link="https://rss.com/blog/how-do-rss-feeds-work/">RSS</abbr>. It gives<br />
 me the best of both worlds; fast access to content, and a way to subscribe to content from sites I frequently visit - without<br />
 having to share my email address. Coincidentally, over the Jubilee weekend, I’ve been updating my website; adding dark mode,<br />
@@ -207,7 +249,7 @@ detects RSS, ATOM, and JSON feeds on pages that I visit, and allows me to subscr
             <title><![CDATA[Exploring the Chrome Extension context gaps]]></title>
             <link>https://darylcecile.net/notes/excom-chrome-extension</link>
             <guid>excom-chrome-extension</guid>
-            <pubDate>Fri, 03 Jun 2022 23:00:00 GMT</pubDate>
+            <pubDate>Sat, 04 Jun 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>A couple of weeks ago, a conversation at work with my manager prompted me to revisit an old chrome extension I created a while<br />
 back to help me manage my tab usage better.</p>
 <p>The extension was born out of frustration for tab management; I was simply out of control.<br />
@@ -511,7 +553,7 @@ new hooks and explain their uses.</p>
             <title><![CDATA[Something needs a Rejig 👀]]></title>
             <link>https://darylcecile.net/notes/something-needs-a-rejig</link>
             <guid>something-needs-a-rejig</guid>
-            <pubDate>Tue, 26 May 2020 23:00:00 GMT</pubDate>
+            <pubDate>Wed, 27 May 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<InfoBox type="warn">
 <strong>Edit:</strong> This post was scheduled to be published on the 8th of April, but due to the COVID pandemic and the uni-related consequences it brought about, I had to delay the post. However, I can now confirm that I am now working on another project idea that I have a genuine interest in and enjoy working on.
 </InfoBox>

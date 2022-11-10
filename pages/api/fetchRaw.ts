@@ -2,9 +2,13 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
 
-	const url = req.query['url'] as string;
+	const incomingUrl = req.query['url'] as string;
 
-	console.log('fetching Raw',url);
+  	console.log('fetching', incomingUrl);
+	
+	if (!incomingUrl) return res.send('');
+
+   let url = decodeURIComponent(incomingUrl);
 	
 	res.setHeader('Cache-Control', 's-maxage=86400');
 

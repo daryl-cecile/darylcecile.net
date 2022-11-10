@@ -11,12 +11,36 @@
     },
     "items": [
         {
+            "id": "building-in-public",
+            "content_html": "<p>For a couple of weeks (months?) now, I have been playing around with the idea of a small API-first headless <Abbr title=\"Content management system\" link=\"https://en.wikipedia.org/wiki/Headless_content_management_system\">CMS</Abbr>. I started forming building blocks and planning they way it would look and behave.</p>\n",
+            "url": "https://darylcecile.net/notes/building-in-public",
+            "title": "Building in public",
+            "image": "https://darylcecile.net/api/og?slug=building-in-public",
+            "date_modified": "2022-11-08T00:00:00.000Z",
+            "author": {
+                "name": "Daryl Cecile",
+                "url": "https://darylcecile.net"
+            }
+        },
+        {
+            "id": "november-life-updates",
+            "content_html": "<p>So im pulling this from <a href=\"https://carol.gg/\" target=\"_blank\" rel=\"noopener\" class=\"l\" hreflang=\"en\">Carol</a>’s book an attempt to provide you with a <a href=\"https://twitter.com/carolsaysthings/status/1587174153190268929?s=61&amp;t=jXDDwfGAQLaMRy52o0w4Qg\" target=\"_blank\" rel=\"noopener\" class=\"l\" hreflang=\"en\">lifenote</a>-esque life update. Since my <Abbr link=\"/notes/moving-out-notts\" title=\"Moving out\">last post</Abbr>, a lot has happened;</p>\n<ul class=\"para\">\n<li>Ive done a couple of house viewings throughout London</li>\n<li>Panther has officially moved down to London</li>\n<li>Ive completed work-related paper work in preparation for the move</li>\n<li>Booked a couple more viewings</li>\n<li>Finalized the <a href=\"https://web.archive.org/web/20220711151132/https%3A%2F%2Fprojectfunction.io%2Fnotes%2Fthis-isnt-farewell\" target=\"_blank\" rel=\"noopener\" class=\"l\" hreflang=\"en\">closure of PF</a> 🥹</li>\n<li>Started putting together a rough plan for my next side project (Exciting times ahead - Keep an eye out for a post 🤞🏾)</li>\n<li>Panther and <a href=\"https://twitter.com/rizbizkits/status/1545162625411153923?s=46&amp;t=B1zScKx5_gYSKx0sedQ1-w\" target=\"_blank\" rel=\"noopener\" class=\"l\" hreflang=\"en\">Mastoo</a> have found comfort in each-others company 🖤</li>\n</ul>\n<p><img src=\"/images/mastoo-and-panther-stairs.png\" alt=\"Mastoo and Panther on the stairs\" loading=\"lazy\" /></p>\n<p>Two weeks ago, I found myself in a bit of a rut. The hectic lifestyle i’ve been trying to keep up with, together with the extremely brutal renting market had led to me spiralling a litte — and it wast until my manager had brought it up that I had realised that I had not been spending any time on myself. Since then i’ve been trying to make more time for self-care:</p>\n<ul class=\"para\">\n<li>I started watching Netflix again (My latest watch being <Abbr title=\"From Scratch\" link=\"https://www.google.co.uk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi2yNmljpX7AhWIZ8AKHdlpA4cQFnoECEoQAQ&url=https%3A%2F%2Fwww.netflix.com%2Ftitle%2F81104486&usg=AOvVaw0LrPqvBVfWDOg0KdjX4ww1\">From Scratch</Abbr> - which I highly recommend!)</li>\n<li>Treated Will and I to a Spa day at Bannatyne Health Spa in Mansfield</li>\n<li>Made some time to work on the designs for my upcoming side-project</li>\n<li>Signed up to <a href=\"https://bere.al/dcjoa\" target=\"_blank\" rel=\"noopener\" class=\"l\" hreflang=\"en\">BeReal</a> to see what the hype is all about 👴🏾</li>\n<li>Endulged in a Portobello Mushroom, Ricotta and Garlic brunch at a newly discovered <a href=\"https://maps.app.goo.gl/VfbxqFcovcLhof3Y6?g_st=ic\" target=\"_blank\" rel=\"noopener\" class=\"l\" hreflang=\"en\">eatery</a></li>\n</ul>\n<p>All of this made possible by finding a temporary home for Panther, which allows me to stay down in London for viewings - rather than travelling down every weekend.</p>\n<p>Last weekend, Panther and I made our way down to London from Nottingham, and then trekked across the city to <a href=\"https://twitter.com/@AugustukazB\" target=\"_blank\" rel=\"noopener\" class=\"l\" hreflang=\"en\">Augustina</a> who had kindly offered to house Panther until our housing situation was sorted. The poor boy had a very stressful trip but thankfully he has recovered and and is now enjoying the company of Aira 🖤</p>\n<p><img src=\"/images/aira-cat.jpg\" alt=\"Aira in her elements\" loading=\"lazy\" /></p>\n<p>Stay tuned for some incoming pictures of Aira and Panther together 🐈‍⬛</p>\n",
+            "url": "https://darylcecile.net/notes/november-life-updates",
+            "title": "November life update",
+            "image": "https://darylcecile.net/api/og?slug=november-life-updates",
+            "date_modified": "2022-11-05T00:00:00.000Z",
+            "author": {
+                "name": "Daryl Cecile",
+                "url": "https://darylcecile.net"
+            }
+        },
+        {
             "id": "project-spotlight-campus",
             "content_html": "<InfoBox type=\"info\">\n    This LMS was created for ProjectFunction, which closed its doors in May 2022. See an archive of it on the <i><a href=\"/projects#ProjectFunction\">project page</a></i>.\n</InfoBox>\n<p>For those of you who have not been keeping up with my adventures lately, <a href=\"https://twitter.com/rizbizkits\" target=\"_blank\" rel=\"noopener\" class=\"l\" hreflang=\"en\">Rizwana</a> and I <a href=\"https://web.archive.org/web/20220711151132/https%3A%2F%2Fprojectfunction.io%2Fnotes%2Fthis-isnt-farewell\" target=\"_blank\" rel=\"noopener\" class=\"l\" hreflang=\"en\">ended a PF session for the last time</a> in May after the successful completion of wave 9. Since then, I have gone for a well-needed holiday, replacing my mental and emotional burns with physical ones.</p>\n<p>Despite existing and providing a digital learning experience for the past 3 years, Campus has never been seen outside of ProjectFunction. So I thought id take a moment to spotlight Campus - the LMS that I have been working on and maintaining for PF for a couple of years.</p>\n<img src=\"/images/spotlight/campus/campus_login_page.png\" alt=\"Campus Login screen\" loading=\"lazy\" />\n<p>Since the inception of v0.1, Campus has had 3 major updates; bringing about a new look, scalable infrastructure, and user-segmented data storage. These changes allowed Campus to grow with PF, as demand and userbase grew.</p>\n<p>By the final version of Campus, we were able to bring about the following features which helped improve the experience for individual instructors, as well as learners:</p>\n<ul class=\"para\">\n<li><strong>Knowledge tracking</strong>: Allows instructors to review cohort progress and adjust content delivery methods to optimize learning</li>\n<li><strong>Lesson recaps</strong>: Learners were able to review any previous lessons and access the relevant assignments, worksheets, and cheatsheets</li>\n<li><strong>Automatic feedback</strong>: Provided instructors with the ability to configure assignment grading options so that assignment submissions could be automatically and instantly graded with feedback when learners submitted work</li>\n<li><strong>Engagement tracking</strong>: Instructors can view learner engagement to provide additional support to those who may need it. Engagement scores are used to guide instructors so they can maximize the engagement of their courses</li>\n<li><strong>Knowledge base</strong>: Each learner has the ability to create their own (or link to other) knowledge bases - enabling knowledge sharing and knowledge consolidation</li>\n<li>Attendance monitoring: Allows instructors to gauge attendance in relation to content delivery</li>\n<li><strong>Automatic assignments publication</strong>: Instructors could opt-in to automatic assignments so take-away tasks could be scheduled, created, and shared between instructors for their learners.</li>\n<li><strong>Github integration</strong>: Lets learners link to GitHub to manage their assignment submissions, while learning the basics of git</li>\n</ul>\n<p>All in all, this platform has grown with ProjectFunction to meet its growing demands. It’s been an amazing experience to build and maintain, but as with all good things, it is now time to put it to rest.</p>\n<Gallery>\n    { \n        \"/images/spotlight/campus/campus_login_page.png\": \"Campus login page\", \n        \"/images/spotlight/campus/campus_dashboard.png\": \"Dashboard showing articles from dev.to\", \n        \"/images/spotlight/campus/campus_assignments.png\": \"Assigment page showing a list of outstanding tasks\", \n        \"/images/spotlight/campus/campus_assignment_detail.png\": \"Assignment detail page\", \n        \"/images/spotlight/campus/campus_submissions.png\": \"User assignment submission page\", \n        \"/images/spotlight/campus/campus_submission_detail.png\": \"Submission detail page showing automatic testing results\", \n        \"/images/spotlight/campus/fizzbuzz_assignment.png\": \"Sample assignment: Fizzbuzz\", \n        \"/images/spotlight/campus/create_from_template.png\": \"Github 6showing flow from Campus for learner to create repo\", \n        \"/images/spotlight/campus/user_account.png\": \"User account showing engagement rating and attendance\", \n        \"/images/spotlight/campus/manage_permissions.png\": \"In dark mode: Admin page showing permission settings\",\n        \"/images/spotlight/campus/campus_lesson.png\": \"Lesson page allows user to recap the sessions they attend\",\n        \"/images/spotlight/campus/lesson_resources.png\": \"Any resources used throughout the lesson are available on lesson pages\",\n        \"/images/spotlight/campus/campus_quick_jump.png\": \"Learners can use quick jump to access lessons, resources, and more\"\n    }\n</Gallery>\n<p>I’ve personally learned a lot along the way, and there are many lessons to take away from the experiences ive gained by building and scaling this platform. Im excited to see where this knowledge takes me 🚀</p>\n",
             "url": "https://darylcecile.net/notes/project-spotlight-campus",
             "title": "Project Spotlight: Campus LMS",
             "image": "https://darylcecile.net/api/og?slug=project-spotlight-campus",
-            "date_modified": "2022-09-02T23:00:00.000Z",
+            "date_modified": "2022-09-03T00:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -28,7 +52,7 @@
             "url": "https://darylcecile.net/notes/moving-out-notts",
             "title": "Moving out",
             "image": "https://darylcecile.net/api/og?slug=moving-out-notts",
-            "date_modified": "2022-07-02T23:00:00.000Z",
+            "date_modified": "2022-07-03T00:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -40,7 +64,7 @@
             "url": "https://darylcecile.net/notes/burning-bright-without-burning-out",
             "title": "Burning bright without burning out",
             "image": "https://darylcecile.net/api/og?slug=burning-bright-without-burning-out",
-            "date_modified": "2022-06-11T23:00:00.000Z",
+            "date_modified": "2022-06-12T00:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -52,7 +76,7 @@
             "url": "https://darylcecile.net/notes/rss-autodiscovery",
             "title": "Adding RSS Autodiscovery to your site",
             "image": "https://darylcecile.net/api/og?slug=rss-autodiscovery",
-            "date_modified": "2022-06-04T23:00:00.000Z",
+            "date_modified": "2022-06-05T00:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -64,7 +88,7 @@
             "url": "https://darylcecile.net/notes/excom-chrome-extension",
             "title": "Exploring the Chrome Extension context gaps",
             "image": "https://darylcecile.net/api/og?slug=excom-chrome-extension",
-            "date_modified": "2022-06-03T23:00:00.000Z",
+            "date_modified": "2022-06-04T00:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -100,7 +124,7 @@
             "url": "https://darylcecile.net/notes/something-needs-a-rejig",
             "title": "Something needs a Rejig 👀",
             "image": "https://darylcecile.net/api/og?slug=something-needs-a-rejig",
-            "date_modified": "2020-05-26T23:00:00.000Z",
+            "date_modified": "2020-05-27T00:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
