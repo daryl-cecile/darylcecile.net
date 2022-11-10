@@ -38,33 +38,32 @@ function useMeta(url:string){
 		description: null as string,
 	});
 	const fetchResults = useFetch('/api/fetch', {
-	  method: 'GET',
 	  queryParams: {
 	    url: encodeURIComponent(url)
 	  }
 	});
+    console.log('fetchResults', fetchResults?.data);
 	
-	useEffect(()=>{
-	  console.log('fetchResults', fetchResults);
-	  if (fetchResults.state === "ready"){
-	    fetchResults.response.text().then((text:string) => {
-	      const PARSER = new DOMParser();
-	      const DOC = PARSER.parseFromString( text , 'text/html');
+    useEffect(()=>{
+    if (fetchResults.state === "ready"){
+      let text = fetchResults.data;
+      const PARSER = new DOMParser();
+      const DOC = PARSER.parseFromString( text , 'text/html');
 			
-			console.log('doc', DOC);
+      console.log('doc', DOC);
 
-			setMeta({
-				title: DOC.querySelector('title')?.innerText,
-				favicon: [...DOC.querySelectorAll('[rel=icon]')].reverse()[0]?.getAttribute('href'),
-				image: DOC.querySelector('[property="og:image"]')?.getAttribute('content'),
-				description: ( DOC.querySelector('[name=description]') ?? DOC.querySelector('[property="og:description"]') )?.getAttribute('content'),
-			});
-			setIsReady(true);
-	    });
-	  }
-	}, [fetchResults.state]);
+      setMeta({
+        title: DOC.querySelector('title')?.innerText,
+        favicon: [...DOC.querySelectorAll('[rel=icon]')].reverse()[0]?.getAttribute('href'),
+        image: DOC.querySelector('[property="og:image"]')?.getAttribute('content'),
+        description: ( DOC.querySelector('[name=description]') ?? DOC.querySelector('[property="og:description"]') )?.getAttribute('content'),
+      });
+      setIsReady(true);
+	  
+    }
+  }, [fetchResults.state]);
 
-	return {isReady, meta}
+  return {isReady, meta}
 }
 
 function AbbrPreview({title, image, favicon, description, onEnter, onLeave, isVisible, css, hideOriginPointer}:AbbrPreviewProps){
@@ -94,7 +93,7 @@ export function Abbreviation(props:AbbreviationProps){
 	const windowContext = useWindow();
 	const [previewVisible, setPreviewVisible] = useState(false);
 	const isMobile = windowContext.innerWidth <= 560;
-	const {isReady, meta} = useMeta(previewVisible ? props.link : undefined);
+	const {isReady, meta} = useMeta(props.link);
 	const canNavigate = !!props.link && !props.static;
 	const canExpand = !canNavigate || (!!props.link && !isMobile);
 	const isVisible = useMemo(()=>{

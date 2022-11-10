@@ -1,39 +1,28 @@
 "use client";
 
-import {useState, useMemo} from "react";
+import useSwr from "swr";
+import {useEffect} from "react";
 
-type UseFetchConfig = Parameters<typeof fetch>[1] & {
+type UseFetchConfig = {
   queryParams?: Record<string, string>
 }
 
 export default function useFetch(url:string, config:UseFetchConfig){
-  let [progress, setProgress] = useState("pending");
-  let [response, setResponse] = useState(null);
-  let [error, setError] = useState(null);
+  let {queryParams} = config;
+  let urlParams = "?" + (new URLSearchParams(queryParams ?? {})).toString();
   
-  let {queryParams, ...otherConfigs} = config;
-  let urlParams = (new URLSearchParams(queryParams ?? {})).toString();
+  const result = useSwr(url + urlParams);
   
-  useMemo(()=>{
-    setProgress("pending");
-    setResponse(null);
-    setError(null);
-    
-    let request = fetch(url, otherConfigs);
-    request.then(response => {
-      setResponse(response);
-      setProgress("ready");
-    });
-    request.catch(err => {
-      setProgress("failed");
-      setError(err);
-    });
+  console.log('GETTING', url + urlParams);
+  console.log('RESULT', result);
+  
+  useEffect(()=>{
+    console.log('MUTATING');
+    result.mutate();
   }, [urlParams]);
   
-  
   return {
-    response,
-    state: progress,
-    error
+    ...result,
+    state: (!!result.data ? (!result.error ? "ready" : "failed") : "pending")
   }
 }
