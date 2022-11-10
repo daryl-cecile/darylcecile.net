@@ -1,4 +1,4 @@
-bbr"use client";
+"use client";
 
 import React, {ReactNode, useMemo, useRef, useState} from "react";
 import styles from "./../styles/abbr.module.scss";
