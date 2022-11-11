@@ -4,7 +4,7 @@
         <title>Daryl Cecile</title>
         <link>https://darylcecile.net</link>
         <description>My notes</description>
-        <lastBuildDate>Wed, 09 Nov 2022 17:23:51 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 11 Nov 2022 00:29:47 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>mFeed</generator>
         <language>en</language>
@@ -18,7 +18,7 @@
             <title><![CDATA[Building in public]]></title>
             <link>https://darylcecile.net/notes/building-in-public</link>
             <guid>building-in-public</guid>
-            <pubDate>Tue, 08 Nov 2022 00:00:00 GMT</pubDate>
+            <pubDate>Sat, 12 Nov 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>For a couple of weeks (months?) now, I have been playing around with the idea of a small API-first headless <Abbr title="Content management system" link="https://en.wikipedia.org/wiki/Headless_content_management_system">CMS</Abbr>. I started forming building blocks and planning they way it would look and behave.</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
