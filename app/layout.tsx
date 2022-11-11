@@ -19,6 +19,10 @@ export default function AppLayout({children}){
 				<main className="container">{children}</main>
 				<LowerNav />
 				{/*<CookieBanner />*/}
+				<a style={{
+				  visibility:'hidden', 
+				  display:'none'
+				}} rel="me" href="https://techhub.social/@daryl">Mastodon</a>
 				<Footer year={(new Date()).getFullYear()}/>
 			</body>
 		</html>
