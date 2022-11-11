@@ -27,7 +27,7 @@ export default function DocumentHead(props:HeadProps){
             <meta name="og:title" content={props.socialTitleOverride ?? siteTitle} />
 
             <meta name="description" content={props.socialDescriptionOverride ?? description}/>
-            <meta property="og:image" content={props.socialImageOverride ?? "/api/og"}/>
+            <meta property="og:image" content={props.socialImageOverride ?? "https://darylcecile.net/api/og"}/>
             <meta name="twitter:card" content={props.twitterCardOverride ?? "summary_large_image"} />
 			<meta property="twitter:title" content={props.socialTitleOverride ?? siteTitle}/>
 			<meta property="twitter:image" content={props.socialImageOverride ?? "/api/og"}/>
@@ -35,7 +35,7 @@ export default function DocumentHead(props:HeadProps){
             <meta name="twitter:creator" content="@darylcecile" />
             <meta name="theme-color" content="#ffffff"/>
             <meta property="og:locale" content="en_US"/>
-            <meta property="og:logo" content="/public/res/images/core/profile_180.png"/>
+            <meta property="og:logo" content="https://darylcecile.net/public/res/images/core/profile_180.png"/>
             <meta name="HandheldFriendly" content="True" />
             <meta name="MobileOptimized" content="320" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>

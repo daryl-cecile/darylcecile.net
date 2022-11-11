@@ -9,6 +9,13 @@ export default async function(opt){
 	let query = opt.nextUrl.searchParams;
 
 	if (!query.has("slug")) {
+
+		if (query.has("page")) {
+			return new ImageResponse(
+				<SimpleImage title={`/${query.get('page').toLowerCase()}`} subHeading={"@darylcecile"} />
+			)
+		}
+
 		return new ImageResponse(
 			<SimpleImage title={"Hey! I'm Daryl 👋🏾"} subHeading={"@darylcecile"} />
 		)

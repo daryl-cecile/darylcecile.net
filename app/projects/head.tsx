@@ -1,7 +1,10 @@
 import DocumentHead from "../../components/DocumentHead";
 
-export default function NotesListHead(){
+export default function ProjectsListHead(){
     return (
-        <DocumentHead title="Notes"/>
+        <DocumentHead 
+            title="Projects" 
+            socialImageOverride={`https://darylcecile.net/api/og?page=projects`} 
+        />
     )
 }
