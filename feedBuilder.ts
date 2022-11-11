@@ -23,8 +23,6 @@ const getNotes = (ignoreContent?:boolean) => {
 		// Use gray-matter to parse the post metadata section
 		const matterResult:Partial<Note> = markdownParser.parse(fileContents);
 
-		if (matterResult.hidden) continue;
-
 		// Combine the data with the id
 		allPostsData.push(<Note>{
 			slug,
@@ -69,22 +67,24 @@ const notes:{items:Array<Partial<Note>>} = {items:[]};
 
 getNotes(false).forEach(note => {
 
-	feed.addItem({
-		title: note.title,
-		id: note.slug,
-		link: `https://darylcecile.net/notes/${note.slug}`,
-		description: '',
-		content: note.renderedContent,
-		image: `https://darylcecile.net/api/og?slug=${note.slug}`,
-		author: [
-			{
-				name: 'Daryl Cecile',
-				email: 'darylcecile@gmail.com',
-				link: 'https://darylcecile.net'
-			}
-		],
-		date: parseISO(note.date)
-	});
+	if (!note.hidden){
+		feed.addItem({
+			title: note.title,
+			id: note.slug,
+			link: `https://darylcecile.net/notes/${note.slug}`,
+			description: '',
+			content: note.renderedContent,
+			image: `https://darylcecile.net/api/og?slug=${note.slug}`,
+			author: [
+				{
+					name: 'Daryl Cecile',
+					email: 'darylcecile@gmail.com',
+					link: 'https://darylcecile.net'
+				}
+			],
+			date: parseISO(note.date)
+		});
+	}
 
 	notes.items.push({
 		title: note.title,
@@ -94,6 +94,7 @@ getNotes(false).forEach(note => {
 		readTime: note.readTime,
 		image: note.image,
 		lastUpdated: note.lastUpdated,
+		hidden: !!note.hidden,
 		author: [
 			{
 				name: 'Daryl Cecile',

@@ -2,9 +2,13 @@ import Anchor from "../components/Anchor";
 import NotePreview from "../components/NotePreview";
 import { getAllNotesDataSorted } from "../lib/notes";
 import utilStyles from '../styles/utils.module.scss';
+import {parseISO} from "date-fns";
 
 export default function Page(){
-    let publicNotes = getAllNotesDataSorted(true);
+    let publicNotes = getAllNotesDataSorted(true).filter(note => {
+        if (note.hidden) return false;
+        return parseISO(note.date).getTime() <= Date.now();
+    });
     return (
         <>
             <div className="restrict">

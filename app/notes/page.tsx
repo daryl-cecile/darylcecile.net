@@ -7,8 +7,7 @@ import utilStyles from "../../styles/utils.module.scss";
 export const revalidate = 30;
 
 export default async function NotesListPage(){
-    const now = new Date();
-    const publicNotes = getAllNotesDataSorted().filter(note => !note.hidden && parseISO(note.date).getTime() <= now.getTime());
+    const publicNotes = getAllNotesDataSorted().filter(note => !note.hidden && parseISO(note.date).getTime() <= Date.now());
 
     return (
         <div className="restrict">
