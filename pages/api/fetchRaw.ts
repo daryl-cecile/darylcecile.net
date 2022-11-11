@@ -8,14 +8,18 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 	
 	if (!incomingUrl) return res.send('');
 
-   let url = decodeURIComponent(incomingUrl);
+    let url = decodeURIComponent(incomingUrl);
 	
 	res.setHeader('Cache-Control', 's-maxage=86400');
 
 	let response = await fetch(url, { method: 'GET' });
 
-	let body = response.body as any;
+	let body = response.body as unknown as NodeJS.ReadableStream;
 
-	await body.pipe(res as any);
+	if ("pipe" in body) {
+		await body.pipe(res);
+		return;
+	}
 
+	res.end();
 }

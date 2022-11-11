@@ -40,9 +40,10 @@ function useMeta(url: string) {
 	});
 	useMemo(async () => {
 		if (isReady) return;
+		if (url === undefined) return;
 		console.log('fetching a', url);
 		let params = new URLSearchParams({ url: encodeURIComponent(url) });
-		let host = isClient ? '' : 'https://darylcecile.net';
+		let host = isClient ? location.origin : 'https://darylcecile.net';
 		let req = await fetch(host + '/api/fetch?' + params).catch(error => {
 			console.error(error);
 			return { ok: false } as { ok: false };
@@ -127,8 +128,6 @@ export function Abbreviation(props: AbbreviationProps) {
 	}
 
 	const isSafari = mounted && navigator.vendor == "Apple Computer, Inc.";
-
-	console.log(meta);
 
 	return (
 		<span className={styles.abbr} data-can-expand={canExpand} data-mob={isMobile}>
