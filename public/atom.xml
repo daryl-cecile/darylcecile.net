@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://darylcecile.net</id>
     <title>Daryl Cecile</title>
-    <updated>2022-11-09T17:23:51.780Z</updated>
+    <updated>2022-11-11T00:29:47.988Z</updated>
     <generator>mFeed</generator>
     <author>
         <name>Daryl Cecile</name>
@@ -19,7 +19,7 @@
         <title type="html"><![CDATA[Building in public]]></title>
         <id>building-in-public</id>
         <link href="https://darylcecile.net/notes/building-in-public"/>
-        <updated>2022-11-08T00:00:00.000Z</updated>
+        <updated>2022-11-12T00:00:00.000Z</updated>
         <content type="html"><![CDATA[<p>For a couple of weeks (months?) now, I have been playing around with the idea of a small API-first headless <Abbr title="Content management system" link="https://en.wikipedia.org/wiki/Headless_content_management_system">CMS</Abbr>. I started forming building blocks and planning they way it would look and behave.</p>
 ]]></content>
         <author>

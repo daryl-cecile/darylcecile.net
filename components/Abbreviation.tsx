@@ -1,17 +1,18 @@
 "use client";
 
-import React, {ReactNode, useMemo, useRef, useState} from "react";
+import React, { ReactNode, useMemo, useRef, useState } from "react";
 import styles from "./../styles/abbr.module.scss";
 import useMounted from "../lib/useMounted";
 import Anchor from "./Anchor";
-import {faCircleInfo, faSpinner} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {Portal} from "next/dist/client/portal";
+import { faCircleInfo, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Portal } from "next/dist/client/portal";
 import useWindow from "../lib/useWindow";
+import { parse } from 'node-html-parser';
 
 type AbbreviationProps = {
-	title?:string,
-	children:ReactNode,
+	title?: string,
+	children: ReactNode,
 	link?: string,
 	static?: boolean
 }
@@ -28,42 +29,45 @@ type AbbrPreviewProps = {
 	hideOriginPointer?: boolean
 }
 
-function useMeta(url:string){
-  const [isReady, setIsReady] = useState(false);
-  const [meta, setMeta] = useState({
-    title: undefined as string,
-    favicon: null as string,
-    image: null as string,
-    description: null as string,
-  });
-  useMemo(async ()=>{
-    console.log('fetching a', url);
-    setIsReady(false);
-    let params = new URLSearchParams({url: encodeURIComponent(url)});
-    let req = await fetch('https://darylcecile.net/api/fetch?' + params);
-    if (!req.ok) return;
-    let text = await req.text();
-    const PARSER = new DOMParser();
-    const DOC = PARSER.parseFromString( text , 'text/html');
-			
-    console.log('doc', DOC);
+function useMeta(url: string) {
+	const isClient = !(typeof window === "undefined");
+	const [isReady, setIsReady] = useState(false);
+	const [meta, setMeta] = useState({
+		title: undefined as string,
+		favicon: null as string,
+		image: null as string,
+		description: null as string,
+	});
+	useMemo(async () => {
+		if (isReady) return;
+		if (url === undefined) return;
+		console.log('fetching a', url);
+		let params = new URLSearchParams({ url: encodeURIComponent(url) });
+		let host = isClient ? location.origin : 'https://darylcecile.net';
+		let req = await fetch(host + '/api/fetch?' + params).catch(error => {
+			console.error(error);
+			return { ok: false } as { ok: false };
+		});
+		if (req.ok === false) return;
+		let text = await req.text();
+		const DOC = parse(text);
 
-    setMeta({
-      title: DOC.querySelector('title')?.innerText,
-      favicon: [...DOC.querySelectorAll('[rel=icon]')].reverse()[0]?.getAttribute('href'),
-      image: DOC.querySelector('[property="og:image"]')?.getAttribute('content'),
-      description: ( DOC.querySelector('[name=description]') ?? DOC.querySelector('[property="og:description"]') )?.getAttribute('content'),
-    });
-    setIsReady(true);
-  }, [url]);
+		setMeta({
+			title: DOC.querySelector('title')?.innerText,
+			favicon: [...DOC.querySelectorAll('[rel=icon]')].reverse()[0]?.getAttribute('href'),
+			image: DOC.querySelector('[property="og:image"]')?.getAttribute('content'),
+			description: (DOC.querySelector('[name=description]') ?? DOC.querySelector('[property="og:description"]'))?.getAttribute('content'),
+		});
+		setIsReady(true);
+	}, [url]);
 
-  return {isReady, meta}
+	return { isReady, meta }
 }
 
-function AbbrPreview({title, image, favicon, description, onEnter, onLeave, isVisible, css, hideOriginPointer}:AbbrPreviewProps){
+function AbbrPreview({ title, image, favicon, description, onEnter, onLeave, isVisible, css, hideOriginPointer }: AbbrPreviewProps) {
 	if (!isVisible) return null;
 
-	if (!title && !description && !image){
+	if (!title && !description) {
 		return (
 			<div className={styles.preview} onMouseOver={onEnter} onMouseLeave={onLeave} style={css} data-hide-pointer={hideOriginPointer}>
 				<div className={styles.previewSpinner}>
@@ -75,28 +79,28 @@ function AbbrPreview({title, image, favicon, description, onEnter, onLeave, isVi
 
 	return (
 		<div className={styles.preview} onMouseOver={onEnter} onMouseLeave={onLeave} style={css} data-hide-pointer={hideOriginPointer}>
-			{!!image && <img src={`/api/fetchRaw?url=${encodeURIComponent(image)}`} alt=""/>}
+			{!!image && <img src={`/api/fetchRaw?url=${encodeURIComponent(image)}`} alt="" />}
 			{!!title && <h3>{title}</h3>}
 			{!!description && <p>{description}</p>}
 		</div>
 	)
 }
 
-export function Abbreviation(props:AbbreviationProps){
-    const mounted = useMounted();
+export function Abbreviation(props: AbbreviationProps) {
+	const mounted = useMounted();
 	const windowContext = useWindow();
 	const [previewVisible, setPreviewVisible] = useState(false);
 	const isMobile = windowContext.innerWidth <= 560;
-	const {isReady, meta} = useMeta(props.link);
+	const { isReady, meta } = useMeta(props.link);
 	const canNavigate = !!props.link && !props.static;
 	const canExpand = !canNavigate || (!!props.link && !isMobile);
-	const isVisible = useMemo(()=>{
+	const isVisible = useMemo(() => {
 		if (isMobile) return false;
 		return isReady && previewVisible;
 	}, [isMobile, isReady, previewVisible]);
 	const containerRef = useRef<HTMLDivElement>(null);
 
-	const {top, left, pointerContained} = useMemo(()=>{
+	const { top, left, pointerContained } = useMemo(() => {
 		if (!containerRef.current) return {
 			top: 0,
 			left: 0,
@@ -118,19 +122,17 @@ export function Abbreviation(props:AbbreviationProps){
 			pointerContained: (newLeft > 10) && (containerRight < windowContext.innerWidth - 10)
 		}
 	}, [containerRef.current, windowContext.innerWidth, windowContext.scrollY, windowContext.scrollX]);
-	
-	console.log('meta', meta);
 
-	if (!mounted){
+	if (!mounted) {
 		return <abbr title={props.title ?? meta.title ?? props.children as string}>{props.children}</abbr>
 	}
-	
-	const isSafari = mounted && navigator.vendor ==  "Apple Computer, Inc.";
+
+	const isSafari = mounted && navigator.vendor == "Apple Computer, Inc.";
 
 	return (
 		<span className={styles.abbr} data-can-expand={canExpand} data-mob={isMobile}>
 			<abbr
-				data-mobile={!canNavigate && isMobile ? 'true' : (isSafari ? 'true' : 'false')} 
+				data-mobile={!canNavigate && isMobile ? 'true' : (isSafari ? 'true' : 'false')}
 				data-nav={!props.static}
 				title={!(isVisible || (previewVisible && !props.link)) ? (props.title ?? meta.title ?? props.children as string) : undefined}
 				onMouseOver={canExpand ? () => { setPreviewVisible(true) } : undefined}
@@ -141,7 +143,7 @@ export function Abbreviation(props:AbbreviationProps){
 			>
 				{canNavigate ? <Anchor href={props.link} ariaDesc={props.title ?? meta.title ?? ''}>{props.children}</Anchor> : props.children}
 				{!canNavigate && isMobile && (
-					<sup><FontAwesomeIcon icon={faCircleInfo}/></sup>
+					<sup><FontAwesomeIcon icon={faCircleInfo} /></sup>
 				)}
 			</abbr>
 			<Portal type={"div"}>
@@ -157,5 +159,5 @@ export function Abbreviation(props:AbbreviationProps){
 			</Portal>
 		</span>
 	)
-	
+
 }
