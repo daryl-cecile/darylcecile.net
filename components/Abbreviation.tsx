@@ -75,6 +75,8 @@ export default function Abbreviation(props: AbbreviationProps) {
 	}
 
 	const isSafari = mounted && navigator.vendor == "Apple Computer, Inc.";
+	const isMobile = windowContext.innerWidth <= 620;
+	const showAsLink = isMobile && !props.static && !!props.link;
 
 	return (
 		<span className={styles.abbr}>
@@ -102,7 +104,8 @@ export default function Abbreviation(props: AbbreviationProps) {
 					}
 				}}
 			>
-				{!!canNavigate && props.children}
+				{!showAsLink && props.children}
+				{showAsLink && <Anchor href={props.link}>{props.children}</Anchor>}
 				{!canNavigate && (
 					<sup><FontAwesomeIcon icon={faCircleInfo} /></sup>
 				)}
@@ -120,7 +123,7 @@ export default function Abbreviation(props: AbbreviationProps) {
 						nextElRef.current?.focus();
 						hidePreview();
 					}}
-					link={props.link}
+					link={props.static ? undefined : props.link}
 					{...meta}
 					title={props.title ?? meta.title}
 				/>
