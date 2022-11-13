@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs, { existsSync } from 'fs'
 import path from 'path'
 import { Mark } from './Mark';
 import { Project } from "../types";
@@ -62,6 +62,9 @@ export const getAllProjectIds = cache(()=>{
 
 export const getProjectData = cache((id:string) => {
 	const fullPath = path.join(projectsDirectory, `${id}.md`)
+
+	if (!existsSync(fullPath)) return null;
+
 	const fileContents = fs.readFileSync(fullPath, 'utf8')
 	const markdownParser = new Mark();
 

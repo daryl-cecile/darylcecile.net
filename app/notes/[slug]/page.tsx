@@ -12,9 +12,12 @@ import EmbeddedScript from "../../../components/EmbeddedScript";
 import Gallery from "../../../components/Gallery";
 import InfoBox from "../../../components/InfoBox";
 import InlineLinkHeader from "../../../components/InlineLinkHeader";
-import { getNoteData } from "../../../lib/notes";
+import { getAllNotesDataSorted, getNoteData } from "../../../lib/notes";
 import LocalDate from "../../../components/LocalDate";
 import galleryStyles from "../../../styles/gallery.module.scss";
+import { parseISO } from "date-fns";
+import { notFound } from "next/navigation";
+import ImageViewer from "../../../components/ImageViewer";
 
 function markdownToHtmlWithoutSanitization(markdown:string){
 	return remark()
@@ -49,10 +52,15 @@ function markdownToReact(markdown:string){
 			if (!!props.alt){
 				return (
 					<figure>
-						<img
+						{/* <img
 							src={props.src}
 							alt={props.alt}
 							decoding={"async"}
+							loading={props.loading ?? "lazy"}
+						/> */}
+						<ImageViewer 
+							src={props.src} 
+							alt={props.alt}
 							loading={props.loading ?? "lazy"}
 						/>
 						<figcaption>{props.alt}</figcaption>
@@ -122,6 +130,7 @@ function markdownToReact(markdown:string){
 
 export default async function SingleNotePage({params}){
     const postData = await getNoteData(params.slug);
+	if (!postData) return notFound();
 	const content = markdownToReact(postData.content);
 
     return (
@@ -137,3 +146,12 @@ export default async function SingleNotePage({params}){
         </article>
     )
 }
+
+export async function generateStaticParams() {
+	const posts = getAllNotesDataSorted(true).filter(note => !note.hidden && parseISO(note.date).getTime() <= Date.now());
+  
+	return posts.map((post) => ({
+	  slug: post.slug,
+	}));
+  }
+  

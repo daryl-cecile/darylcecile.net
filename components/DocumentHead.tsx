@@ -15,6 +15,7 @@ export default function DocumentHead(props:HeadProps){
     let siteTitle = props.siteTitle ?? "Daryl Cecile";
     let docTitle = props.title ?? siteTitle;
     let description = "My thoughts and experiences in the world of software and technology";
+
     return (
         <>
             <link rel="apple-touch-icon" sizes="180x180" href="/images/core/profile_180.png"/>
