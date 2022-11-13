@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://darylcecile.net</id>
     <title>Daryl Cecile</title>
-    <updated>2022-11-11T00:29:47.988Z</updated>
+    <updated>2022-11-13T00:51:18.726Z</updated>
     <generator>mFeed</generator>
     <author>
         <name>Daryl Cecile</name>
@@ -19,8 +19,16 @@
         <title type="html"><![CDATA[Building in public]]></title>
         <id>building-in-public</id>
         <link href="https://darylcecile.net/notes/building-in-public"/>
-        <updated>2022-11-12T00:00:00.000Z</updated>
-        <content type="html"><![CDATA[<p>For a couple of weeks (months?) now, I have been playing around with the idea of a small API-first headless <Abbr title="Content management system" link="https://en.wikipedia.org/wiki/Headless_content_management_system">CMS</Abbr>. I started forming building blocks and planning they way it would look and behave.</p>
+        <updated>2022-11-11T00:00:00.000Z</updated>
+        <content type="html"><![CDATA[<p>For a couple of weeks (months?) now, I have been playing around with the idea of a small API-first headless <Abbr title="Content Management System" link="https://kinsta.com/knowledgebase/content-management-system/">CMS</Abbr>. I started forming building blocks and planning they way it would look and behave.</p>
+<p>Initially it started off with curiousity around the logic behind what a headless CMS is; I was already familiar with coupled CMS’ thanks to my previous work on <Abbr title="SlantedPress" link="https://slantedpress.com">SlantedPress</Abbr> — so this time, I was keen on working out what a headless approach would be (if I were to build one from the ground up). So I started <a href="https://jumbled-dichondra-7a3.notion.site/NextCMS-ce699824a5cb439f822853e0c82dad46" target="_blank" rel="noopener" class="l" hreflang="en">architecting, designing, and moulding an API</a>.</p>
+<p><img src="/images/figma-inkly.png" alt="Figma designs of Inkly" loading="lazy" /></p>
+<p>When I first started thinking about this project, I knew I wanted the process to be product-driven, and from that I had planned to make the entire product React-hook-driven. When designing the initial design around some basic use-cases, I figured I wanted to try and make a powerful API and then have a bunch of React-hooks that could consume the endpoints and be super-easy-to-use™</p>
+<p>Recently however, Vercel and the Next.js team released <Abbr link="https://nextjs.org/blog/next-13">Next.js 13</Abbr>; along with it came the introduction to the <code>app</code> directory. Find out more about it on their blog. As part of this release, they also introduced Server Components to the Next.js ecosystem - which cannot make use of hooks.</p>
+<p>Im excited about this release, but at the same time feeling a little knocked-back as all of the ideas I had would now need to be reformed if I was to make use of the latest Next.js 13 had to offer.</p>
+<p>My hopes for this project is to get a better understanding of patterns and the logic behind headless CMS’, push myself to become better at marketing my skills (<em>we both know I suck at this!</em>), and maybe make some connections along the way 😉</p>
+<p>Im looking forward to seeing what I can come up with and intend to fully work through this in public - so watch out for updates both on here, and the bird app!</p>
+<p>Until then… ✌🏽</p>
 ]]></content>
         <author>
             <name>Daryl Cecile</name>
@@ -33,7 +41,7 @@
         <id>november-life-updates</id>
         <link href="https://darylcecile.net/notes/november-life-updates"/>
         <updated>2022-11-05T00:00:00.000Z</updated>
-        <content type="html"><![CDATA[<p>So im pulling this from <a href="https://carol.gg/" target="_blank" rel="noopener" class="l" hreflang="en">Carol</a>’s book an attempt to provide you with a <a href="https://twitter.com/carolsaysthings/status/1587174153190268929?s=61&amp;t=jXDDwfGAQLaMRy52o0w4Qg" target="_blank" rel="noopener" class="l" hreflang="en">lifenote</a>-esque life update. Since my <Abbr link="/notes/moving-out-notts" title="Moving out">last post</Abbr>, a lot has happened;</p>
+        <content type="html"><![CDATA[<p>So im pulling this from <a href="https://carol.gg/" target="_blank" rel="noopener" class="l" hreflang="en">Carol</a>’s book an attempt to provide you with a <a href="https://twitter.com/carolsaysthings/status/1587174153190268929?s=61&amp;t=jXDDwfGAQLaMRy52o0w4Qg" target="_blank" rel="noopener" class="l" hreflang="en">lifenote</a>-esque life update. Since my <Abbr link="https://darylcecile.net/notes/moving-out-notts" title="Moving out">last post</Abbr>, a lot has happened;</p>
 <ul class="para">
 <li>Ive done a couple of house viewings throughout London</li>
 <li>Panther has officially moved down to London</li>
@@ -67,7 +75,7 @@
         <title type="html"><![CDATA[Project Spotlight: Campus LMS]]></title>
         <id>project-spotlight-campus</id>
         <link href="https://darylcecile.net/notes/project-spotlight-campus"/>
-        <updated>2022-09-03T00:00:00.000Z</updated>
+        <updated>2022-09-02T23:00:00.000Z</updated>
         <content type="html"><![CDATA[<InfoBox type="info">
     This LMS was created for ProjectFunction, which closed its doors in May 2022. See an archive of it on the <i><a href="/projects#ProjectFunction">project page</a></i>.
 </InfoBox>
@@ -116,7 +124,7 @@
         <title type="html"><![CDATA[Moving out]]></title>
         <id>moving-out-notts</id>
         <link href="https://darylcecile.net/notes/moving-out-notts"/>
-        <updated>2022-07-03T00:00:00.000Z</updated>
+        <updated>2022-07-02T23:00:00.000Z</updated>
         <content type="html"><![CDATA[<p>This post has been a long time in the making. I’ve been scratching my head, wondering how to announce this<br />
 major milestone in my life. When writing notes for my website, I often like to form a story to help me get my thought process across;<br />
 but the thing is, this doesn’t need a story because it is already a story on its own. And after many unsuccessful attempts at starting this<br />
@@ -152,7 +160,7 @@ This isn’t the last Notts will see of me; I will return to visit regularly. �
         <title type="html"><![CDATA[Burning bright without burning out]]></title>
         <id>burning-bright-without-burning-out</id>
         <link href="https://darylcecile.net/notes/burning-bright-without-burning-out"/>
-        <updated>2022-06-12T00:00:00.000Z</updated>
+        <updated>2022-06-11T23:00:00.000Z</updated>
         <content type="html"><![CDATA[<InfoBox type="success">
 <strong>Opinion:</strong> This post is based mostly on my opinion, and experiences that I have gained and/or that have been shared with me. I
 am not a mental health specialist. 
@@ -235,7 +243,7 @@ than re-growing an entire forest. 🌱</p>
         <title type="html"><![CDATA[Adding RSS Autodiscovery to your site]]></title>
         <id>rss-autodiscovery</id>
         <link href="https://darylcecile.net/notes/rss-autodiscovery"/>
-        <updated>2022-06-05T00:00:00.000Z</updated>
+        <updated>2022-06-04T23:00:00.000Z</updated>
         <content type="html"><![CDATA[<p>Recently, I’ve discovered a new-found love for <abbr title="Really Simple Syndication" link="https://rss.com/blog/how-do-rss-feeds-work/">RSS</abbr>. It gives<br />
 me the best of both worlds; fast access to content, and a way to subscribe to content from sites I frequently visit - without<br />
 having to share my email address. Coincidentally, over the Jubilee weekend, I’ve been updating my website; adding dark mode,<br />
@@ -268,7 +276,7 @@ detects RSS, ATOM, and JSON feeds on pages that I visit, and allows me to subscr
         <title type="html"><![CDATA[Exploring the Chrome Extension context gaps]]></title>
         <id>excom-chrome-extension</id>
         <link href="https://darylcecile.net/notes/excom-chrome-extension"/>
-        <updated>2022-06-04T00:00:00.000Z</updated>
+        <updated>2022-06-03T23:00:00.000Z</updated>
         <content type="html"><![CDATA[<p>A couple of weeks ago, a conversation at work with my manager prompted me to revisit an old chrome extension I created a while<br />
 back to help me manage my tab usage better.</p>
 <p>The extension was born out of frustration for tab management; I was simply out of control.<br />
@@ -581,7 +589,7 @@ new hooks and explain their uses.</p>
         <title type="html"><![CDATA[Something needs a Rejig 👀]]></title>
         <id>something-needs-a-rejig</id>
         <link href="https://darylcecile.net/notes/something-needs-a-rejig"/>
-        <updated>2020-05-27T00:00:00.000Z</updated>
+        <updated>2020-05-26T23:00:00.000Z</updated>
         <content type="html"><![CDATA[<InfoBox type="warn">
 <strong>Edit:</strong> This post was scheduled to be published on the 8th of April, but due to the COVID pandemic and the uni-related consequences it brought about, I had to delay the post. However, I can now confirm that I am now working on another project idea that I have a genuine interest in and enjoy working on.
 </InfoBox>

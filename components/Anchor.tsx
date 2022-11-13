@@ -7,6 +7,7 @@ import Link from "next/link";
 type AnchorProp = {
 	children: ReactNode,
 	href?: string,
+	tabIndex?: number,
 	onClick?: (ev:MouseEvent<HTMLButtonElement>)=>void,
 	className?: string,
 	isExternal?: boolean,
@@ -38,6 +39,7 @@ export default function Anchor(props:AnchorProp){
 				onMouseLeave={props.onFocusLoss}
 				onBlur={props.onFocusLoss}
 				aria-label={props.ariaDesc}
+				tabIndex={props.tabIndex}
 			>{props.children}</button>
 		)
 	}
@@ -45,6 +47,7 @@ export default function Anchor(props:AnchorProp){
 	return (
 		<Link 
 			href={props.href} 
+			tabIndex={props.tabIndex}
 			passHref={true}
 			onMouseOver={props.onFocusGain}
 			onMouseLeave={props.onFocusLoss}

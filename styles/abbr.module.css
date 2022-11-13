@@ -1,0 +1,104 @@
+.abbr {
+  display: inline;
+  position: relative;
+}
+.abbr [data-safari=true] {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+.abbr sup {
+  margin-left: 0.2rem;
+  font-size: 12px;
+}
+
+.preview {
+  transform: translateY(0.45rem);
+  position: absolute;
+  width: 320px;
+  max-width: calc(100% - 20px);
+  border-radius: 4px;
+  padding: 1px;
+  border: 1px solid var(--canvas-default-border);
+  background: var(--canvas-muted);
+  box-shadow: 0 3px 25px -5px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+.preview:not([data-hide-pointer=true])::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: calc(50% - 6px);
+  top: -6px;
+  background: var(--canvas-muted);
+  transform: rotate(45deg);
+  border-left: 1px solid var(--canvas-default-border);
+  border-top: 1px solid var(--canvas-default-border);
+  z-index: 1;
+}
+.preview img {
+  margin: 0;
+  width: calc(100% - 2px);
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 3;
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  right: 1px;
+}
+.preview img + h3 {
+  margin-top: 180px;
+}
+.preview h3 {
+  font-size: 20px;
+  color: var(--heading-fg);
+  margin: 0;
+  padding: 0.72rem 1rem 0;
+  text-rendering: optimizeLegibility;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  box-sizing: inherit;
+}
+.preview h3:last-child {
+  padding: 0.3rem;
+  text-align: center;
+}
+.preview p {
+  padding: 0.2rem 1rem 1rem;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  color: var(--article-content-para-fg);
+  font-family: "Open Sans", sans-serif;
+  box-sizing: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+.preview .previewSpinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  padding: 2rem;
+}
+.preview a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--canvas-default-border);
+  color: var(--article-content-para-fg);
+  width: 100%;
+  font-size: 0.75rem;
+  height: 32pt;
+  margin-top: 1rem;
+}
+.preview a:hover {
+  background: var(--nav-link-hover-fg);
+}
+.preview p + a {
+  margin-top: 0;
+}

@@ -16,6 +16,7 @@
     "@next/font": "^13.0.0",
     "@types/markdown-it": "^12.2.3",
     "@vercel/og": "^0.0.20",
+    "client-only": "^0.0.1",
     "date-fns": "^2.28.0",
     "eslint-config-next": "^13.0.2",
     "feed": "^4.2.2",

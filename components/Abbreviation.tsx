@@ -1,14 +1,16 @@
 "use client";
 
-import React, { ReactNode, useMemo, useRef, useState } from "react";
+import React, { ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styles from "./../styles/abbr.module.scss";
 import useMounted from "../lib/useMounted";
 import Anchor from "./Anchor";
-import { faCircleInfo, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Portal } from "next/dist/client/portal";
 import useWindow from "../lib/useWindow";
-import { parse } from 'node-html-parser';
+import useSWR from "swr";
+import AbbrPreview from "./AbbrPreview";
+import useFetch from "../lib/useFetch";
 
 type AbbreviationProps = {
 	title?: string,
@@ -17,88 +19,33 @@ type AbbreviationProps = {
 	static?: boolean
 }
 
-type AbbrPreviewProps = {
-	title: string,
-	image?: string,
-	favicon?: string,
-	description: string,
-	onEnter: React.MouseEventHandler<HTMLDivElement>,
-	onLeave: React.MouseEventHandler<HTMLDivElement>,
-	isVisible: boolean,
-	css?: React.CSSProperties,
-	hideOriginPointer?: boolean
-}
-
-function useMeta(url: string) {
-	const isClient = !(typeof window === "undefined");
-	const [isReady, setIsReady] = useState(false);
-	const [meta, setMeta] = useState({
-		title: undefined as string,
-		favicon: null as string,
-		image: null as string,
-		description: null as string,
-	});
-	useMemo(async () => {
-		if (isReady) return;
-		if (url === undefined) return;
-		console.log('fetching a', url);
-		let params = new URLSearchParams({ url: encodeURIComponent(url) });
-		let host = isClient ? location.origin : 'https://darylcecile.net';
-		let req = await fetch(host + '/api/fetch?' + params).catch(error => {
-			console.error(error);
-			return { ok: false } as { ok: false };
-		});
-		if (req.ok === false) return;
-		let text = await req.text();
-		const DOC = parse(text);
-
-		setMeta({
-			title: DOC.querySelector('title')?.innerText,
-			favicon: [...DOC.querySelectorAll('[rel=icon]')].reverse()[0]?.getAttribute('href'),
-			image: DOC.querySelector('[property="og:image"]')?.getAttribute('content'),
-			description: (DOC.querySelector('[name=description]') ?? DOC.querySelector('[property="og:description"]'))?.getAttribute('content'),
-		});
-		setIsReady(true);
-	}, [url]);
-
-	return { isReady, meta }
-}
-
-function AbbrPreview({ title, image, favicon, description, onEnter, onLeave, isVisible, css, hideOriginPointer }: AbbrPreviewProps) {
-	if (!isVisible) return null;
-
-	if (!title && !description) {
-		return (
-			<div className={styles.preview} onMouseOver={onEnter} onMouseLeave={onLeave} style={css} data-hide-pointer={hideOriginPointer}>
-				<div className={styles.previewSpinner}>
-					<FontAwesomeIcon icon={faSpinner} spin />
-				</div>
-			</div>
-		)
-	}
-
-	return (
-		<div className={styles.preview} onMouseOver={onEnter} onMouseLeave={onLeave} style={css} data-hide-pointer={hideOriginPointer}>
-			{!!image && <img src={`/api/fetchRaw?url=${encodeURIComponent(image)}`} alt="" />}
-			{!!title && <h3>{title}</h3>}
-			{!!description && <p>{description}</p>}
-		</div>
-	)
-}
-
-export function Abbreviation(props: AbbreviationProps) {
+export default function Abbreviation(props: AbbreviationProps) {
 	const mounted = useMounted();
 	const windowContext = useWindow();
 	const [previewVisible, setPreviewVisible] = useState(false);
-	const isMobile = windowContext.innerWidth <= 560;
-	const { isReady, meta } = useMeta(props.link);
+	const metaEndpoint = useMemo(()=>{
+		let params = new URLSearchParams({ url: encodeURIComponent(props.link) });
+		let url = `/api/fetch-meta?${params}`;
+		return url;
+	}, [props.link]);
+	const { value, fetchState, reason, revalidate } = useFetch(mounted ? metaEndpoint : null, {asJson: true, revalidateOnFocus: true});
+	const meta = {...value};
 	const canNavigate = !!props.link && !props.static;
-	const canExpand = !canNavigate || (!!props.link && !isMobile);
-	const isVisible = useMemo(() => {
-		if (isMobile) return false;
-		return isReady && previewVisible;
-	}, [isMobile, isReady, previewVisible]);
 	const containerRef = useRef<HTMLDivElement>(null);
+	const previewElRef = useRef<HTMLDivElement>(null);
+	const nextElRef = useRef<HTMLDivElement>(null);
+	const timeoutRef = useRef<number>();
+	const showPreview  = useCallback(()=>{
+		if (!mounted) return;
+		clearTimeout(timeoutRef.current);
+		setPreviewVisible(true);
+	}, [mounted]);
+	const hidePreview = useCallback(()=>{
+		if (!mounted) return;
+		timeoutRef.current = setTimeout(() => {
+			setPreviewVisible(false);
+		}, 150) as unknown as number;
+	}, [mounted])
 
 	const { top, left, pointerContained } = useMemo(() => {
 		if (!containerRef.current) return {
@@ -130,29 +77,50 @@ export function Abbreviation(props: AbbreviationProps) {
 	const isSafari = mounted && navigator.vendor == "Apple Computer, Inc.";
 
 	return (
-		<span className={styles.abbr} data-can-expand={canExpand} data-mob={isMobile}>
+		<span className={styles.abbr}>
 			<abbr
-				data-mobile={!canNavigate && isMobile ? 'true' : (isSafari ? 'true' : 'false')}
+				data-safari={isSafari ? 'true' : 'false'}
 				data-nav={!props.static}
-				title={!(isVisible || (previewVisible && !props.link)) ? (props.title ?? meta.title ?? props.children as string) : undefined}
-				onMouseOver={canExpand ? () => { setPreviewVisible(true) } : undefined}
-				onFocusCapture={canExpand ? () => { setPreviewVisible(true) } : undefined}
-				onMouseLeave={() => setPreviewVisible(false)}
-				onBlurCapture={() => setPreviewVisible(false)}
+				title={!(previewVisible && !props.link) ? (props.title ?? meta.title ?? props.children as string) : undefined}
+				onMouseOver={() => { showPreview() }}
+				onFocusCapture={() => { showPreview() }}
+				onMouseLeave={() => { hidePreview() }}
+				onBlurCapture={() => hidePreview() }
 				ref={containerRef}
+				tabIndex={0}
+				onKeyDown={ev => {
+					if (ev.key === "Tab" && !ev.shiftKey){
+						setTimeout(()=>{
+							nextElRef.current = document.activeElement as any;
+							
+							let nextLink = previewElRef.current?.querySelector('a');
+							if (!nextLink) return;
+							ev.preventDefault();
+							ev.stopPropagation();
+							nextLink?.focus();
+						}, 0);
+					}
+				}}
 			>
-				{canNavigate ? <Anchor href={props.link} ariaDesc={props.title ?? meta.title ?? ''}>{props.children}</Anchor> : props.children}
-				{!canNavigate && isMobile && (
+				{!!canNavigate && props.children}
+				{!canNavigate && (
 					<sup><FontAwesomeIcon icon={faCircleInfo} /></sup>
 				)}
 			</abbr>
 			<Portal type={"div"}>
 				<AbbrPreview
+					ref={previewElRef}
 					hideOriginPointer={!pointerContained}
 					css={{ top, left }}
 					isVisible={previewVisible}
-					onEnter={canNavigate && !isMobile ? () => { setPreviewVisible(true) } : undefined}
-					onLeave={() => setPreviewVisible(false)}
+					onEnter={() => showPreview()}
+					onFocus={() => showPreview()}
+					onLeave={() => hidePreview()}
+					onTabOut={() => {
+						nextElRef.current?.focus();
+						hidePreview();
+					}}
+					link={props.link}
 					{...meta}
 					title={props.title ?? meta.title}
 				/>
