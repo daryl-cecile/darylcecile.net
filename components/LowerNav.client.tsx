@@ -14,6 +14,8 @@ export default function LowerNav(){
     return (
         <>
             <div className={styles.backToHome}>
+                <hr/>
+                <br/>
                 <Link href="/">
                     ← Home
                 </Link>

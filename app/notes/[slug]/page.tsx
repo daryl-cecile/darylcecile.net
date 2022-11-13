@@ -5,7 +5,7 @@ import rehypeReact from "rehype-react";
 import { remark } from "remark";
 import html from "remark-html";
 import { unified } from "unified";
-import { Abbreviation } from "../../../components/Abbreviation";
+import Abbreviation from "../../../components/Abbreviation";
 import Anchor from "../../../components/Anchor";
 import CodeBlock from "../../../components/CodeBlock";
 import EmbeddedScript from "../../../components/EmbeddedScript";
@@ -118,6 +118,7 @@ function markdownToReact(markdown:string){
 
 	return result.result;
 }
+
 
 export default async function SingleNotePage({params}){
     const postData = await getNoteData(params.slug);

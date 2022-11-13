@@ -3,7 +3,7 @@
 	display: inline;
 	position: relative;
 	
-	[data-mobile=true]{
+	[data-safari=true]{
 		// force this on mobile
 		text-decoration: underline dotted;
 	}
@@ -15,12 +15,8 @@
 }
 
 .preview {
-	//top: calc(100% + 0.45rem);
-	//left: 50%;
-	//transform: translateX(-50%);
 	transform: translateY(0.45rem);
 	position: absolute;
-	background: red;
 	width: 320px;
 	max-width: calc(100% - 20px);
 	border-radius: 4px;
@@ -99,4 +95,25 @@
 		padding: 2rem;
 		
 	}
+
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--canvas-default-border);
+		color: var(--article-content-para-fg);
+		width: 100%;
+		font-size: 0.75rem;
+		height: 32pt;
+		margin-top: 1rem;
+
+		&:hover {
+			background: var(--nav-link-hover-fg);
+		}
+	}
+
+	p + a {
+		margin-top: 0;
+	}
+
 }
