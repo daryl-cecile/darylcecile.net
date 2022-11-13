@@ -89,7 +89,7 @@ export default function Abbreviation(props: AbbreviationProps) {
 				onMouseLeave={() => { hidePreview() }}
 				onBlurCapture={() => hidePreview() }
 				ref={containerRef}
-				tabIndex={0}
+				tabIndex={showAsLink ? -1 : 0}
 				onKeyDown={ev => {
 					if (ev.key === "Tab" && !ev.shiftKey){
 						setTimeout(()=>{
@@ -110,24 +110,26 @@ export default function Abbreviation(props: AbbreviationProps) {
 					<sup><FontAwesomeIcon icon={faCircleInfo} /></sup>
 				)}
 			</abbr>
-			<Portal type={"div"}>
-				<AbbrPreview
-					ref={previewElRef}
-					hideOriginPointer={!pointerContained}
-					css={{ top, left }}
-					isVisible={previewVisible}
-					onEnter={() => showPreview()}
-					onFocus={() => showPreview()}
-					onLeave={() => hidePreview()}
-					onTabOut={() => {
-						nextElRef.current?.focus();
-						hidePreview();
-					}}
-					link={props.static ? undefined : props.link}
-					{...meta}
-					title={props.title ?? meta.title}
-				/>
-			</Portal>
+			{!showAsLink && (
+				<Portal type={"div"}>
+					<AbbrPreview
+						ref={previewElRef}
+						hideOriginPointer={!pointerContained}
+						css={{ top, left }}
+						isVisible={previewVisible}
+						onEnter={() => showPreview()}
+						onFocus={() => showPreview()}
+						onLeave={() => hidePreview()}
+						onTabOut={() => {
+							nextElRef.current?.focus();
+							hidePreview();
+						}}
+						link={props.static ? undefined : props.link}
+						{...meta}
+						title={props.title ?? meta.title}
+					/>
+				</Portal>
+			)}
 		</span>
 	)
 
