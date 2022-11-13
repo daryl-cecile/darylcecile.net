@@ -24,7 +24,8 @@ export default function Abbreviation(props: AbbreviationProps) {
 	const windowContext = useWindow();
 	const [previewVisible, setPreviewVisible] = useState(false);
 	const metaEndpoint = useMemo(()=>{
-		let params = new URLSearchParams({ url: encodeURIComponent(props.link) });
+		let params = !!props.link ? new URLSearchParams({ url: encodeURIComponent(props.link) }) : null;
+		if (!params) return null; 
 		let url = `/api/fetch-meta?${params}`;
 		return url;
 	}, [props.link]);

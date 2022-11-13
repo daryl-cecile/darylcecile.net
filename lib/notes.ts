@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs, { existsSync } from 'fs'
 import fsAsync from "fs/promises";
 import path from 'path'
 import {Mark} from './Mark';
@@ -62,6 +62,9 @@ export const getAllNotesSlugs = cache(getAllNotesSlug_UnCached);
 
 export const getNoteData_UnCached = async (slug:string, ignoreContent?:boolean) => {
 	const fullPath = path.join(postsDirectory, `${slug}.md`)
+	
+	if (!existsSync(fullPath)) return null;
+
 	const fileContents = await fsAsync.readFile(fullPath, 'utf8')
 	const markdownParser = new Mark();
 

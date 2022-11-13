@@ -95,7 +95,7 @@ This issue ended up being less of a blocker as some guesswork closed the gaps an
 
 Looking at the deployment endpoint's query param options, I could see some properties were unknown. I checked the documentation's own [Types](https://vercel.com/docs/rest-api#introduction/api-basics/types) section to see if this had some explanation, but it didn't.  
 
-![](/images/Unknown-types-deploy.png)
+![Unknown types in the docs](/images/Unknown-types-deploy.png)
 
 As ive mentioned before, this was less of an issue and more of an inconvenience as I was able to guess the data types for those parameters. 
 

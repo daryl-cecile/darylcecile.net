@@ -53,7 +53,7 @@ export default forwardRef(function AbbrPreview(props: AbbrPreviewProps, ref:Ref<
 			{!!image && <img src={`/api/fetch-raw?url=${encodeURIComponent(image)}`} alt="" />}
 			{!!title && <h3>{title}</h3>}
 			{!!description && <p>{description}</p>}
-			{!!link && <Anchor href={link} tabIndex={1}>Visit</Anchor>}
+			{!!link && <Anchor href={link} tabIndex={1}>Read more</Anchor>}
 		</div>
 	)
 });
