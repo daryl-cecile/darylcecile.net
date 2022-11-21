@@ -8,6 +8,10 @@ module.exports = {
 	async rewrites() {
 		return [
 			{
+			    source: "/.well-known/webfinger",
+			    destination: "/api/webfinger"
+			},
+			{
 				source: "/bee.js",
 				destination: "https://cdn.splitbee.io/sb.js",
 			},
