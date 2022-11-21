@@ -5,7 +5,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     
     if (resource && resource.includes('@')) {
         const [user, domain] = resource.split('@');
-        const knownNames = ['me', 'daryl', 'dazza'].;
+        const knownNames = ['me', 'daryl', 'dazza'].map(name => `acct:${name}`);
         if (knownNames.includes(user) && domain === 'darylcecile.net') {
             res.json({
                 "subject":"acct:daryl@techhub.social",
