@@ -18,22 +18,12 @@ module.exports = {
 			{
 				source: "/r/images.unsplash.com/:path*",
 				destination: "https://images.unsplash.com/:path*"
+			},
+			{
+				source: "/home",
+				destination: "/"
 			}
 		];
-	},
-	async redirects() {
-		return [
-			{
-				source: '/en-US',
-				destination: '/',
-				permanent: true,
-			},
-			{
-				source: '/en-US/:path*',
-				destination: '/:path*',
-				permanent: true,
-			},
-		]
 	},
 	experimental: {
 		appDir: true
