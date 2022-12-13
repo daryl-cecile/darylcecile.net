@@ -4,7 +4,7 @@
         <title>Daryl Cecile</title>
         <link>https://darylcecile.net</link>
         <description>My notes</description>
-        <lastBuildDate>Sun, 13 Nov 2022 16:27:57 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 13 Dec 2022 20:24:32 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>mFeed</generator>
         <language>en</language>
@@ -401,7 +401,7 @@ CreateDeployment({
 <h3>Unknown Types</h3>
 <p>This issue ended up being less of a blocker as some guesswork closed the gaps and allowed me to move forward, however I thought it was notable enough as in some cases, there were discrepancies between types.</p>
 <p>Looking at the deployment endpoint’s query param options, I could see some properties were unknown. I checked the documentation’s own <a href="https://vercel.com/docs/rest-api#introduction/api-basics/types" target="_blank" rel="noopener" class="l" hreflang="en">Types</a> section to see if this had some explanation, but it didn’t.</p>
-<p><img src="/images/Unknown-types-deploy.png" alt="" loading="lazy" /></p>
+<p><img src="/images/Unknown-types-deploy.png" alt="Unknown types in the docs" loading="lazy" /></p>
 <p>As ive mentioned before, this was less of an issue and more of an inconvenience as I was able to guess the data types for those parameters.</p>
 <h3>Final Notes: PF + ▲ = 💜</h3>
 <p>As noted by Vercel, changes that they make to the APIs will be outlined in their changelogs, and it is possible that some outlined issues above could have cropped up there, however, this exploration was purely to build a wrapper around the API for consumption by PF (as I couldn’t find a suitable one that already existed).</p>

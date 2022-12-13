@@ -15,28 +15,33 @@ type GalleryItemProps = {
     alt: string
 }
 
-
 export default function Gallery({imageUrls, children}:GalleryProps) {
     const images = imageUrls ?? JSON.parse(children[0].trim());
     const urls = Object.keys(images);
     const previewElementRef = useRef<HTMLDivElement>();
 	const [currentImageUrl, setCurrentImageUrl] = useState<string>( urls[0] );
+    const imageElements = useMemo(() => {
+        let elementList = previewElementRef.current?.querySelectorAll('img') ?? [];
+        return [...elementList];
+    }, [previewElementRef.current]);
 
     useEffect(()=>{
-        if (!previewElementRef.current) return;
-
-        const images = [...previewElementRef.current.querySelectorAll('img')];
-        const selectedImageIndex = images.findIndex(img => img.src.endsWith(currentImageUrl));
-        console.log('image at' , selectedImageIndex, previewElementRef.current)
-
-        if (selectedImageIndex > -1) {
-            images[selectedImageIndex].scrollIntoView();
-            console.log(images[selectedImageIndex])
-        }
-    }, [currentImageUrl]);
+        let observer = new IntersectionObserver(entries => {
+            for (let img of entries.reverse()){
+                if (img.isIntersecting){
+                    setCurrentImageUrl(img.target.getAttribute('src'));
+                }
+            }
+        }, {
+            root: previewElementRef.current,
+            threshold: 0.3
+        });
+        imageElements.forEach(img => observer.observe(img));
+        return () => observer.disconnect();
+    }, [imageElements]);
 
 	return (
-        <div aria-role="list" aria-label="Image gallery" className={"wider-content"}>
+        <ol aria-label="Image gallery" className={"wider-content " + css.galleryContainer}>
             <div className={css.galleryRoot}>
                 <div className={css.preview} ref={previewElementRef}>
                     {urls.map(url => {
@@ -55,6 +60,7 @@ export default function Gallery({imageUrls, children}:GalleryProps) {
                                         setCurrentImageUrl(url);
                                         ev.preventDefault();
                                         ev.stopPropagation();
+                                        imageElements.find(img => img.getAttribute('src') === url)?.scrollIntoView()
                                     }}
                                 />
                             )
@@ -63,6 +69,6 @@ export default function Gallery({imageUrls, children}:GalleryProps) {
                 </div>
             </div>
             <figcaption aria-hidden="true">{images[currentImageUrl]}</figcaption>
-        </div>
+        </ol>
     )
 }
