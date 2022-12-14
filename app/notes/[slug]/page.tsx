@@ -52,12 +52,6 @@ function markdownToReact(markdown:string){
 			if (!!props.alt){
 				return (
 					<figure>
-						{/* <img
-							src={props.src}
-							alt={props.alt}
-							decoding={"async"}
-							loading={props.loading ?? "lazy"}
-						/> */}
 						<ImageViewer 
 							src={props.src} 
 							alt={props.alt}

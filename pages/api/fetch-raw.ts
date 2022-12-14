@@ -1,4 +1,5 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextApiRequest, NextApiResponse } from 'next';
+import { request } from 'undici';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
 
@@ -12,14 +13,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 	
 	res.setHeader('Cache-Control', 's-maxage=86400');
 
-	let response = await fetch(url, { method: 'GET' });
+	const { body } = await request(url, {method: 'GET'});
 
-	let body = response.body as unknown as NodeJS.ReadableStream;
-
-	if ("pipe" in body) {
-		await body.pipe(res);
+	if (!body) {
+		res.status(404).end();
 		return;
 	}
 
-	res.end();
+	body.pipe(res, {end: true});
 }
