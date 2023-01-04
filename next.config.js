@@ -1,11 +1,16 @@
 module.exports = {
 	poweredByHeader: false,
-	async rewrites() {
+	async redirects() {
 		return [
 			{
 				source: "/mastodon",
-				destination: "https://techhub.social/@daryl"
-			},
+				destination: "https://techhub.social/@daryl",
+				permanent: true
+			}	
+		]
+	},
+	async rewrites() {
+		return [
 			{
 				source: "/.well-known/webfinger",
 				destination: "/api/webfinger"
