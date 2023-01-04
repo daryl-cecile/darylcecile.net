@@ -3,8 +3,12 @@ module.exports = {
 	async rewrites() {
 		return [
 			{
-			    source: "/.well-known/webfinger",
-			    destination: "/api/webfinger"
+				source: "/mastodon",
+				destination: "https://techhub.social/@daryl"
+			},
+			{
+				source: "/.well-known/webfinger",
+				destination: "/api/webfinger"
 			},
 			{
 				source: "/bee.js",
