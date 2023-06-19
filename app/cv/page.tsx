@@ -20,17 +20,25 @@ export default function MilestonePage(){
               date={"2021 - Now"}
           >
               <p>
-                    Working in a developer-tooling team; creating infrastructure, internal developer tools, and sharing knowledge of AWS Cloud solutions. This
-                    role covers some dev-rel and developer advocacy work through encouragement and support of migrations to AWS Cloud services from on-prem.
+                    Working in an internal devtools team across both frontend and back-end
+					(using Nodejs, Python, and Kotlin); creating internal developer tools,
+					managing infrastructure (IaC via Terraform), and sharing knowledge of AWS
+					Cloud solutions. This role also covered some DevRel and developer
+					advocacy work through encouragement and support of migrations to AWS
+					Cloud services from on-prem, and improving developer experience through
+					introduction of custom tools and automation.
               </p>
               <p>
-                    My other responsibilies are: working on tooling to simplify developer experience and providing dev resources 
-                    when capacity allows — all while providing training where required, and ensuring developers are onboarded in an 
-                    industry-compliant way.
+                    Occasionally I collaborated across the enterprise - working with US teams
+					and contributed to enterprise-level code-bases; all while providing training
+					where required, and ensuring developers are onboarded to new tools in an
+					regulation-compliant way.
               </p>
               <p>
-                    When not assisting with migration and CICD pipeline work, I work on tools ranging from package-management, chrome extension, dev-env automation,
-                    and more.
+                    When not assisting with migration and CI/CD improvement work, I mentor
+					interns and Junior team members, as well as work on tools ranging from
+					package-management, chrome extension, environment-automation, and
+					more.
               </p>
           </Milestone>
 
