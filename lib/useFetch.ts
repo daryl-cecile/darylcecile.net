@@ -52,7 +52,7 @@ async function _fetch<T>(url: string, config?:IFetchConfig) {
 
 export default function useFetch(url: string, config?: UseFetchConfig) {
 	let urlParams = "?" + (new URLSearchParams(config?.queryParams ?? {})).toString();
-	let endpoint = !!url ? `${url}${urlParams}` : null;
+	let endpoint = `${url}${urlParams}`;
 	let [result, setResult] = useState<any>();
 	let [jobState, setJobState] = useState<"pending"|"ready"|"failed">("pending");
 	let [reason, setReason] = useState<string>();
