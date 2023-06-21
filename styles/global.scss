@@ -72,8 +72,8 @@ a:hover {
   margin: 0 auto;
 }
 
-.content img,
-.content figure,
+.content img:not(.tweet img),
+.content figure:not(.tweet figure),
 .wider-content{
   width: 100%;
   max-width: 860px;

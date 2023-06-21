@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from './layout.module.css'
+import styles from '../styles/layout.module.scss'
 import utilStyles from '../styles/utils.module.scss'
 import Link from 'next/link'
 import {LayoutOptions} from "../types";
@@ -9,7 +9,6 @@ import Nav from './Nav.client';
 import Footer from "./Footer";
 import ScrollToTop from "./scrollToTop";
 import Anchor from "./Anchor";
-import CookieBanner from "./cookieBanner";
 
 const name = ' Hey! I\'m Daryl. '
 export const siteTitle = 'Daryl Cecile'
