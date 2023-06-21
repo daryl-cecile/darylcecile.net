@@ -93,7 +93,7 @@ function markdownToReact(markdown:string){
 			return <InfoBox {...props}>{props.children}</InfoBox>
 		},
 		tweet: (props:any)=>{
-			/* @ts-expect-error Server Component */
+			/* @ts-ignore-error Server Component */
 			return <Tweet id={props.id} />
 		},
 		gallery: (props: any)=> {
