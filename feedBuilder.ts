@@ -74,7 +74,7 @@ getNotes(false).forEach(note => {
 			link: `https://darylcecile.net/notes/${note.slug}`,
 			description: '',
 			content: note.renderedContent,
-			image: `https://darylcecile.net/api/og?slug=${note.slug}`,
+			image: `https://darylcecile.net/og?slug=${note.slug}`,
 			author: [
 				{
 					name: 'Daryl Cecile',

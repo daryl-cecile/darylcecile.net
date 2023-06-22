@@ -4,10 +4,8 @@ import componentStyles from "../styles/projectPreview.module.scss";
 import utilsCss from "../styles/utils.module.scss"
 import React, {Fragment} from "react";
 import Anchor from "./Anchor";
-import useUnstableValue from "../lib/useUnstableValue";
 
 export default function ProjectPreview({id, name, startYear, summary, image, link, tokens, endYear}){
-	const stableSummary = useUnstableValue(summary);
 
 	return (
         <div className={componentStyles.projectItem}>
@@ -17,7 +15,7 @@ export default function ProjectPreview({id, name, startYear, summary, image, lin
 					{!!image && <img src={image.startsWith("https://") ? image : `/images/projects/${image}`} alt=''/>}
 					<div className={componentStyles.projectPreviewBody}>
 						<h3>{name}</h3>
-						<div className={utilsCss.paragraph} dangerouslySetInnerHTML={{__html: stableSummary}}/>
+						<div className={utilsCss.paragraph} dangerouslySetInnerHTML={{__html: summary}}/>
 						<div className={componentStyles.tokens}>
 							<span className={componentStyles.token}>project</span> &middot;
 							{tokens.map((token,index) => (

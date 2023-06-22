@@ -8,7 +8,7 @@ export default async function Head({params}){
         return (
             <DocumentHead 
                 title={'Not Found'} 
-                socialImageOverride={`https://darylcecile.net/api/og`} 
+                socialImageOverride={`https://darylcecile.net/og`} 
             />
         )
     }
@@ -16,7 +16,7 @@ export default async function Head({params}){
     return (
         <DocumentHead 
             title={postData.title} 
-            socialImageOverride={`https://darylcecile.net/api/og?slug=${postData.slug}`} 
+            socialImageOverride={`https://darylcecile.net/og?slug=${postData.slug}`} 
             socialTitleOverride={postData.title}
         />
     )

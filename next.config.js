@@ -13,7 +13,7 @@ module.exports = {
 		return [
 			{
 				source: "/.well-known/webfinger",
-				destination: "/api/webfinger"
+				destination: "/webfinger"
 			},
 			{
 				source: "/bee.js",
@@ -32,14 +32,5 @@ module.exports = {
 				destination: "/"
 			}
 		];
-	},
-	experimental: {
-		appDir: true
-	},
-	images: {
-		domains: ['images.unsplash.com']
-	},
-	typescript:{
-		ignoreBuildErrors: true,
 	}
 }

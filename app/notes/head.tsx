@@ -4,7 +4,7 @@ export default function NotesListHead(){
     return (
         <DocumentHead 
             title="Notes" 
-            socialImageOverride={`https://darylcecile.net/api/og?page=notes`} 
+            socialImageOverride={`https://darylcecile.net/og?page=notes`} 
         />
     )
 }

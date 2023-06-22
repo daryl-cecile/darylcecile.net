@@ -4,7 +4,7 @@ export default function ProjectsListHead(){
     return (
         <DocumentHead 
             title="Projects" 
-            socialImageOverride={`https://darylcecile.net/api/og?page=projects`} 
+            socialImageOverride={`https://darylcecile.net/og?page=projects`} 
         />
     )
 }

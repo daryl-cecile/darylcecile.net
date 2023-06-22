@@ -1,18 +1,18 @@
 import { ImageResponse } from '@vercel/og';
 import noteData from "../../public/notes.json";
+import { notFound } from 'next/navigation';
+import { NextRequest } from 'next/server';
 
-export const config = {
-	runtime: 'experimental-edge',
-}
+export const runtime = 'edge';
 
-export default async function(opt){
-	let query = opt.nextUrl.searchParams;
+export async function GET(opt:NextRequest){
+	const { searchParams } = new URL(opt.url);
 
-	if (!query.has("slug")) {
+	if (!searchParams.has("slug")) {
 
-		if (query.has("page")) {
+		if (searchParams.has("page")) {
 			return new ImageResponse(
-				<SimpleImage title={`/${query.get('page').toLowerCase()}`} subHeading={"@darylcecile"} />
+				<SimpleImage title={`/${searchParams.get('page')!.toLowerCase()}`} subHeading={"@darylcecile"} />
 			)
 		}
 
@@ -21,7 +21,9 @@ export default async function(opt){
 		)
 	}
 
-	let post = noteData.items.find(item => item.slug === query.get("slug"));
+	let post = noteData.items.find(item => item.slug === searchParams.get("slug"));
+
+    if (!post) return notFound()
 	
 	return new ImageResponse(
 		<AdvanceImage title={post.title} authorName={post.author[0].name} readTime={post.readTime} />

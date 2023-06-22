@@ -18,7 +18,7 @@ type GalleryItemProps = {
 export default function Gallery({imageUrls, children}:GalleryProps) {
     const images = imageUrls ?? JSON.parse(children[0].trim());
     const urls = Object.keys(images);
-    const previewElementRef = useRef<HTMLDivElement>();
+    const previewElementRef = useRef<HTMLDivElement>(null);
 	const [currentImageUrl, setCurrentImageUrl] = useState<string>( urls[0] );
     const imageElements = useMemo(() => {
         let elementList = previewElementRef.current?.querySelectorAll('img') ?? [];
@@ -29,7 +29,7 @@ export default function Gallery({imageUrls, children}:GalleryProps) {
         let observer = new IntersectionObserver(entries => {
             for (let img of entries.reverse()){
                 if (img.isIntersecting){
-                    setCurrentImageUrl(img.target.getAttribute('src'));
+                    setCurrentImageUrl(img.target.getAttribute('src')!);
                 }
             }
         }, {

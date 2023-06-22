@@ -8,7 +8,7 @@ type InlineLinkHeaderProps = {
 }
 
 export default function InlineLinkHeader(props:InlineLinkHeaderProps){
-	const id = props.children[0]
+	const id = props.children?.[0]
 					.toString()
 					.toLowerCase()
 					.replace(/[ ]+/gm, '-')
