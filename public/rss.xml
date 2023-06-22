@@ -4,7 +4,7 @@
         <title>Daryl Cecile</title>
         <link>https://darylcecile.net</link>
         <description>My notes</description>
-        <lastBuildDate>Wed, 21 Jun 2023 22:50:40 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 22 Jun 2023 17:05:17 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>mFeed</generator>
         <language>en</language>
@@ -18,7 +18,7 @@
             <title><![CDATA[Throwaway Prototypes]]></title>
             <link>https://darylcecile.net/notes/throwaway-prototypes</link>
             <guid>throwaway-prototypes</guid>
-            <pubDate>Mon, 26 Jun 2023 00:00:00 GMT</pubDate>
+            <pubDate>Thu, 22 Jun 2023 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>For the past couple of years I have grown fond of prototyping as a way of getting my ideas across to other developers. As part of my role at CapitalOne (Software Engineer - Internal Tooling), I’ve had the opportunity to come up with innovative ways to improve the developer experience at the company in a creative and fun way; it allowed me to explore new technologies and paradigms, and inherit new ways to architect and design products. Prototyping is not a topic that comes up often in my sphere, and it is definately not something I bring up often in conversations, however a recent Twitter post surfaced made me think a lot about the perceived value of prototyping as an engineer:</p>
 <p><Tweet id="1670411055296544773"></Tweet></p>
 <p>Working in a DevTools team, the customers I often created solutions for were other developers who were having a hard time; they were using tools that were slow, unstable, or sometime just plain unpleasant. Due to the size of the business, it meant that there was often a variety of pain-points that I could chose from to explore and solutionize. Some of my most recent successes include:</p>
@@ -35,7 +35,7 @@
 <p>P.S. At the time of writing, i’m attempting to prototype a <Abbr link="https://github.com/daryl-cecile/corai" >Toy React server</Abbr> to better understand how it works at a meta-framework level; and so far I have learned a lot about React Server Components. I plan to do a write-up on this soon!</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=throwaway-prototypes" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=throwaway-prototypes" length="0" type="image//og"/>
         </item>
         <item>
             <title><![CDATA[Building in public]]></title>
@@ -53,7 +53,7 @@
 <p>Until then… ✌🏽</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=building-in-public" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=building-in-public" length="0" type="image//og"/>
         </item>
         <item>
             <title><![CDATA[November life update]]></title>
@@ -85,7 +85,7 @@
 <p>Stay tuned for some incoming pictures of Aira and Panther together 🐈‍⬛</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=november-life-updates" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=november-life-updates" length="0" type="image//og"/>
         </item>
         <item>
             <title><![CDATA[Project Spotlight: Campus LMS]]></title>
@@ -131,7 +131,7 @@
 <p>I’ve personally learned a lot along the way, and there are many lessons to take away from the experiences ive gained by building and scaling this platform. Im excited to see where this knowledge takes me 🚀</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=project-spotlight-campus" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=project-spotlight-campus" length="0" type="image//og"/>
         </item>
         <item>
             <title><![CDATA[Moving out]]></title>
@@ -164,7 +164,7 @@ awaits, but I can truly say that I am ready for the next chapter of this adventu
 This isn’t the last Notts will see of me; I will return to visit regularly. 🫶🏽</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=moving-out-notts" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=moving-out-notts" length="0" type="image//og"/>
         </item>
         <item>
             <title><![CDATA[Burning bright without burning out]]></title>
@@ -244,7 +244,7 @@ step back every now and then to evaluate how we are feeling, and where we are on
 than re-growing an entire forest. 🌱</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=burning-bright-without-burning-out" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=burning-bright-without-burning-out" length="0" type="image//og"/>
         </item>
         <item>
             <title><![CDATA[Adding RSS Autodiscovery to your site]]></title>
@@ -274,7 +274,7 @@ it easier for visitors to subscribe to it. My <em>current</em> feed aggregator o
 detects RSS, ATOM, and JSON feeds on pages that I visit, and allows me to subscribe to it with two clicks.</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=rss-autodiscovery" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=rss-autodiscovery" length="0" type="image//og"/>
         </item>
         <item>
             <title><![CDATA[Exploring the Chrome Extension context gaps]]></title>
@@ -354,7 +354,7 @@ little exploration was worth it - and if anything, it was just the push I needed
 <p><sup id="reference1">[1]</sup> <a href="https://github.com/daryl-cecile/excom" target="_blank" rel="noopener" class="l" hreflang="en">Excom Repository</a></p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=excom-chrome-extension" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=excom-chrome-extension" length="0" type="image//og"/>
         </item>
         <item>
             <title><![CDATA[Doc Journey: ▲Vercel Edition]]></title>
@@ -443,7 +443,7 @@ CreateDeployment({
 <p><sup id="reference2">[2]</sup> This <a href="https://darylcecile.net" target="_blank" rel="noopener" class="l" hreflang="en">website</a> was created using Next.js</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=vercel-doc-journey" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=vercel-doc-journey" length="0" type="image//og"/>
         </item>
         <item>
             <title><![CDATA[useReact: My go-to React Hooks]]></title>
@@ -578,7 +578,7 @@ new hooks and explain their uses.</p>
 <p>✌🏽</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=hooked-on-react" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=hooked-on-react" length="0" type="image//og"/>
         </item>
         <item>
             <title><![CDATA[Something needs a Rejig 👀]]></title>
@@ -597,7 +597,7 @@ new hooks and explain their uses.</p>
 <p>“<em>I kindly await your response…</em>”</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=something-needs-a-rejig" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=something-needs-a-rejig" length="0" type="image//og"/>
         </item>
         <item>
             <title><![CDATA[I did a thing... PyroGist 👨🏽‍💻]]></title>
@@ -656,7 +656,7 @@ console.log('Loaded PyroGist instances');
 <p><em>P.S. This library can be found <a href="https://github.com/daryl-cecile/PyroGist" target="_blank" rel="noopener" class="l" hreflang="en">here</a>, on my GitHub account!</em></p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=did-a-thing-pyro" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=did-a-thing-pyro" length="0" type="image//og"/>
         </item>
         <item>
             <title><![CDATA[PF February Update ⚡️🧙🏽‍♂️]]></title>
@@ -678,7 +678,7 @@ console.log('Loaded PyroGist instances');
 <img src="/images/business_card_1.jpeg" alt="Me holding my new PF business card" loading="lazy" />
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=pf-february-update" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=pf-february-update" length="0" type="image//og"/>
         </item>
         <item>
             <title><![CDATA[Futuristic Pursuit 🐣]]></title>
@@ -710,7 +710,7 @@ console.log('Loaded PyroGist instances');
 <p>All in all, I have a clear idea of the kind of workplace where I want to work as a Web developer 👨🏽‍💻. Now I just need to find it and make it happen. I guess i’ll find out when it gets to it. I just hope that the place I find meets those points as closely as possible 🤞🏽. Once I do that, I can finally start focusing on ProjectFunction, and the many plans we have for it in the near future!</p>
 ]]></content:encoded>
             <author>darylcecile@gmail.com (Daryl Cecile)</author>
-            <enclosure url="https://darylcecile.net/api/og?slug=futuristic-pursuit" length="0" type="image//api/og"/>
+            <enclosure url="https://darylcecile.net/og?slug=futuristic-pursuit" length="0" type="image//og"/>
         </item>
     </channel>
 </rss>

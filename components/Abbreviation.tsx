@@ -26,7 +26,7 @@ export default function Abbreviation(props: AbbreviationProps) {
 	const metaEndpoint = useMemo(()=>{
 		let params = !!props.link ? new URLSearchParams({ url: encodeURIComponent(props.link) }) : null;
 		if (!params) return null; 
-		let url = `/api/fetch-meta?${params}`;
+		let url = `/fetch-meta?${params}`;
 		return url;
 	}, [props.link]);
 	// @ts-ignore

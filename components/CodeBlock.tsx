@@ -16,7 +16,7 @@ export default function CodeBlock(props:CodeBlockProps){
 	const [copyComplete, setCopyComplete] = useState(false);
 	const ref:any = useRef<HTMLPreElement>(null);
 	const isMounted = useMounted();
-	const [linedNodes, setLinedNodes] = useState<Array<any>>();
+	const [linedNodes, setLinedNodes] = useState<Array<any>>([]);
 
 	const initCopy = useCallback(()=>{
 		const value = ref.current?.innerText ?? "";
@@ -53,8 +53,8 @@ export default function CodeBlock(props:CodeBlockProps){
 			const items = [...codeEl.childNodes];
 			newItems = [];
 
-			let leftOver = undefined;
-			let leftOverType = undefined;
+			let leftOver:any = undefined;
+			let leftOverType:number|undefined = undefined;
 			let lastProcessedIndex = 0;
 
 			items.forEach((item, index) => {
@@ -121,7 +121,7 @@ export default function CodeBlock(props:CodeBlockProps){
 
 						singleLineChunks.push((()=>{
 							const cl = item.cloneNode(true) as HTMLElement;
-							cl.innerHTML = contents.shift();
+							cl.innerHTML = contents.shift()!;
 							return cl;
 						})());
 

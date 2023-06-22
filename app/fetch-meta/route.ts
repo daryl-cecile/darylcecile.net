@@ -1,33 +1,39 @@
 import { parse } from 'node-html-parser';
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
+import { notFound } from 'next/navigation';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
-    const incomingUrl = req.query['url'] as string;
+export async function GET(req: NextRequest){
+    const { searchParams } = new URL(req.url);
+    const incomingUrl = searchParams.get("url");
 
-    if (!incomingUrl) return res.status(404);
+    if (!incomingUrl) return notFound();
 
     let url = decodeURIComponent(incomingUrl);
 
-    res.setHeader('Cache-Control', 's-maxage=86400');
-
     let response = await fetch(url, { method: 'GET' });
 
-    if (!response.ok) return res.status(404);
+    if (!response.ok) return notFound();
 
     try{
         let text = await response.text();
         let DOC = parse(text);
 
-        return res.json({
+        return NextResponse.json({
             title: DOC.querySelector('title')?.innerText,
 			favicon: [...DOC.querySelectorAll('[rel=icon]')].reverse()[0]?.getAttribute('href'),
 			image: DOC.querySelector('[property="og:image"]')?.getAttribute('content'),
 			description: (DOC.querySelector('[name=description]') ?? DOC.querySelector('[property="og:description"]'))?.getAttribute('content'),
+        }, {
+            headers: new Headers({
+                "Cache-Control": 's-maxage=86400'
+            })
         });
+
     }
     catch (e){
         console.error(e);
         
-        return res.status(500);
+        return NextResponse.error();
     }
 };

@@ -13,7 +13,7 @@ export default function SearchBox(props:SearchBoxProps){
 
 	useEffect(()=>{
 		if (value.length === 0 && query.has("q")) {
-			let newValue = query.get("q").trim().toLowerCase();
+			let newValue = query.get("q")!.trim().toLowerCase();
 			setValue(newValue);
 			props.onChange(newValue);
 		}
