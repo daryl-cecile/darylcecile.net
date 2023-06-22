@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "throwaway-prototypes",
+            "content_html": "<p>For the past couple of years I have grown fond of prototyping as a way of getting my ideas across to other developers. As part of my role at CapitalOne (Software Engineer - Internal Tooling), I’ve had the opportunity to come up with innovative ways to improve the developer experience at the company in a creative and fun way; it allowed me to explore new technologies and paradigms, and inherit new ways to architect and design products. Prototyping is not a topic that comes up often in my sphere, and it is definately not something I bring up often in conversations, however a recent Twitter post surfaced made me think a lot about the perceived value of prototyping as an engineer:</p>\n<p><Tweet id=\"1670411055296544773\"></Tweet></p>\n<p>Working in a DevTools team, the customers I often created solutions for were other developers who were having a hard time; they were using tools that were slow, unstable, or sometime just plain unpleasant. Due to the size of the business, it meant that there was often a variety of pain-points that I could chose from to explore and solutionize. Some of my most recent successes include:</p>\n<ul class=\"para\">\n<li>Designing and Implementing a Chrome Extension that summarizes CI/CD logs and surfaces solutions to those problems</li>\n<li>Creating a centralized package manager that simplified onboarding and setup of new development environments</li>\n<li>Creating an SSO wrapper that gave developers a drop-in solution to add Single Sign-On to any of their Lambda and Express applications</li>\n</ul>\n<p>Prototyping isn’t always going to lead to buy-in, however it almost always comes with other benefits which enable upskilling and exploring new technologies. Its also worth noting that building prototypes in an enterprise is obviously going to be easier that in smaller companies where resources are limited; however, I would say whenever possible prototyping is a valuable practice. It allows software engineers to explore and experiment with new technologies, methodologies, and ideas. By creating a prototype, engineers can quickly validate the feasibility of a concept, identify potential challenges, and gather feedback early on. This iterative process of building and refining helps to minimize risks and making informed decisions before investing significant resources into development.</p>\n<p>Moreover, prototypes serve as powerful communication tools. They allow software engineers to effectively convey their vision and ideas to stakeholders, product managers, and other teams. A lot of the solutions I brought to life at CapitalOne originated as a simple proof-of-concept prototypes. These prototypes helped me imagine up the solution, and solidify the implementation details that were floating in my head; and once I had a tangible solution, it helped me convey the value to other parts of the business. This visual representation also helps bridge the gap between technical and non-technical stakeholders, fostering collaboration and alignment throughout the development process.</p>\n<p>I encourage my mentees and more junior colleagues to create proof of concepts for ideas they might have, and so far both them and I have seen an increase in not just their confidence, but their skills. In addition to facilitating communication, prototypes also enable upskilling and knowledge expansion. As engineers work on prototypes, they gain hands-on experience with new technologies, frameworks, or approaches. This provides an opportunity for professional growth, allowing them to stay abreast of the latest industry trends and sharpen their skills. Furthermore, prototypes often act as a playground for experimentation, encouraging engineers to think creatively and explore alternative solutions that might not have been considered otherwise.</p>\n<p>Overall, prototyping and building proof of concepts offer numerous advantages. From solidifying implementation details to garnering support, these early-stage artifacts help shape successful software solutions. By leveraging prototypes, engineers can validate ideas, communicate effectively, and foster a culture of innovation within their organizations. Embracing the practice of prototyping ultimately leads to more robust, user-centric, and successful software products.</p>\n<hr />\n<p>P.S. At the time of writing, i’m attempting to prototype a <Abbr link=\"https://github.com/daryl-cecile/corai\" >Toy React server</Abbr> to better understand how it works at a meta-framework level; and so far I have learned a lot about React Server Components. I plan to do a write-up on this soon!</p>\n",
+            "url": "https://darylcecile.net/notes/throwaway-prototypes",
+            "title": "Throwaway Prototypes",
+            "image": "https://darylcecile.net/api/og?slug=throwaway-prototypes",
+            "date_modified": "2023-06-26T00:00:00.000Z",
+            "author": {
+                "name": "Daryl Cecile",
+                "url": "https://darylcecile.net"
+            }
+        },
+        {
             "id": "building-in-public",
             "content_html": "<p>For a couple of weeks (months?) now, I have been playing around with the idea of a small API-first headless <Abbr title=\"Content Management System\" link=\"https://kinsta.com/knowledgebase/content-management-system/\">CMS</Abbr>. I started forming building blocks and planning they way it would look and behave.</p>\n<p>Initially it started off with curiousity around the logic behind what a headless CMS is; I was already familiar with coupled CMS’ thanks to my previous work on <Abbr title=\"SlantedPress\" link=\"https://slantedpress.com\">SlantedPress</Abbr> — so this time, I was keen on working out what a headless approach would be (if I were to build one from the ground up). So I started <a href=\"https://jumbled-dichondra-7a3.notion.site/NextCMS-ce699824a5cb439f822853e0c82dad46\" target=\"_blank\" rel=\"noopener\" class=\"l\" hreflang=\"en\">architecting, designing, and moulding an API</a>.</p>\n<p><img src=\"/images/figma-inkly.png\" alt=\"Figma designs of Inkly\" loading=\"lazy\" /></p>\n<p>When I first started thinking about this project, I knew I wanted the process to be product-driven, and from that I had planned to make the entire product React-hook-driven. When designing the initial design around some basic use-cases, I figured I wanted to try and make a powerful API and then have a bunch of React-hooks that could consume the endpoints and be super-easy-to-use™</p>\n<p>Recently however, Vercel and the Next.js team released <Abbr link=\"https://nextjs.org/blog/next-13\">Next.js 13</Abbr>; along with it came the introduction to the <code>app</code> directory. Find out more about it on their blog. As part of this release, they also introduced Server Components to the Next.js ecosystem - which cannot make use of hooks.</p>\n<p>Im excited about this release, but at the same time feeling a little knocked-back as all of the ideas I had would now need to be reformed if I was to make use of the latest Next.js 13 had to offer.</p>\n<p>My hopes for this project is to get a better understanding of patterns and the logic behind headless CMS’, push myself to become better at marketing my skills (<em>we both know I suck at this!</em>), and maybe make some connections along the way 😉</p>\n<p>Im looking forward to seeing what I can come up with and intend to fully work through this in public - so watch out for updates both on here, and the bird app!</p>\n<p>Until then… ✌🏽</p>\n",
             "url": "https://darylcecile.net/notes/building-in-public",
@@ -40,7 +52,7 @@
             "url": "https://darylcecile.net/notes/project-spotlight-campus",
             "title": "Project Spotlight: Campus LMS",
             "image": "https://darylcecile.net/api/og?slug=project-spotlight-campus",
-            "date_modified": "2022-09-02T23:00:00.000Z",
+            "date_modified": "2022-09-03T00:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -52,7 +64,7 @@
             "url": "https://darylcecile.net/notes/moving-out-notts",
             "title": "Moving out",
             "image": "https://darylcecile.net/api/og?slug=moving-out-notts",
-            "date_modified": "2022-07-02T23:00:00.000Z",
+            "date_modified": "2022-07-03T00:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -64,7 +76,7 @@
             "url": "https://darylcecile.net/notes/burning-bright-without-burning-out",
             "title": "Burning bright without burning out",
             "image": "https://darylcecile.net/api/og?slug=burning-bright-without-burning-out",
-            "date_modified": "2022-06-11T23:00:00.000Z",
+            "date_modified": "2022-06-12T00:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -76,7 +88,7 @@
             "url": "https://darylcecile.net/notes/rss-autodiscovery",
             "title": "Adding RSS Autodiscovery to your site",
             "image": "https://darylcecile.net/api/og?slug=rss-autodiscovery",
-            "date_modified": "2022-06-04T23:00:00.000Z",
+            "date_modified": "2022-06-05T00:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -88,7 +100,7 @@
             "url": "https://darylcecile.net/notes/excom-chrome-extension",
             "title": "Exploring the Chrome Extension context gaps",
             "image": "https://darylcecile.net/api/og?slug=excom-chrome-extension",
-            "date_modified": "2022-06-03T23:00:00.000Z",
+            "date_modified": "2022-06-04T00:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -124,7 +136,7 @@
             "url": "https://darylcecile.net/notes/something-needs-a-rejig",
             "title": "Something needs a Rejig 👀",
             "image": "https://darylcecile.net/api/og?slug=something-needs-a-rejig",
-            "date_modified": "2020-05-26T23:00:00.000Z",
+            "date_modified": "2020-05-27T00:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"

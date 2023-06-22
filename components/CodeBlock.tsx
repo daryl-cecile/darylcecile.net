@@ -14,12 +14,12 @@ export default function CodeBlock(props:CodeBlockProps){
 	const [isOpen, setIsOpen] = useState(true);
 	const [shouldCollapse, setShouldCollapse] = useState(false);
 	const [copyComplete, setCopyComplete] = useState(false);
-	const ref = useRef<HTMLPreElement>();
+	const ref:any = useRef<HTMLPreElement>(null);
 	const isMounted = useMounted();
-	const [linedNodes, setLinedNodes] = useState(null);
+	const [linedNodes, setLinedNodes] = useState<Array<any>>();
 
 	const initCopy = useCallback(()=>{
-		const value = ref.current.innerText;
+		const value = ref.current?.innerText ?? "";
 		navigator.clipboard.writeText(value).then(res => {
 			setCopyComplete(true);
 		}).catch(ex => {
@@ -36,7 +36,7 @@ export default function CodeBlock(props:CodeBlockProps){
 	}, [copyComplete])
 
 	useEffect(()=>{
-		const size = ref.current.getBoundingClientRect();
+		const size = ref.current?.getBoundingClientRect();
 		if (size.height > 300){
 			setIsOpen(false);
 			setShouldCollapse(true);

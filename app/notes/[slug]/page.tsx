@@ -11,6 +11,7 @@ import CodeBlock from "../../../components/CodeBlock";
 import EmbeddedScript from "../../../components/EmbeddedScript";
 import Gallery from "../../../components/Gallery";
 import InfoBox from "../../../components/InfoBox";
+import Tweet from "../../../components/Tweet";
 import InlineLinkHeader from "../../../components/InlineLinkHeader";
 import { getAllNotesDataSorted, getNoteData } from "../../../lib/notes";
 import LocalDate from "../../../components/LocalDate";
@@ -18,6 +19,7 @@ import galleryStyles from "../../../styles/gallery.module.scss";
 import { parseISO } from "date-fns";
 import { notFound } from "next/navigation";
 import ImageViewer from "../../../components/ImageViewer";
+
 
 function markdownToHtmlWithoutSanitization(markdown:string){
 	return remark()
@@ -37,7 +39,7 @@ function markdownToReact(markdown:string){
 			return <Abbreviation {...otherProps}>{children}</Abbreviation>
 		},
 		p: (props: any)=>{
-			if (props.children.length === 1 && props.children[0]?.type?.name === "img"){
+			if (props.children.length === 1 &&  ["img", "tweet"].includes(props.children[0]?.type?.name)){
 				return props.children[0];
 			}
 			return <p>{props.children}</p>
@@ -89,6 +91,10 @@ function markdownToReact(markdown:string){
 		},
 		infobox: (props: any)=>{
 			return <InfoBox {...props}>{props.children}</InfoBox>
+		},
+		tweet: (props:any)=>{
+			/* @ts-ignore-error Server Component */
+			return <Tweet id={props.id} />
 		},
 		gallery: (props: any)=> {
 			return <Gallery {...props}/>

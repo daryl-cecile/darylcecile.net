@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  min-width: 220px;
+  width: 100%;
+  margin: 1rem auto;    
+  align-items: center;
+
+  p > span {
+    line-height: 1;
+  }
+}

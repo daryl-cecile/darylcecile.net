@@ -4,7 +4,7 @@
         <title>Daryl Cecile</title>
         <link>https://darylcecile.net</link>
         <description>My notes</description>
-        <lastBuildDate>Tue, 13 Dec 2022 23:43:10 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 21 Jun 2023 22:50:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>mFeed</generator>
         <language>en</language>
@@ -13,7 +13,30 @@
             <url>https://darylcecile.net/images/core/header.png</url>
             <link>https://darylcecile.net</link>
         </image>
-        <copyright>Daryl Cecile © 2022</copyright>
+        <copyright>Daryl Cecile © 2023</copyright>
+        <item>
+            <title><![CDATA[Throwaway Prototypes]]></title>
+            <link>https://darylcecile.net/notes/throwaway-prototypes</link>
+            <guid>throwaway-prototypes</guid>
+            <pubDate>Mon, 26 Jun 2023 00:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>For the past couple of years I have grown fond of prototyping as a way of getting my ideas across to other developers. As part of my role at CapitalOne (Software Engineer - Internal Tooling), I’ve had the opportunity to come up with innovative ways to improve the developer experience at the company in a creative and fun way; it allowed me to explore new technologies and paradigms, and inherit new ways to architect and design products. Prototyping is not a topic that comes up often in my sphere, and it is definately not something I bring up often in conversations, however a recent Twitter post surfaced made me think a lot about the perceived value of prototyping as an engineer:</p>
+<p><Tweet id="1670411055296544773"></Tweet></p>
+<p>Working in a DevTools team, the customers I often created solutions for were other developers who were having a hard time; they were using tools that were slow, unstable, or sometime just plain unpleasant. Due to the size of the business, it meant that there was often a variety of pain-points that I could chose from to explore and solutionize. Some of my most recent successes include:</p>
+<ul class="para">
+<li>Designing and Implementing a Chrome Extension that summarizes CI/CD logs and surfaces solutions to those problems</li>
+<li>Creating a centralized package manager that simplified onboarding and setup of new development environments</li>
+<li>Creating an SSO wrapper that gave developers a drop-in solution to add Single Sign-On to any of their Lambda and Express applications</li>
+</ul>
+<p>Prototyping isn’t always going to lead to buy-in, however it almost always comes with other benefits which enable upskilling and exploring new technologies. Its also worth noting that building prototypes in an enterprise is obviously going to be easier that in smaller companies where resources are limited; however, I would say whenever possible prototyping is a valuable practice. It allows software engineers to explore and experiment with new technologies, methodologies, and ideas. By creating a prototype, engineers can quickly validate the feasibility of a concept, identify potential challenges, and gather feedback early on. This iterative process of building and refining helps to minimize risks and making informed decisions before investing significant resources into development.</p>
+<p>Moreover, prototypes serve as powerful communication tools. They allow software engineers to effectively convey their vision and ideas to stakeholders, product managers, and other teams. A lot of the solutions I brought to life at CapitalOne originated as a simple proof-of-concept prototypes. These prototypes helped me imagine up the solution, and solidify the implementation details that were floating in my head; and once I had a tangible solution, it helped me convey the value to other parts of the business. This visual representation also helps bridge the gap between technical and non-technical stakeholders, fostering collaboration and alignment throughout the development process.</p>
+<p>I encourage my mentees and more junior colleagues to create proof of concepts for ideas they might have, and so far both them and I have seen an increase in not just their confidence, but their skills. In addition to facilitating communication, prototypes also enable upskilling and knowledge expansion. As engineers work on prototypes, they gain hands-on experience with new technologies, frameworks, or approaches. This provides an opportunity for professional growth, allowing them to stay abreast of the latest industry trends and sharpen their skills. Furthermore, prototypes often act as a playground for experimentation, encouraging engineers to think creatively and explore alternative solutions that might not have been considered otherwise.</p>
+<p>Overall, prototyping and building proof of concepts offer numerous advantages. From solidifying implementation details to garnering support, these early-stage artifacts help shape successful software solutions. By leveraging prototypes, engineers can validate ideas, communicate effectively, and foster a culture of innovation within their organizations. Embracing the practice of prototyping ultimately leads to more robust, user-centric, and successful software products.</p>
+<hr />
+<p>P.S. At the time of writing, i’m attempting to prototype a <Abbr link="https://github.com/daryl-cecile/corai" >Toy React server</Abbr> to better understand how it works at a meta-framework level; and so far I have learned a lot about React Server Components. I plan to do a write-up on this soon!</p>
+]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/api/og?slug=throwaway-prototypes" length="0" type="image//api/og"/>
+        </item>
         <item>
             <title><![CDATA[Building in public]]></title>
             <link>https://darylcecile.net/notes/building-in-public</link>
@@ -68,7 +91,7 @@
             <title><![CDATA[Project Spotlight: Campus LMS]]></title>
             <link>https://darylcecile.net/notes/project-spotlight-campus</link>
             <guid>project-spotlight-campus</guid>
-            <pubDate>Fri, 02 Sep 2022 23:00:00 GMT</pubDate>
+            <pubDate>Sat, 03 Sep 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<InfoBox type="info">
     This LMS was created for ProjectFunction, which closed its doors in May 2022. See an archive of it on the <i><a href="/projects#ProjectFunction">project page</a></i>.
 </InfoBox>
@@ -114,7 +137,7 @@
             <title><![CDATA[Moving out]]></title>
             <link>https://darylcecile.net/notes/moving-out-notts</link>
             <guid>moving-out-notts</guid>
-            <pubDate>Sat, 02 Jul 2022 23:00:00 GMT</pubDate>
+            <pubDate>Sun, 03 Jul 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>This post has been a long time in the making. I’ve been scratching my head, wondering how to announce this<br />
 major milestone in my life. When writing notes for my website, I often like to form a story to help me get my thought process across;<br />
 but the thing is, this doesn’t need a story because it is already a story on its own. And after many unsuccessful attempts at starting this<br />
@@ -147,7 +170,7 @@ This isn’t the last Notts will see of me; I will return to visit regularly. �
             <title><![CDATA[Burning bright without burning out]]></title>
             <link>https://darylcecile.net/notes/burning-bright-without-burning-out</link>
             <guid>burning-bright-without-burning-out</guid>
-            <pubDate>Sat, 11 Jun 2022 23:00:00 GMT</pubDate>
+            <pubDate>Sun, 12 Jun 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<InfoBox type="success">
 <strong>Opinion:</strong> This post is based mostly on my opinion, and experiences that I have gained and/or that have been shared with me. I
 am not a mental health specialist. 
@@ -227,7 +250,7 @@ than re-growing an entire forest. 🌱</p>
             <title><![CDATA[Adding RSS Autodiscovery to your site]]></title>
             <link>https://darylcecile.net/notes/rss-autodiscovery</link>
             <guid>rss-autodiscovery</guid>
-            <pubDate>Sat, 04 Jun 2022 23:00:00 GMT</pubDate>
+            <pubDate>Sun, 05 Jun 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>Recently, I’ve discovered a new-found love for <abbr title="Really Simple Syndication" link="https://rss.com/blog/how-do-rss-feeds-work/">RSS</abbr>. It gives<br />
 me the best of both worlds; fast access to content, and a way to subscribe to content from sites I frequently visit - without<br />
 having to share my email address. Coincidentally, over the Jubilee weekend, I’ve been updating my website; adding dark mode,<br />
@@ -257,7 +280,7 @@ detects RSS, ATOM, and JSON feeds on pages that I visit, and allows me to subscr
             <title><![CDATA[Exploring the Chrome Extension context gaps]]></title>
             <link>https://darylcecile.net/notes/excom-chrome-extension</link>
             <guid>excom-chrome-extension</guid>
-            <pubDate>Fri, 03 Jun 2022 23:00:00 GMT</pubDate>
+            <pubDate>Sat, 04 Jun 2022 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>A couple of weeks ago, a conversation at work with my manager prompted me to revisit an old chrome extension I created a while<br />
 back to help me manage my tab usage better.</p>
 <p>The extension was born out of frustration for tab management; I was simply out of control.<br />
@@ -561,7 +584,7 @@ new hooks and explain their uses.</p>
             <title><![CDATA[Something needs a Rejig 👀]]></title>
             <link>https://darylcecile.net/notes/something-needs-a-rejig</link>
             <guid>something-needs-a-rejig</guid>
-            <pubDate>Tue, 26 May 2020 23:00:00 GMT</pubDate>
+            <pubDate>Wed, 27 May 2020 00:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<InfoBox type="warn">
 <strong>Edit:</strong> This post was scheduled to be published on the 8th of April, but due to the COVID pandemic and the uni-related consequences it brought about, I had to delay the post. However, I can now confirm that I am now working on another project idea that I have a genuine interest in and enjoy working on.
 </InfoBox>

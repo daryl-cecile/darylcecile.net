@@ -29,6 +29,7 @@ export default function Abbreviation(props: AbbreviationProps) {
 		let url = `/api/fetch-meta?${params}`;
 		return url;
 	}, [props.link]);
+	// @ts-ignore
 	const { value, fetchState, reason, revalidate } = useFetch(mounted ? metaEndpoint : null, {asJson: true, revalidateOnFocus: true});
 	const meta = {...value};
 	const canNavigate = !!props.link && !props.static;
@@ -94,6 +95,7 @@ export default function Abbreviation(props: AbbreviationProps) {
 				onKeyDown={ev => {
 					if (ev.key === "Tab" && !ev.shiftKey){
 						setTimeout(()=>{
+							// @ts-ignore
 							nextElRef.current = document.activeElement as any;
 							
 							let nextLink = previewElRef.current?.querySelector('a');
