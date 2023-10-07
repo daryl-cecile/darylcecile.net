@@ -5,7 +5,7 @@ import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
-export async function GET(opt:NextRequest){
+export async function GET(opt:NextRequest):Promise<Response>{
 	const { searchParams } = new URL(opt.url);
 
 	if (!searchParams.has("slug")) {
@@ -13,12 +13,12 @@ export async function GET(opt:NextRequest){
 		if (searchParams.has("page")) {
 			return new ImageResponse(
 				<SimpleImage title={`/${searchParams.get('page')!.toLowerCase()}`} subHeading={"@darylcecile"} />
-			)
+			) as Response
 		}
 
 		return new ImageResponse(
 			<SimpleImage title={"Hey! I'm Daryl 👋🏾"} subHeading={"@darylcecile"} />
-		)
+		) as Response
 	}
 
 	let post = noteData.items.find(item => item.slug === searchParams.get("slug"));
@@ -27,7 +27,7 @@ export async function GET(opt:NextRequest){
 	
 	return new ImageResponse(
 		<AdvanceImage title={post.title} authorName={post.author[0].name} readTime={post.readTime} />
-	)
+	) as Response
 }
 
 function SimpleImage({title, subHeading}){
