@@ -2,6 +2,7 @@
 name: SlantedPress
 image: screenshots/slantedpress.png
 startYear: 2017
+endYear: 2022
 link: https://slantedpress.com
 tokens: [web]
 ---

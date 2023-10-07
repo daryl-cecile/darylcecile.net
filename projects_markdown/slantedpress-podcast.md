@@ -2,6 +2,7 @@
 name: SlantedPods
 image: screenshots/slantedpods.png
 startYear: 2018
+endYear: 2022
 link: https://pods.slantedpress.com
 tokens: [web]
 ---

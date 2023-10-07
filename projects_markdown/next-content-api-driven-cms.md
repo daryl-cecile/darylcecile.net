@@ -1,7 +1,7 @@
 ---
 name: NextContent
 startYear: 2022
-sticky: true
+endYear: 2023
 link: https://jumbled-dichondra-7a3.notion.site/NextCMS-ce699824a5cb439f822853e0c82dad46
 image: https://www.figma.com/file/xAawYaHw1GcYw5KZmtt3Co/thumbnail?ver=thumbnails/efe1ecdb-70e6-4936-b2f8-3c91ff975583
 tokens: [web, platform]
