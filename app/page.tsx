@@ -2,12 +2,21 @@ import Anchor from "../components/Anchor";
 import NotePreview from "../components/NotePreview";
 import { getAllNotesDataSorted } from "../lib/notes";
 import utilStyles from '../styles/utils.module.scss';
-import {parseISO} from "date-fns";
+import dayjs from "dayjs"
+import utc from "dayjs/plugin/utc"
+import timezone from "dayjs/plugin/timezone"
+import customParseFormat from "dayjs/plugin/customParseFormat"
 
 export default function Page(){
     let publicNotes = getAllNotesDataSorted(true).filter(note => {
-        if (note.hidden) return false;
-        return parseISO(note.date).getTime() <= Date.now();
+        dayjs.extend(utc);
+		dayjs.extend(timezone);
+		dayjs.extend(customParseFormat);
+
+		const publishDate = dayjs.tz(note.date, "YYYY-MM-DD", "Europe/London");
+		const currentDate = dayjs().tz("Europe/London");
+		
+		return !note.hidden && publishDate.toDate() < currentDate.toDate()
     });
     return (
         <>

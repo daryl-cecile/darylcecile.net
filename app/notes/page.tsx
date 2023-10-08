@@ -1,5 +1,4 @@
 
-import { parseISO } from "date-fns";
 import Anchor from "../../components/Anchor";
 import NotePreview from "../../components/NotePreview";
 import { getAllNotesDataSorted } from "../../lib/notes";
