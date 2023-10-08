@@ -4,7 +4,7 @@
         <title>Daryl Cecile</title>
         <link>https://darylcecile.net</link>
         <description>My notes</description>
-        <lastBuildDate>Thu, 22 Jun 2023 17:05:17 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 08 Oct 2023 21:57:26 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>mFeed</generator>
         <language>en</language>
@@ -15,10 +15,48 @@
         </image>
         <copyright>Daryl Cecile © 2023</copyright>
         <item>
+            <title><![CDATA[Next-level Pursuit 🐣]]></title>
+            <link>https://darylcecile.net/notes/next-level-pursuit</link>
+            <guid>next-level-pursuit</guid>
+            <pubDate>Thu, 05 Oct 2023 23:00:00 GMT</pubDate>
+            <content:encoded><![CDATA[<p>So it’s been officially 3 years and 8 months (give or take) since I last wrote Futuristic <Abbr title="Futuristic Pursuit" link="https://darylcecile.net/notes/futuristic-pursuit">Pursuit</Abbr>. How time flies!</p>
+<p>Since then, I got a job at Capital One UK; starting as a Software Engineer and quickly progressing to a Senior SDE Role, finalized the closures of PF’s doors, <Abbr title="Moving out" link="https://darylcecile.net/notes/moving-out-notts">Moved to London</Abbr> with Panther and my Partner, and got back into working on my side projects (after recovering from some serious burnout!) 😅</p>
+<p><img src="/images/mauritius-beach-profile-2023.jpg" alt="Daryl recovering from burnout, while burning out on a beach in Mauritius" loading="lazy" /></p>
+<h3>Time for a change</h3>
+<p>Due to some recent changes in the engineering department structure and future direction, I decided it was time for me to find my next new challenge; to go out forth and figure out whats next in my career journey. Let me tell you, the market is brutal at the moment. Here are the numbers to date:</p>
+<ul class="para">
+<li>2 interviews at exciting companies</li>
+<li>4 interviews at companies that ended up throwing too many red flags</li>
+<li>1 interview at a company based in Germany</li>
+<li>3 pending interviews</li>
+</ul>
+<p>Initially I was struggling to get interviews, but more recently I’ve had an influx of invites and interviews come through on both my LinkedIn and <Abbr title="Otta Jobs" link="https://otta.com">Otta</Abbr>, so I am hopeful.</p>
+<p>With an aim to follow traditions (and in true Daryl-fashion), here is a rough idea of what im looking for next:</p>
+<ul class="para">
+<li>A <s>startup-like</s> ‘Big-corp’ environment would be perfect</li>
+<li>An internal tooling role (Web)</li>
+<li>Team where Node.js + Typescript are part of their toolset (or looking to adopt)</li>
+<li>Flexible working (No office-only)</li>
+<li>Having personal-development budget and opportunities</li>
+<li>No crunch-time (clear seperation of work and personal life)</li>
+<li>Regular opportunities for career-progression</li>
+<li>Stellar SEM known internally for their supportive and enabling nature</li>
+<li>Diverse and inclusive teams</li>
+<li>Actively pursues experimentation and Proof-of-concept</li>
+<li>A place that is not afraid to make (and dogfood) their own tools</li>
+<li>Open-souce contributors would be a plus</li>
+<li>A place that is happy to work and give back to the community</li>
+</ul>
+<p>All in all, I have a clear idea of the kind of workplace where I want to work as a Senior Software Engineer 👨🏽‍💻. Now we need to make it happen 🚀</p>
+]]></content:encoded>
+            <author>darylcecile@gmail.com (Daryl Cecile)</author>
+            <enclosure url="https://darylcecile.net/og?slug=next-level-pursuit" length="0" type="image//og"/>
+        </item>
+        <item>
             <title><![CDATA[Throwaway Prototypes]]></title>
             <link>https://darylcecile.net/notes/throwaway-prototypes</link>
             <guid>throwaway-prototypes</guid>
-            <pubDate>Thu, 22 Jun 2023 00:00:00 GMT</pubDate>
+            <pubDate>Wed, 21 Jun 2023 23:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>For the past couple of years I have grown fond of prototyping as a way of getting my ideas across to other developers. As part of my role at CapitalOne (Software Engineer - Internal Tooling), I’ve had the opportunity to come up with innovative ways to improve the developer experience at the company in a creative and fun way; it allowed me to explore new technologies and paradigms, and inherit new ways to architect and design products. Prototyping is not a topic that comes up often in my sphere, and it is definately not something I bring up often in conversations, however a recent Twitter post surfaced made me think a lot about the perceived value of prototyping as an engineer:</p>
 <p><Tweet id="1670411055296544773"></Tweet></p>
 <p>Working in a DevTools team, the customers I often created solutions for were other developers who were having a hard time; they were using tools that were slow, unstable, or sometime just plain unpleasant. Due to the size of the business, it meant that there was often a variety of pain-points that I could chose from to explore and solutionize. Some of my most recent successes include:</p>
@@ -91,7 +129,7 @@
             <title><![CDATA[Project Spotlight: Campus LMS]]></title>
             <link>https://darylcecile.net/notes/project-spotlight-campus</link>
             <guid>project-spotlight-campus</guid>
-            <pubDate>Sat, 03 Sep 2022 00:00:00 GMT</pubDate>
+            <pubDate>Fri, 02 Sep 2022 23:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<InfoBox type="info">
     This LMS was created for ProjectFunction, which closed its doors in May 2022. See an archive of it on the <i><a href="/projects#ProjectFunction">project page</a></i>.
 </InfoBox>
@@ -137,7 +175,7 @@
             <title><![CDATA[Moving out]]></title>
             <link>https://darylcecile.net/notes/moving-out-notts</link>
             <guid>moving-out-notts</guid>
-            <pubDate>Sun, 03 Jul 2022 00:00:00 GMT</pubDate>
+            <pubDate>Sat, 02 Jul 2022 23:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>This post has been a long time in the making. I’ve been scratching my head, wondering how to announce this<br />
 major milestone in my life. When writing notes for my website, I often like to form a story to help me get my thought process across;<br />
 but the thing is, this doesn’t need a story because it is already a story on its own. And after many unsuccessful attempts at starting this<br />
@@ -170,7 +208,7 @@ This isn’t the last Notts will see of me; I will return to visit regularly. �
             <title><![CDATA[Burning bright without burning out]]></title>
             <link>https://darylcecile.net/notes/burning-bright-without-burning-out</link>
             <guid>burning-bright-without-burning-out</guid>
-            <pubDate>Sun, 12 Jun 2022 00:00:00 GMT</pubDate>
+            <pubDate>Sat, 11 Jun 2022 23:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<InfoBox type="success">
 <strong>Opinion:</strong> This post is based mostly on my opinion, and experiences that I have gained and/or that have been shared with me. I
 am not a mental health specialist. 
@@ -250,7 +288,7 @@ than re-growing an entire forest. 🌱</p>
             <title><![CDATA[Adding RSS Autodiscovery to your site]]></title>
             <link>https://darylcecile.net/notes/rss-autodiscovery</link>
             <guid>rss-autodiscovery</guid>
-            <pubDate>Sun, 05 Jun 2022 00:00:00 GMT</pubDate>
+            <pubDate>Sat, 04 Jun 2022 23:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>Recently, I’ve discovered a new-found love for <abbr title="Really Simple Syndication" link="https://rss.com/blog/how-do-rss-feeds-work/">RSS</abbr>. It gives<br />
 me the best of both worlds; fast access to content, and a way to subscribe to content from sites I frequently visit - without<br />
 having to share my email address. Coincidentally, over the Jubilee weekend, I’ve been updating my website; adding dark mode,<br />
@@ -280,7 +318,7 @@ detects RSS, ATOM, and JSON feeds on pages that I visit, and allows me to subscr
             <title><![CDATA[Exploring the Chrome Extension context gaps]]></title>
             <link>https://darylcecile.net/notes/excom-chrome-extension</link>
             <guid>excom-chrome-extension</guid>
-            <pubDate>Sat, 04 Jun 2022 00:00:00 GMT</pubDate>
+            <pubDate>Fri, 03 Jun 2022 23:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>A couple of weeks ago, a conversation at work with my manager prompted me to revisit an old chrome extension I created a while<br />
 back to help me manage my tab usage better.</p>
 <p>The extension was born out of frustration for tab management; I was simply out of control.<br />
@@ -584,7 +622,7 @@ new hooks and explain their uses.</p>
             <title><![CDATA[Something needs a Rejig 👀]]></title>
             <link>https://darylcecile.net/notes/something-needs-a-rejig</link>
             <guid>something-needs-a-rejig</guid>
-            <pubDate>Wed, 27 May 2020 00:00:00 GMT</pubDate>
+            <pubDate>Tue, 26 May 2020 23:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<InfoBox type="warn">
 <strong>Edit:</strong> This post was scheduled to be published on the 8th of April, but due to the COVID pandemic and the uni-related consequences it brought about, I had to delay the post. However, I can now confirm that I am now working on another project idea that I have a genuine interest in and enjoy working on.
 </InfoBox>

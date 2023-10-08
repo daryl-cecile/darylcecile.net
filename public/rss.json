@@ -11,12 +11,24 @@
     },
     "items": [
         {
+            "id": "next-level-pursuit",
+            "content_html": "<p>So it’s been officially 3 years and 8 months (give or take) since I last wrote Futuristic <Abbr title=\"Futuristic Pursuit\" link=\"https://darylcecile.net/notes/futuristic-pursuit\">Pursuit</Abbr>. How time flies!</p>\n<p>Since then, I got a job at Capital One UK; starting as a Software Engineer and quickly progressing to a Senior SDE Role, finalized the closures of PF’s doors, <Abbr title=\"Moving out\" link=\"https://darylcecile.net/notes/moving-out-notts\">Moved to London</Abbr> with Panther and my Partner, and got back into working on my side projects (after recovering from some serious burnout!) 😅</p>\n<p><img src=\"/images/mauritius-beach-profile-2023.jpg\" alt=\"Daryl recovering from burnout, while burning out on a beach in Mauritius\" loading=\"lazy\" /></p>\n<h3>Time for a change</h3>\n<p>Due to some recent changes in the engineering department structure and future direction, I decided it was time for me to find my next new challenge; to go out forth and figure out whats next in my career journey. Let me tell you, the market is brutal at the moment. Here are the numbers to date:</p>\n<ul class=\"para\">\n<li>2 interviews at exciting companies</li>\n<li>4 interviews at companies that ended up throwing too many red flags</li>\n<li>1 interview at a company based in Germany</li>\n<li>3 pending interviews</li>\n</ul>\n<p>Initially I was struggling to get interviews, but more recently I’ve had an influx of invites and interviews come through on both my LinkedIn and <Abbr title=\"Otta Jobs\" link=\"https://otta.com\">Otta</Abbr>, so I am hopeful.</p>\n<p>With an aim to follow traditions (and in true Daryl-fashion), here is a rough idea of what im looking for next:</p>\n<ul class=\"para\">\n<li>A <s>startup-like</s> ‘Big-corp’ environment would be perfect</li>\n<li>An internal tooling role (Web)</li>\n<li>Team where Node.js + Typescript are part of their toolset (or looking to adopt)</li>\n<li>Flexible working (No office-only)</li>\n<li>Having personal-development budget and opportunities</li>\n<li>No crunch-time (clear seperation of work and personal life)</li>\n<li>Regular opportunities for career-progression</li>\n<li>Stellar SEM known internally for their supportive and enabling nature</li>\n<li>Diverse and inclusive teams</li>\n<li>Actively pursues experimentation and Proof-of-concept</li>\n<li>A place that is not afraid to make (and dogfood) their own tools</li>\n<li>Open-souce contributors would be a plus</li>\n<li>A place that is happy to work and give back to the community</li>\n</ul>\n<p>All in all, I have a clear idea of the kind of workplace where I want to work as a Senior Software Engineer 👨🏽‍💻. Now we need to make it happen 🚀</p>\n",
+            "url": "https://darylcecile.net/notes/next-level-pursuit",
+            "title": "Next-level Pursuit 🐣",
+            "image": "https://darylcecile.net/og?slug=next-level-pursuit",
+            "date_modified": "2023-10-05T23:00:00.000Z",
+            "author": {
+                "name": "Daryl Cecile",
+                "url": "https://darylcecile.net"
+            }
+        },
+        {
             "id": "throwaway-prototypes",
             "content_html": "<p>For the past couple of years I have grown fond of prototyping as a way of getting my ideas across to other developers. As part of my role at CapitalOne (Software Engineer - Internal Tooling), I’ve had the opportunity to come up with innovative ways to improve the developer experience at the company in a creative and fun way; it allowed me to explore new technologies and paradigms, and inherit new ways to architect and design products. Prototyping is not a topic that comes up often in my sphere, and it is definately not something I bring up often in conversations, however a recent Twitter post surfaced made me think a lot about the perceived value of prototyping as an engineer:</p>\n<p><Tweet id=\"1670411055296544773\"></Tweet></p>\n<p>Working in a DevTools team, the customers I often created solutions for were other developers who were having a hard time; they were using tools that were slow, unstable, or sometime just plain unpleasant. Due to the size of the business, it meant that there was often a variety of pain-points that I could chose from to explore and solutionize. Some of my most recent successes include:</p>\n<ul class=\"para\">\n<li>Designing and Implementing a Chrome Extension that summarizes CI/CD logs and surfaces solutions to those problems</li>\n<li>Creating a centralized package manager that simplified onboarding and setup of new development environments</li>\n<li>Creating an SSO wrapper that gave developers a drop-in solution to add Single Sign-On to any of their Lambda and Express applications</li>\n</ul>\n<p>Prototyping isn’t always going to lead to buy-in, however it almost always comes with other benefits which enable upskilling and exploring new technologies. Its also worth noting that building prototypes in an enterprise is obviously going to be easier that in smaller companies where resources are limited; however, I would say whenever possible prototyping is a valuable practice. It allows software engineers to explore and experiment with new technologies, methodologies, and ideas. By creating a prototype, engineers can quickly validate the feasibility of a concept, identify potential challenges, and gather feedback early on. This iterative process of building and refining helps to minimize risks and making informed decisions before investing significant resources into development.</p>\n<p>Moreover, prototypes serve as powerful communication tools. They allow software engineers to effectively convey their vision and ideas to stakeholders, product managers, and other teams. A lot of the solutions I brought to life at CapitalOne originated as a simple proof-of-concept prototypes. These prototypes helped me imagine up the solution, and solidify the implementation details that were floating in my head; and once I had a tangible solution, it helped me convey the value to other parts of the business. This visual representation also helps bridge the gap between technical and non-technical stakeholders, fostering collaboration and alignment throughout the development process.</p>\n<p>I encourage my mentees and more junior colleagues to create proof of concepts for ideas they might have, and so far both them and I have seen an increase in not just their confidence, but their skills. In addition to facilitating communication, prototypes also enable upskilling and knowledge expansion. As engineers work on prototypes, they gain hands-on experience with new technologies, frameworks, or approaches. This provides an opportunity for professional growth, allowing them to stay abreast of the latest industry trends and sharpen their skills. Furthermore, prototypes often act as a playground for experimentation, encouraging engineers to think creatively and explore alternative solutions that might not have been considered otherwise.</p>\n<p>Overall, prototyping and building proof of concepts offer numerous advantages. From solidifying implementation details to garnering support, these early-stage artifacts help shape successful software solutions. By leveraging prototypes, engineers can validate ideas, communicate effectively, and foster a culture of innovation within their organizations. Embracing the practice of prototyping ultimately leads to more robust, user-centric, and successful software products.</p>\n<hr />\n<p>P.S. At the time of writing, i’m attempting to prototype a <Abbr link=\"https://github.com/daryl-cecile/corai\" >Toy React server</Abbr> to better understand how it works at a meta-framework level; and so far I have learned a lot about React Server Components. I plan to do a write-up on this soon!</p>\n",
             "url": "https://darylcecile.net/notes/throwaway-prototypes",
             "title": "Throwaway Prototypes",
             "image": "https://darylcecile.net/og?slug=throwaway-prototypes",
-            "date_modified": "2023-06-22T00:00:00.000Z",
+            "date_modified": "2023-06-21T23:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -52,7 +64,7 @@
             "url": "https://darylcecile.net/notes/project-spotlight-campus",
             "title": "Project Spotlight: Campus LMS",
             "image": "https://darylcecile.net/og?slug=project-spotlight-campus",
-            "date_modified": "2022-09-03T00:00:00.000Z",
+            "date_modified": "2022-09-02T23:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -64,7 +76,7 @@
             "url": "https://darylcecile.net/notes/moving-out-notts",
             "title": "Moving out",
             "image": "https://darylcecile.net/og?slug=moving-out-notts",
-            "date_modified": "2022-07-03T00:00:00.000Z",
+            "date_modified": "2022-07-02T23:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -76,7 +88,7 @@
             "url": "https://darylcecile.net/notes/burning-bright-without-burning-out",
             "title": "Burning bright without burning out",
             "image": "https://darylcecile.net/og?slug=burning-bright-without-burning-out",
-            "date_modified": "2022-06-12T00:00:00.000Z",
+            "date_modified": "2022-06-11T23:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -88,7 +100,7 @@
             "url": "https://darylcecile.net/notes/rss-autodiscovery",
             "title": "Adding RSS Autodiscovery to your site",
             "image": "https://darylcecile.net/og?slug=rss-autodiscovery",
-            "date_modified": "2022-06-05T00:00:00.000Z",
+            "date_modified": "2022-06-04T23:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -100,7 +112,7 @@
             "url": "https://darylcecile.net/notes/excom-chrome-extension",
             "title": "Exploring the Chrome Extension context gaps",
             "image": "https://darylcecile.net/og?slug=excom-chrome-extension",
-            "date_modified": "2022-06-04T00:00:00.000Z",
+            "date_modified": "2022-06-03T23:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
@@ -136,7 +148,7 @@
             "url": "https://darylcecile.net/notes/something-needs-a-rejig",
             "title": "Something needs a Rejig 👀",
             "image": "https://darylcecile.net/og?slug=something-needs-a-rejig",
-            "date_modified": "2020-05-27T00:00:00.000Z",
+            "date_modified": "2020-05-26T23:00:00.000Z",
             "author": {
                 "name": "Daryl Cecile",
                 "url": "https://darylcecile.net"
