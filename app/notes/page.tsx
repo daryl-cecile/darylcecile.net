@@ -5,6 +5,10 @@ import NotePreview from "../../components/NotePreview";
 import { getAllNotesDataSorted } from "../../lib/notes";
 import utilStyles from "../../styles/utils.module.scss";
 import { Metadata, ResolvingMetadata } from "next";
+import dayjs from "dayjs"
+import utc from "dayjs/plugin/utc"
+import timezone from "dayjs/plugin/timezone"
+import customParseFormat from "dayjs/plugin/customParseFormat"
 
 export const revalidate = 30;
 
@@ -62,7 +66,16 @@ export async function generateMetadata({ params, searchParams }: NotesListProps,
 }
 
 export default async function NotesListPage(){
-    const publicNotes = getAllNotesDataSorted().filter(note => !note.hidden && parseISO(note.date).getTime() <= Date.now());
+    const publicNotes = getAllNotesDataSorted().filter(note => {
+		dayjs.extend(utc);
+		dayjs.extend(timezone);
+		dayjs.extend(customParseFormat);
+
+		const publishDate = dayjs.tz(note.date, "YYYY-MM-DD", "Europe/London");
+		const currentDate = dayjs().tz("Europe/London");
+		
+		return !note.hidden && publishDate.toDate() < currentDate.toDate()
+	});
 
     return (
         <div className="restrict">
