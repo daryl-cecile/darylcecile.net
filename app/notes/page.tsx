@@ -30,13 +30,13 @@ export async function generateMetadata({ params, searchParams }: NotesListProps,
 		description: 'Daryl Cecile',
 		openGraph: {
 			title: 'Notes | Daryl Cecile',
-			images: [`https://darylcecile.net/og`],
+			images: [`https://darylcecile.net/og?page=notes`],
 			locale: 'en_US'
 		},
 		twitter: {
 			card: 'summary_large_image',
 			title: 'Notes | Daryl Cecile',
-			images: `https://darylcecile.net/og`,
+			images: `https://darylcecile.net/og?page=notes`,
 			site: '@darylcecile',
 			creator: '@darylcecile'
 		},

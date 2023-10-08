@@ -7,6 +7,7 @@ import "highlight.js/styles/atom-one-dark.css"
 import HomeHeader from "../components/HomeHeader";
 import LowerNav from "../components/LowerNav";
 import { Metadata, ResolvingMetadata } from "next";
+import {Analytics} from "@vercel/analytics/react"
 
 type RootLayoutProps = {
 	params: {},
@@ -75,6 +76,7 @@ export default function AppLayout({children}){
 				  display:'none'
 				}} rel="me" href="https://techhub.social/@daryl">Mastodon</a>
 				<Footer year={(new Date()).getFullYear()}/>
+				<Analytics />
 			</body>
 		</html>
     )

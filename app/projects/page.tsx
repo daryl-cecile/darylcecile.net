@@ -3,8 +3,62 @@ import ProjectPreview from "../../components/ProjectPreview";
 import { getAllProjectsDataSorted } from "../../lib/projects";
 import utilStyles from "../../styles/utils.module.scss";
 import componentStyles from "../../styles/projectPreview.module.scss";
+import { Metadata, ResolvingMetadata } from "next";
 
 export const revalidate = 30;
+
+type ProjectListProps = {
+	params: {},
+	searchParams?: Record<string, string>
+}
+
+export async function generateMetadata({ params, searchParams }: ProjectListProps, parent: ResolvingMetadata): Promise<Metadata> {
+	return {
+		metadataBase: new URL(`https://darylcecile.net/`),
+		alternates: {
+			canonical: 'https://darylcecile.net/projects',
+			types: {
+				'application/rss+xml': [
+					{ title: 'RSS Feed for darylcecile.net', url: '/rss.xml' }
+				]
+			}
+		},
+		viewport: { minimumScale:1, initialScale: 1, width: 'device-width' },
+		title: 'Projects | Daryl Cecile',
+		authors: { name: 'Daryl Cecile', url: 'https://darylcecile.net' },
+		description: 'Daryl Cecile',
+		openGraph: {
+			title: 'Projects | Daryl Cecile',
+			images: [`https://darylcecile.net/og?page=projects`],
+			locale: 'en_US'
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: 'Projects | Daryl Cecile',
+			images: `https://darylcecile.net/og?page=projects`,
+			site: '@darylcecile',
+			creator: '@darylcecile'
+		},
+		themeColor: '#ffffff',
+		icons: {
+			apple: {
+				sizes: "180x180",
+				url: '/images/core/profile_180.png'
+			},
+			icon: [
+				{ url: '/images/core/profile_32.png', sizes: '32x32', type: 'image/png' },
+				{ url: '/images/core/profile_16.png', sizes: '16x16', type: 'image/png' },
+			],
+			shortcut: ['/images/core/profile.ico'],
+			other: [
+				{ rel: 'me', url:'https://twitter.com/darylcecile' },
+				{ rel: 'webmention', url:'https://webmention.io/darylcecile.net/webmention' },
+				{ rel: 'pingback', url:'https://webmention.io/darylcecile.net/xmlrpc' }
+			]
+		},
+		manifest: '/site.webmanifest'
+	} satisfies Metadata
+}
 
 export default function ProjectListPage(){
     const allProjectsData = getAllProjectsDataSorted();
