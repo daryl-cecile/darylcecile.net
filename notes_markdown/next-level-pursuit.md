@@ -5,12 +5,12 @@ date: "2023-10-09"
 
 So it's been officially 3 years and 8 months (give or take) since I last wrote Futuristic <Abbr title="Futuristic Pursuit" link="https://darylcecile.net/notes/futuristic-pursuit">Pursuit</Abbr>. How time flies!
 
-Since then, I got a job at Capital One UK; starting as a Software Engineer and quickly progressing to a Senior SDE Role, finalized the closures of PF's doors, <Abbr title="Moving out" link="https://darylcecile.net/notes/moving-out-notts">Moved to London</Abbr> with Panther and my Partner, and got back into working on my side projects (after recovering from some serious burnout!) 😅
+Since then, I got a job at Capital One UK; starting off as a Software Engineer and quickly progressing to a Senior Role, I finalized the winding-down of ProjectFunction, <Abbr title="Moving out" link="https://darylcecile.net/notes/moving-out-notts">Moved to London</Abbr> with Panther and my Partner, and got back into working on my side projects (after recovering from some serious burnout!)
 
 ![Daryl recovering from burnout, while burning out on a beach in Mauritius](/images/mauritius-beach-profile-2023.jpg)
 
 
-### Time for a change
+### Time for change
 
 Due to some recent changes in the engineering department structure and future direction, I decided it was time for me to find my next new challenge; to go out forth and figure out whats next in my career journey. Let me tell you, the market is brutal at the moment. Here are the numbers to date:
 

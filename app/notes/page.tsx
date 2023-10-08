@@ -4,8 +4,62 @@ import Anchor from "../../components/Anchor";
 import NotePreview from "../../components/NotePreview";
 import { getAllNotesDataSorted } from "../../lib/notes";
 import utilStyles from "../../styles/utils.module.scss";
+import { Metadata, ResolvingMetadata } from "next";
 
 export const revalidate = 30;
+
+type NotesListProps = {
+	params: {},
+	searchParams?: Record<string, string>
+}
+
+export async function generateMetadata({ params, searchParams }: NotesListProps, parent: ResolvingMetadata): Promise<Metadata> {
+	return {
+		metadataBase: new URL(`https://darylcecile.net/`),
+		alternates: {
+			canonical: 'https://darylcecile.net/notes',
+			types: {
+				'application/rss+xml': [
+					{ title: 'RSS Feed for darylcecile.net', url: '/rss.xml' }
+				]
+			}
+		},
+		viewport: { minimumScale:1, initialScale: 1, width: 'device-width' },
+		title: 'Notes | Daryl Cecile',
+		authors: { name: 'Daryl Cecile', url: 'https://darylcecile.net' },
+		description: 'Daryl Cecile',
+		openGraph: {
+			title: 'Notes | Daryl Cecile',
+			images: [`https://darylcecile.net/og`],
+			locale: 'en_US'
+		},
+		twitter: {
+			card: 'summary_large_image',
+			title: 'Notes | Daryl Cecile',
+			images: `https://darylcecile.net/og`,
+			site: '@darylcecile',
+			creator: '@darylcecile'
+		},
+		themeColor: '#ffffff',
+		icons: {
+			apple: {
+				sizes: "180x180",
+				url: '/images/core/profile_180.png'
+			},
+			icon: [
+				{ url: '/images/core/profile_32.png', sizes: '32x32', type: 'image/png' },
+				{ url: '/images/core/profile_16.png', sizes: '16x16', type: 'image/png' },
+			],
+			shortcut: ['/images/core/profile.ico'],
+			other: [
+				{ rel: 'me', url:'https://twitter.com/darylcecile' },
+				{ rel: 'webmention', url:'https://webmention.io/darylcecile.net/webmention' },
+				{ rel: 'pingback', url:'https://webmention.io/darylcecile.net/xmlrpc' }
+			]
+		},
+		manifest: '/site.webmanifest'
+	} satisfies Metadata
+}
 
 export default async function NotesListPage(){
     const publicNotes = getAllNotesDataSorted().filter(note => !note.hidden && parseISO(note.date).getTime() <= Date.now());

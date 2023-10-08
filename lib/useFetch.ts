@@ -50,7 +50,7 @@ async function _fetch<T>(url: string, config?:IFetchConfig) {
 	});
 }
 
-export default function useFetch(url: string, config?: UseFetchConfig) {
+export default function useFetch(url: string|null, config?: UseFetchConfig) {
 	let urlParams = "?" + (new URLSearchParams(config?.queryParams ?? {})).toString();
 	let endpoint = `${url}${urlParams}`;
 	let [result, setResult] = useState<any>();
@@ -73,7 +73,8 @@ export default function useFetch(url: string, config?: UseFetchConfig) {
 		}
 	}, [revalidate, config?.revalidateOnFocus ?? false]);
 	
-	useMemo(()=>{
+	useEffect(()=>{
+		if (!url) return;
 		if (!endpoint) return;
 		if (cache.has(endpoint)) return;
 		let job = _fetch(endpoint, {method: config?.method, body: config?.body});
@@ -93,7 +94,7 @@ export default function useFetch(url: string, config?: UseFetchConfig) {
 				setJobState("failed");
 				setReason(err);
 			});
-	}, [endpoint, id]);
+	}, [endpoint, id, url]);
 
 	return {
 		value: result,

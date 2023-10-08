@@ -29,7 +29,6 @@ export default function Abbreviation(props: AbbreviationProps) {
 		let url = `/fetch-meta?${params}`;
 		return url;
 	}, [props.link]);
-	// @ts-ignore
 	const { value, fetchState, reason, revalidate } = useFetch(mounted ? metaEndpoint : null, {asJson: true, revalidateOnFocus: true});
 	const meta = {...value};
 	const canNavigate = !!props.link && !props.static;

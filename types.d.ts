@@ -17,6 +17,7 @@ declare type Note = {
 	readTime: string
 	hidden?:boolean
 	image?: string
+	snippet?: string
 }
 
 declare type Project = {
