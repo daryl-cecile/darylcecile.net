@@ -2,6 +2,7 @@
 title: "Project Spotlight: Campus LMS"
 date: "2022-09-03"
 image: https://darylcecile.net/images/spotlight/campus/campus_lesson.png
+snippet: 'Spotlight: A Learning Management System created for ProjectFunction'
 ---
 
 <InfoBox type="info">

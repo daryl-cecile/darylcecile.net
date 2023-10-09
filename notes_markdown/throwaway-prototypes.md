@@ -1,6 +1,7 @@
 ---
 title: "Throwaway Prototypes"
 date: "2023-06-22"
+snippet: For the past couple of years I have grown fond of prototyping as a way of getting my ideas across to other developers.
 ---
 
 For the past couple of years I have grown fond of prototyping as a way of getting my ideas across to other developers. As part of my role at CapitalOne (Software Engineer - Internal Tooling), I've had the opportunity to come up with innovative ways to improve the developer experience at the company in a creative and fun way; it allowed me to explore new technologies and paradigms, and inherit new ways to architect and design products. Prototyping is not a topic that comes up often in my sphere, and it is definately not something I bring up often in conversations, however a recent Twitter post surfaced made me think a lot about the perceived value of prototyping as an engineer: 

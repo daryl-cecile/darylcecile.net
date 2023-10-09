@@ -1,6 +1,7 @@
 ---
 title: Something needs a Rejig 👀
 date: "2020-05-27"
+snippet: I've decided to take the risk and start working on the new project called rejig for my Final year project...
 ---
 <InfoBox type="warn">
 <strong>Edit:</strong> This post was scheduled to be published on the 8th of April, but due to the COVID pandemic and the uni-related consequences it brought about, I had to delay the post. However, I can now confirm that I am now working on another project idea that I have a genuine interest in and enjoy working on.

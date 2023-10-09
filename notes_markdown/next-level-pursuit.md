@@ -1,6 +1,7 @@
 ---
 title: Next-level Pursuit 🐣
 date: "2023-10-09"
+snippet: I'm looking for my next challenge!
 ---
 
 So it's been officially 3 years and 8 months (give or take) since I last wrote Futuristic <Abbr title="Futuristic Pursuit" link="https://darylcecile.net/notes/futuristic-pursuit">Pursuit</Abbr>. How time flies!

@@ -1,7 +1,12 @@
 ---
 title: "Building in public"
 date: "2022-11-11"
+snippet: Life updates - Building In Public!
 ---
+
+<InfoBox type="warn">
+<strong>DEPRECATED:</strong> This Project is no longer being maintained and has now be deprecated
+</InfoBox>
 
 For a couple of weeks (months?) now, I have been playing around with the idea of a small API-first headless <Abbr title="Content Management System" link="https://kinsta.com/knowledgebase/content-management-system/">CMS</Abbr>. I started forming building blocks and planning they way it would look and behave. 
 

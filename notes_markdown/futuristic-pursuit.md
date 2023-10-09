@@ -1,6 +1,7 @@
 ---
 title: Futuristic Pursuit 🐣
 date: "2020-01-31"
+snippet: I'm looking for my next Challenge!
 ---
 
 For the past 4 years, I've been telling myself that I will be ready for adult life when it comes - and until recently, that was true. I've always had a clear image of what I wanted to achieve in the future; Since college, I knew that I wanted to start my own (side?) project/company, and find a job in development somewhere that is chill. But now that I am finally about to step into proper "adult life", I cant help but feel like i'm not as ready as I thought 😬

@@ -2,6 +2,7 @@
 title: "November life update"
 date: "2022-11-05"
 image: "https://darylcecile.net/r/images.unsplash.com/photo-1468245856972-a0333f3f8293?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGZvcmVzdCUyMGJ1cm58ZW58MHx8MHx8&auto=format&fit=crop&w=1024&q=6"
+snippet: Life updates - November
 ---
 
 So im pulling this from [Carol](https://carol.gg/)'s book an attempt to provide you with a [lifenote](https://twitter.com/carolsaysthings/status/1587174153190268929?s=61&t=jXDDwfGAQLaMRy52o0w4Qg)-esque life update. Since my <Abbr link="https://darylcecile.net/notes/moving-out-notts" title="Moving out">last post</Abbr>, a lot has happened;

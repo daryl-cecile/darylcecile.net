@@ -1,7 +1,12 @@
 ---
 title: I did a thing... PyroGist 👨🏽‍💻
 date: "2020-03-05"
+snippet: 'Spotlight: PyroGist - DEPRECATED'
 ---
+
+<InfoBox type="warn">
+<strong>DEPRECATED:</strong> This Project is no longer being maintained and has now be deprecated
+</InfoBox>
 
 As some of you might have heard, ProjectFunction is partnering up with NTU to deliver a 2 weeks intensive course. As with other PF courses we have run in the past, this one will be open to those who are under-represented in the industry. As part of this programme, learners will have the opportunity to take part in workshops and attend talks related to working in tech. Additionally, they will have the opportunity to apply all the skills they gather and the knowledge they gain, to design and implement their own website.
 

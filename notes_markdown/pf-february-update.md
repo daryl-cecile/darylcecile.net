@@ -1,6 +1,7 @@
 ---
 title: PF February Update ⚡️🧙🏽‍♂️
 date: "2020-02-29"
+snippet: Life updates - February
 ---
 
 This month's entry is comparatively short to the last, as it is not what I had initially planned to post. This is due to me spending almost an hour and half doing the write up for the original post to then decide at the very last minute that I needed more time to refine the wording of the content. So here is a short post 😂

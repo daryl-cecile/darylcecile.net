@@ -2,6 +2,7 @@
 title: "Doc Journey: ▲Vercel Edition"
 date: "2022-02-16"
 lastUpdated: "2022-03-01"
+snippet: Join me on a cursory journey around the Vercel Documentation, and how I think it could be improved
 ---
 
 <InfoBox>

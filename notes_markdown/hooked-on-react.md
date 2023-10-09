@@ -2,6 +2,7 @@
 title: "useReact: My go-to React Hooks"
 date: "2022-02-01"
 lastUpdated: "2022-02-25"
+snippet: 'Spotlight: My go-to React Hooks'
 ---
 
 <InfoBox type="warn">

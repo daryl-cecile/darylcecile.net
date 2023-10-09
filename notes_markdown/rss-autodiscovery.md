@@ -1,6 +1,7 @@
 ---
 title: "Adding RSS Autodiscovery to your site"
 date: "2022-06-05"
+snippet: A how-to guide on adding RSS to your site
 ---
 
 Recently, I've discovered a new-found love for <abbr title="Really Simple Syndication" link="https://rss.com/blog/how-do-rss-feeds-work/">RSS</abbr>. It gives

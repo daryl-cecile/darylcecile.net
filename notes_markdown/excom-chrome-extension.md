@@ -1,6 +1,7 @@
 ---
 title: "Exploring the Chrome Extension context gaps"
 date: "2022-06-04"
+snippet: 'Spotlight: Chrome extension Tool'
 ---
 
 A couple of weeks ago, a conversation at work with my manager prompted me to revisit an old chrome extension I created a while
