@@ -40,7 +40,6 @@ export async function generateMetadata({ params, searchParams }: RootLayoutProps
 			site: '@darylcecile',
 			creator: '@darylcecile'
 		},
-		themeColor: '#ffffff',
 		icons: {
 			apple: {
 				sizes: "180x180",

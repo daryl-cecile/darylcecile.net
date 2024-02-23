@@ -39,7 +39,6 @@ export async function generateMetadata({ params, searchParams }: ProjectListProp
 			site: '@darylcecile',
 			creator: '@darylcecile'
 		},
-		themeColor: '#ffffff',
 		icons: {
 			apple: {
 				sizes: "180x180",
