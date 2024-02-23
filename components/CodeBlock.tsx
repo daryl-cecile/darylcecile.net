@@ -37,13 +37,13 @@ export default function CodeBlock(props:CodeBlockProps){
 			className={cn(
 				styles.container,
 				'wider-content relative', 
-				'p-2 rounded-lg bg-black',
+				'rounded-lg bg-black',
 			)}
 		>
 			<pre 
 				ref={ref} 
 				className={cn(
-					"text-sm font-extralight overflow-x-auto"
+					"text-sm font-extralight overflow-x-auto p-2"
 				)}
 			>
 				{props.children}
