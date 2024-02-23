@@ -4,7 +4,7 @@
         <title>Daryl Cecile</title>
         <link>https://darylcecile.net</link>
         <description>My notes</description>
-        <lastBuildDate>Sun, 08 Oct 2023 21:57:26 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 23 Feb 2024 23:27:27 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>mFeed</generator>
         <language>en</language>
@@ -13,16 +13,16 @@
             <url>https://darylcecile.net/images/core/header.png</url>
             <link>https://darylcecile.net</link>
         </image>
-        <copyright>Daryl Cecile © 2023</copyright>
+        <copyright>Daryl Cecile © 2024</copyright>
         <item>
             <title><![CDATA[Next-level Pursuit 🐣]]></title>
             <link>https://darylcecile.net/notes/next-level-pursuit</link>
             <guid>next-level-pursuit</guid>
-            <pubDate>Thu, 05 Oct 2023 23:00:00 GMT</pubDate>
+            <pubDate>Sun, 08 Oct 2023 23:00:00 GMT</pubDate>
             <content:encoded><![CDATA[<p>So it’s been officially 3 years and 8 months (give or take) since I last wrote Futuristic <Abbr title="Futuristic Pursuit" link="https://darylcecile.net/notes/futuristic-pursuit">Pursuit</Abbr>. How time flies!</p>
-<p>Since then, I got a job at Capital One UK; starting as a Software Engineer and quickly progressing to a Senior SDE Role, finalized the closures of PF’s doors, <Abbr title="Moving out" link="https://darylcecile.net/notes/moving-out-notts">Moved to London</Abbr> with Panther and my Partner, and got back into working on my side projects (after recovering from some serious burnout!) 😅</p>
+<p>Since then, I got a job at Capital One UK; starting off as a Software Engineer and quickly progressing to a Senior Role, I finalized the winding-down of ProjectFunction, <Abbr title="Moving out" link="https://darylcecile.net/notes/moving-out-notts">Moved to London</Abbr> with Panther and my Partner, and got back into working on my side projects (after recovering from some serious burnout!)</p>
 <p><img src="/images/mauritius-beach-profile-2023.jpg" alt="Daryl recovering from burnout, while burning out on a beach in Mauritius" loading="lazy" /></p>
-<h3>Time for a change</h3>
+<h3>Time for change</h3>
 <p>Due to some recent changes in the engineering department structure and future direction, I decided it was time for me to find my next new challenge; to go out forth and figure out whats next in my career journey. Let me tell you, the market is brutal at the moment. Here are the numbers to date:</p>
 <ul class="para">
 <li>2 interviews at exciting companies</li>
@@ -80,7 +80,10 @@
             <link>https://darylcecile.net/notes/building-in-public</link>
             <guid>building-in-public</guid>
             <pubDate>Fri, 11 Nov 2022 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>For a couple of weeks (months?) now, I have been playing around with the idea of a small API-first headless <Abbr title="Content Management System" link="https://kinsta.com/knowledgebase/content-management-system/">CMS</Abbr>. I started forming building blocks and planning they way it would look and behave.</p>
+            <content:encoded><![CDATA[<InfoBox type="warn">
+<strong>DEPRECATED:</strong> This Project is no longer being maintained and has now be deprecated
+</InfoBox>
+<p>For a couple of weeks (months?) now, I have been playing around with the idea of a small API-first headless <Abbr title="Content Management System" link="https://kinsta.com/knowledgebase/content-management-system/">CMS</Abbr>. I started forming building blocks and planning they way it would look and behave.</p>
 <p>Initially it started off with curiousity around the logic behind what a headless CMS is; I was already familiar with coupled CMS’ thanks to my previous work on <Abbr title="SlantedPress" link="https://slantedpress.com">SlantedPress</Abbr> — so this time, I was keen on working out what a headless approach would be (if I were to build one from the ground up). So I started <a href="https://jumbled-dichondra-7a3.notion.site/NextCMS-ce699824a5cb439f822853e0c82dad46" target="_blank" rel="noopener" class="l" hreflang="en">architecting, designing, and moulding an API</a>.</p>
 <p><img src="/images/figma-inkly.png" alt="Figma designs of Inkly" loading="lazy" /></p>
 <p>When I first started thinking about this project, I knew I wanted the process to be product-driven, and from that I had planned to make the entire product React-hook-driven. When designing the initial design around some basic use-cases, I figured I wanted to try and make a powerful API and then have a bunch of React-hooks that could consume the endpoints and be super-easy-to-use™</p>
@@ -642,7 +645,10 @@ new hooks and explain their uses.</p>
             <link>https://darylcecile.net/notes/did-a-thing-pyro</link>
             <guid>did-a-thing-pyro</guid>
             <pubDate>Thu, 05 Mar 2020 00:00:00 GMT</pubDate>
-            <content:encoded><![CDATA[<p>As some of you might have heard, ProjectFunction is partnering up with NTU to deliver a 2 weeks intensive course. As with other PF courses we have run in the past, this one will be open to those who are under-represented in the industry. As part of this programme, learners will have the opportunity to take part in workshops and attend talks related to working in tech. Additionally, they will have the opportunity to apply all the skills they gather and the knowledge they gain, to design and implement their own website.</p>
+            <content:encoded><![CDATA[<InfoBox type="warn">
+<strong>DEPRECATED:</strong> This Project is no longer being maintained and has now be deprecated
+</InfoBox>
+<p>As some of you might have heard, ProjectFunction is partnering up with NTU to deliver a 2 weeks intensive course. As with other PF courses we have run in the past, this one will be open to those who are under-represented in the industry. As part of this programme, learners will have the opportunity to take part in workshops and attend talks related to working in tech. Additionally, they will have the opportunity to apply all the skills they gather and the knowledge they gain, to design and implement their own website.</p>
 <p>In preparation for this, I have started writing up some documentation and tasks for the learners. While doing the documentation for this, I came across 2 issues; firstly, there was no way to natively embed non-gist GitHub code into webpages, and secondly the option provided by GitHub does not make it difficult, if not impossible to restyle.</p>
 <p>As it currently stands, GitHub allows you to embed gists into your webpage using the <em>embed</em> option. But this comes in the form of a <code>&lt;script&gt;</code> tag that you insert into the page. This makes embedding simple, but at the cost of interface customizations. So I made my own. Now I know there are other solutions out there such as <a href="https://github.com/robertkrimen/gist-it" target="_blank" rel="noopener" class="l" hreflang="en"><em>gist-it</em></a> but I thought it would be a good challenge to implement my own.</p>
 <p>My main priority when creating this was simplicity and customizability. I wanted the library to be easy to use, but also provide some customization options. Furthermore, I wanted to keep the element in the light DOM (outside of the shadow DOM) to ensure users could go even further with their customizations by using custom CSS.</p>

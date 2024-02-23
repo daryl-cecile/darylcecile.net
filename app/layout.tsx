@@ -2,7 +2,6 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav.client";
 
 import '../styles/global.scss'
-import "highlight.js/styles/atom-one-dark.css"
 
 import HomeHeader from "../components/HomeHeader";
 import LowerNav from "../components/LowerNav";
@@ -69,7 +68,7 @@ export default function AppLayout({children}){
 			<body>
 				<Nav/>
 				<HomeHeader name={' Hey! I\'m Daryl. '}/>
-				<main className="container">{children}</main>
+				<main className="parentCont">{children}</main>
 				<LowerNav />
 				<a style={{
 				  visibility:'hidden', 

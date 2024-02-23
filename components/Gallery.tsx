@@ -16,7 +16,9 @@ type GalleryItemProps = {
 }
 
 export default function Gallery({imageUrls, children}:GalleryProps) {
-    const images = imageUrls ?? JSON.parse(children[0].trim());
+    const raw = typeof children === "string" ? children : (Array.isArray(children) ? children.at(0) : "");
+    
+    const images = imageUrls ?? JSON.parse(raw.trim());
     const urls = Object.keys(images);
     const previewElementRef = useRef<HTMLDivElement>(null);
 	const [currentImageUrl, setCurrentImageUrl] = useState<string>( urls[0] );
