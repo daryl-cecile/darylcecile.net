@@ -79,7 +79,7 @@ export default async function SingleNotePage({ params }) {
 				<span className="datetime">{'Last updated: '}<LocalDate dateString={postData.lastUpdated} /></span>
 			)}
 			<br />
-			<div className="wider-content content prose">
+			<div className="wider-content content prose prose-a:text-[--article-content-para-fg] prose-headings:text-[--article-content-para-fg] prose-strong:text-[--article-content-para-fg]">
 				<Markdown
 					children={postData.content}
 				/>
