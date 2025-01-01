@@ -14,7 +14,7 @@ type NotePageProps = {
 }
 
 export async function generateViewport({ params, searchParams }: NotePageProps): Promise<Viewport[]> {
-	return [{ minimumScale:1, initialScale: 1, width: 'device-width' }]
+	return [{ minimumScale: 1, initialScale: 1, width: 'device-width' }]
 }
 
 export async function generateMetadata({ params, searchParams }: NotePageProps, parent: ResolvingMetadata): Promise<Metadata> {
@@ -57,9 +57,9 @@ export async function generateMetadata({ params, searchParams }: NotePageProps, 
 			],
 			shortcut: ['/images/core/profile.ico'],
 			other: [
-				{ rel: 'me', url:'https://twitter.com/darylcecile' },
-				{ rel: 'webmention', url:'https://webmention.io/darylcecile.net/webmention' },
-				{ rel: 'pingback', url:'https://webmention.io/darylcecile.net/xmlrpc' }
+				{ rel: 'me', url: 'https://twitter.com/darylcecile' },
+				{ rel: 'webmention', url: 'https://webmention.io/darylcecile.net/webmention' },
+				{ rel: 'pingback', url: 'https://webmention.io/darylcecile.net/xmlrpc' }
 			]
 		},
 		manifest: '/site.webmanifest'
@@ -79,8 +79,8 @@ export default async function SingleNotePage({ params }) {
 				<span className="datetime">{'Last updated: '}<LocalDate dateString={postData.lastUpdated} /></span>
 			)}
 			<br />
-			<div className="wider-content content">
-				<Markdown 
+			<div className="wider-content content prose">
+				<Markdown
 					children={postData.content}
 				/>
 			</div>
